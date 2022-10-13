@@ -11,8 +11,8 @@
             position: fixed;
             right: 0;
             bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
+            width: 100%;
+            height: 100%;
         }
 
         .content {
@@ -26,13 +26,13 @@
     </style>
 </head>
 <body>
-<img src="https://topchiase24h.com/wp-content/uploads/2021/04/hinh-anh-phong-canh-resort-canh-bien-dep-1.jpg"
+<img src="https://img.freepik.com/premium-photo/spa-beauty-massage-health-wellness-background-spa-thai-therapy-treatment-aromatherapy-body-woman-with-flower-nature-candle-relax-summer-time_35007-260.jpg?w=2000"
      id="myVideo">
 
 <div class="content">
     <h2 class="text-center fw-bold" style="color: #e7e70b">UPDATE FACILITY</h2>
     <div class="d-flex justify-content-center">
-        <form class="w-50 border border-2 border-warning p-3 bg-warning bg-opacity-25 rounded"
+        <form class="w-50 border border-2 border-warning p-3 bg-warning bg-opacity-50 rounded"
               th:action="@{/facility/update}"
               method="post" th:object="${facility}">
 
@@ -170,7 +170,7 @@
         </form>
     </div>
     <p class="text-center m-3">
-        <a style="color: aliceblue" href="/facility/list"><i class="fa-solid fa-backward"></i> Back to Facility list</a>
+        <a style="color: #75a8cd; font-size: 20px; font-weight: bolder" href="/facility/list"><i class="fa-solid fa-backward"></i> Back to Facility list</a>
     </p>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
