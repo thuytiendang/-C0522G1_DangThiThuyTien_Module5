@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FURAMA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        h5 {
+            font-size: 35px;
+            font-weight: bolder;
+            color: black;
+            font-family: "Harlow Solid Italic";
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container-fluid" style="padding: 0">
+    <header th:fragment="header" class="sticky-top">
+        <div th:fragment="">
+            <div class="row bg-warning bg-opacity-25">
+                <div class="bg-gray-500 d-flex myCSS" style="height: 100px">
+                    <div class="col-lg-8 left">
+
+                        <img class="ms-2 ps-2 "
+                             src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png"
+                             alt="" height="70%" width="60%">
+                        <img class="h-100 p-4" src="https://www.furama.com/images/LOGOFurama_4C_Normal.png" alt="">
+                    </div>
+                    <div class="col-lg-4 right">
+                        <div class="row">
+                            <div class="col-lg-6" id="navbarContent">
+                                <ul class=" me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item dropdown ms-3">
+                                        <a class="nav-link dropdown-toggle " href="#" role="button"
+                                           data-bs-toggle="dropdown"
+                                           aria-expanded="false" style="font-size: 30px">Language</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Việt Nam </a></li>
+                                            <li><a class="dropdown-item" href="#">English</a></li>
+                                            <li><a class="dropdown-item" href="#">日本語</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-2">
+             <span style="font-size: 40px;color: #b28356"><a class="navbar-brand" href="/"
+                                                             style="width: 70% ; height: 70%">
+                 <i class="fa-brands fa-instagram"></i></a></span>
+                            </div>
+                            <div class="col-lg-2 col-md-2">
+             <span style="font-size: 40px;color: #b28356"><a class="navbar-brand" href="/"
+                                                             style="width: 70% ; height: 70%">
+                 <i class="fa-brands fa-facebook"></i></a></span>
+                            </div>
+                            <div class="col-lg-2 col-md-2">
+             <span style="font-size: 40px;color: #b28356"><a class="navbar-brand" href="/"
+                                                             style="width: 70% ; height: 70%">
+                 <i class="fa-brands fa-youtube"></i></a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg bg-warning p-2 text-white bg-opacity-50">
+                <div class="container">
+                    <a class="navbar-brand" href="/">Home</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">Employee</a>
+                                <ul class="dropdown-menu bg-warning bg-opacity-75">
+                                    <li><a class="dropdown-item" href="/employee/list">Employee list</a></li>
+                                    <li><a class="dropdown-item" href="/employee/create">Add new Employee</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">Customer</a>
+                                <ul class="dropdown-menu bg-warning bg-opacity-75">
+                                    <li><a class="dropdown-item" href="/customer/list">Customer list</a></li>
+                                    <li><a class="dropdown-item" href="/customer/create">Add new Customer</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">Facility</a>
+                                <ul class="dropdown-menu bg-warning bg-opacity-75">
+                                    <li><a class="dropdown-item" href="facility\facility_list.html">Facility list</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">Contract</a>
+                                <ul class="dropdown-menu bg-warning bg-opacity-75">
+                                    <li><a class="dropdown-item" href="/contract/list">Contract list</a></li>
+                                    <li><a class="dropdown-item" href="/contract/create">Add new Contract</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+                    aria-label="Slide 7"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.furama.com/images/furama.sg-Banner12.jpg" height="500" class="d-block w-100"
+                     alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>EAT, PLAY, LOVE AT FURAMA HOTELS</h5>
+                    <p style="font-size: 25px; color: black">#EXPLOREFURAMA: SINGAPORE</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://checkindanang.com/uploads/image/khach-san/furama/furama-resort-khu-nghi-duong-dang-cap-hang-dau-viet-nam-1.jpg"
+                     height="500" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>EAT, PLAY, LOVE AT FURAMA HOTELS</h5>
+                    <p style="font-size: 25px; color: black">#EXPLOREFURAMA: CHINA</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://www.365travel.asia/images/tour/items/img2/furama-resort-danang-banner.jpg"
+                     class="d-block w-100" height="500" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>EAT, PLAY, LOVE AT FURAMA HOTELS</h5>
+                    <p style="font-size: 25px; color: black">#EXPLOREFURAMA: BANGKOK</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://ib.vib.com.vn/banners/Promotion/20180608174327535_Vietnam_Danang_Furama_Resort_Exterior_Ocean_Pool.jpg"
+                     class="d-block w-100" height="500" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>EAT, PLAY, LOVE AT FURAMA HOTELS</h5>
+                    <p style="font-size: 25px; color: black">#EXPLOREFURAMA: DA NANG</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://danangtransfer.vn/wp-content/uploads/2019/02/coco-ocean-resort-banner-2.jpg"
+                     class="d-block w-100" height="500" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>EAT, PLAY, LOVE AT FURAMA HOTELS</h5>
+                    <p style="font-size: 25px; color: black">#EXPLOREFURAMA: KUALA LUMPUR</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://www.furama.com/factsheet/images/fvs/facade.jpg" class="d-block w-100" height="500"
+                     alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>EAT, PLAY, LOVE AT FURAMA HOTELS</h5>
+                    <p style="font-size: 25px; color: black">#EXPLOREFURAMA: BALI</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://ik.imgkit.net/3vlqs5axxjf/external/http://images.ntmllc.com/v4/Hotel/T37/T37074/T37074_POL_ZC273F.JPG?tr=w-922%2Ch-519%2Cfo-auto"
+                     class="d-block w-100" height="500" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>EAT, PLAY, LOVE AT FURAMA HOTELS</h5>
+                    <p style="font-size: 25px; color: black">#EXPLOREFURAMA: HUAHIN</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://cdn.scb.com.vn/picture/0512_.webp" height="300" class="d-block w-100" alt="...">
+                    <p style="text-align: right; margin: 20px"><a href="#" class="btn btn-warning btn-opacity-50">FURAMA
+                        RIVERFRONT, SINGAPORE</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div>
+                <div style="padding-top: 80px">
+                    <h5 style="text-align: center">FURAMA INTERNATIONAL</h5>
+                    <p>Furama hotels offer leisure and business travellers alike a well-appointed backdrop
+                        to indulge in restful play and invigorating work. Be pampered by our warm service from the heart
+                        as
+                        you immerse yourself in unique cultures and insightful experiences on your journey.
+                    </p>
+                    <p class="text-warning text-opacity-75" style="font-size: 20px; font-weight: bolder">VIEW HOTELS
+                        BY</p>
+                    <div style="text-align: center">
+                        <a href="#" class="btn btn-warning">BRANDS</a>
+                        <a href="#" class="btn" style="background-color: #efe784">DESTINATION</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6"
+                    aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="7"
+                    aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="8"
+                    aria-label="Slide 9"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://www.furama.com/images/frf-Thumbnail.jpg" height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="text-align: right; font-size: 40px">PROMOTIONS</h3>
+                    <p style="text-align: right">WORKCATION WITH US</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://www.vn.kayak.com/rimg/himg/c6/3f/61/revato-6608-12567585-137210.jpg?width=720&height=576&crop=true"
+                     height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="text-align: right; font-size: 40px">PROMOTIONS</h3>
+                    <p style="text-align: right">WORKCATION WITH US</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas_Bathroom-1047x563.jpg"
+                     height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="text-align: right; font-size: 40px">PROMOTIONS</h3>
+                    <p style="text-align: right">WORKCATION WITH US</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas_Bedroom-1-1047x563.jpg"
+                     height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="text-align: right; font-size: 40px">PROMOTIONS</h3>
+                    <p style="text-align: right">WORKCATION WITH US</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://resortdanang.info/wp-content/uploads/2018/12/phong-khach-villas-3-bedroom-furama-da-nang.jpg"
+                     height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="text-align: right; font-size: 40px">PROMOTIONS</h3>
+                    <p style="text-align: right">WORKCATION WITH US</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/two-bedroom-pool-villa-cr-800x450.jpg"
+                     height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="text-align: right; font-size: 40px">PROMOTIONS</h3>
+                    <p style="text-align: right">WORKCATION WITH US</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://pix10.agoda.net/hotelImages/463/463255/463255_16030718370040522268.jpg?ca=13&ce=1&s=1024x768"
+                     height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="text-align: right; font-size: 40px">PROMOTIONS</h3>
+                    <p style="text-align: right">WORKCATION WITH US</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/214250624.jpg?k=9da781bfe7d25ffdb4581d5c3a5dfe9d414b4b853aca42863cf19c2f122fe6d0&o=&hp=1"
+                     height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="text-align: right; font-size: 40px">PROMOTIONS</h3>
+                    <p style="text-align: right">WORKCATION WITH US</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://q-xx.bstatic.com/xdata/images/hotel/840x460/92592424.jpg?k=23442c2880ee77ff898618aa9bdef9b3eb6e2b735dd45ccf30de406e014d8a89&o="
+                     height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="text-align: right; font-size: 40px">PROMOTIONS</h3>
+                    <p style="text-align: right">WORKCATION WITH US</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <h1 style="text-align: center; font-size: 30px; color: #c7b735; padding-top: 15px">#EXPLOREFURAMA DESTINATIONS</h1>
+
+    <div class="row m-3">
+        <div class="col-sm-6">
+            <div class="card" style="width: 40rem;">
+                <img src="https://www.furama.com/images/nh_bkkstrip.jpg" class="card-img-top" height="200px" alt="...">
+                <div class="card-body">
+                    <a href="#" class="btn" style="font-size: 25px; text-align: center; background-color: #f1ee92">SINGAPORE</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card" style="width: 40rem;">
+                <img src="https://www.furama.com/images/nw_h_Location02.jpg" height="200px" alt="...">
+                <div class="card-body">
+                    <a href="#" class="btn" style="font-size: 25px; text-align: center; background-color: #f1ee92">KUALA
+                        LUMPUR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-sm-6">
+            <div class="card" style="width: 40rem;">
+                <img src="https://2.bp.blogspot.com/-nKwcrUpjtFw/WGyMbua-QEI/AAAAAAABEa0/4OfkkDdh4xQRhxKU9imKsnistKZBGoiHgCPcB/s1600/nam-lay-tay-anh-di-ly-son-1.jpg"
+                     class="card-img-top" height="200px" alt="...">
+                <div class="card-body">
+                    <a href="#" class="btn" style="font-size: 25px; text-align: center; background-color: #f1ee92">BANGKOK</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card" style="width: 40rem;">
+                <img src="https://halotravel.vn/wp-content/uploads/2019/06/bangkok-1.jpg" height="200px" alt="...">
+                <div class="card-body">
+                    <a href="#" class="btn" style="font-size: 25px; text-align: center; background-color: #f1ee92">BATTAYA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-sm-6">
+            <div class="card" style="width: 40rem;">
+                <img src="https://staticproxy.mytourcdn.com/480x360,q90/resources/pictures/locations/fai1516938100.jpg"
+                     class="card-img-top" height="200px" alt="...">
+                <div class="card-body">
+                    <a href="#" class="btn" style="font-size: 25px; text-align: center; background-color: #f1ee92">CHIANG
+                        MAI</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card" style="width: 40rem;">
+                <img src="https://dulichlive.com/thai-lan/wp-content/uploads/sites/4/2019/08/Du-lich-Hua-Hin-Bien-Hua-Hin-cuoi-ngua.jpg"
+                     height="200px" alt="...">
+                <div class="card-body">
+                    <a href="#" class="btn" style="font-size: 25px; text-align: center; background-color: #f1ee92">HUA
+                        HIN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-sm-6">
+            <div>
+                <div style="padding-top: 80px">
+                    <h2 style="text-align: left">INDULGE IN A DASH OF FURAMA'S FLAVOURS AT HOME</h2>
+                    <p>Our award-winning restaurants are now available for self-collection and delivery within
+                        Singapore,
+                        Kuala Lumpur, Bangkok & Bali! Tuck in to exotic and tantalising flavours from our restaurants
+                        - at the comfort of your own home.
+                    </p>
+                    <div style="text-align: center">
+                        <a href="#" class="btn btn-warning">SELECT YOUR LOCATION</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div>
+                <div>
+                    <img src="https://cdn.dealtoday.vn/img/s630x0/6929c2e38a4a4eb88446c2db835cd320.jpg?sign=HTWRtOkSE7EerrodLvXnrg"
+                         height="400" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid " style="margin-top: 70px;padding: 0">
+        <div class="row">
+            <div class="col-lg-2 bg-warning  p-2 text-dark bg-opacity-25"></div>
+
+            <div class="col-lg-3 bg-warning p-2 text-dark bg-opacity-10">
+                <h3 style="color: chocolate;margin-top: 70px">Travel Guide</h3>
+                <pre>Furama Resort is the premier base for
+Discover one of the most fascinating
+destinations Asia. Only a short drive
+from Da Nang are four World Cultural
+Heritages UNESCO recognized:</pre>
+                <a href="#" class="btn btn-warning btn-with-arrow js-footer-map-toggle"><i
+                        class="icon-placeholder"></i><span
+                        class="opened-text">View On Map</span></a>
+                <h5 style="margin-top: 20px;color: chocolate">LOCATION</h5>
+                <pre><b>1. Co Do Hue</b>                    2 hours</pre>
+                <hr>
+                <pre><b>2. Hoi An ancient town </b>        30 minus</pre>
+                <hr>
+                <pre><b>3. My Son Sanctuary </b>           90 minus</pre>
+                <hr>
+                <pre><b>4. Phong Nha Cave </b>              3 hours</pre>
+                <hr>
+            </div>
+            <div class="col-lg-7 bg-warning  p-2 text-dark bg-opacity-25">
+                <div class="row" style="margin-top: 70px">
+                    <div class="col-lg-4">
+                        <ul class="abc" style="margin-left: 50px">
+                            <li><a href="#">Announced Price</a></li>
+                            <li><a href="#">Lifestyle Blog</a></li>
+                            <li><a href="">Recruitment</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <h5 style="color: chocolate">CONTACT US</h5>
+                        <pre style="text-align: justify">103 - 105 Vo Nguyen Giap Street, Khue My Ward,
+Ngu Hanh Son District, Danang City, Vietnam
+Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666
+Email: reservation@furamavietnam.com *
+www.furamavietnam.com
+GDS Codes: Amadeus-GD DADFUR, Galileo/Apollo-GD
+ 16236,Sabre-GD 032771,
+Worldspan- GD DADFU</pre>
+                        <img style="width: 32px;height: 32px;float: left"
+                             src="https://furamavietnam.com/wp-content/uploads/2019/06/incon-Facbook-1.png"
+                             alt=""
+                             width="32" height="32">
+                        <img style="width: 40px;height: 32px;float: left"
+                             src="https://furamavietnam.com/wp-content/uploads/2019/06/social-ins.png"
+                             alt="" width="40"
+                             height="32">
+                        <img style="width: 40px;height: 32px;float: left"
+                             src="https://furamavietnam.com/wp-content/uploads/2021/10/social-youtube.png"
+                             alt=""
+                             width="40" height="32">
+                    </div>
+                    <div class="col-lg-2">
+                    </div>
+                </div>
+                <div style="margin-top: 100px;margin-left: 90px">
+                    <img src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png"
+                         alt="Ariyana Tourism Complex" width="500px;" style="height: 100px;width: 600px">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
