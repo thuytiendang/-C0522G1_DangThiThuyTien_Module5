@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>FURAMA</title>
@@ -26,8 +26,8 @@
 </head>
 <body>
 <div class="container-fluid" style="padding: 0">
-    <header th:fragment="header" class="sticky-top">
-        <div th:fragment="">
+    <header class="sticky-top">
+        <div >
             <div class="row bg-warning bg-opacity-25">
                 <div class="bg-gray-500 d-flex myCSS" style="height: 100px">
                     <div class="col-lg-8 left">
@@ -96,8 +96,8 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                    aria-expanded="false">Customer</a>
                                 <ul class="dropdown-menu bg-warning bg-opacity-75">
-                                    <li><a class="dropdown-item" href="/customer/list">Customer list</a></li>
-                                    <li><a class="dropdown-item" href="/customer/create">Add new Customer</a></li>
+                                    <li><a class="dropdown-item" href="customer/customer_list.html">Customer list</a></li>
+                                    <li><a class="dropdown-item" href="customer/create.html">Add new Customer</a></li>
                                 </ul>
                             </li>
 
@@ -106,6 +106,7 @@
                                    aria-expanded="false">Facility</a>
                                 <ul class="dropdown-menu bg-warning bg-opacity-75">
                                     <li><a class="dropdown-item" href="facility\facility_list.html">Facility list</a></li>
+                                    <li><a class="dropdown-item" href="facility\create.html">Add new Facility</a></li>
                                 </ul>
                             </li>
 
