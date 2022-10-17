@@ -1,0 +1,21 @@
+<h1>CALCULATOR</h1>
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">Number 1</span>
+  <input type="number" class="form-control" placeholder="input number 1" aria-label="Username" aria-describedby="addon-wrapping"
+  [value]="number1" [(ngModel)]="number1">
+</div>
+
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping1">Number 2</span>
+  <input type="number" class="form-control" placeholder="input number 2" aria-label="Username" aria-describedby="addon-wrapping"
+         [value]="number2" [(ngModel)]="number2">
+</div>
+<div>
+  <button type="button" class="btn btn-primary" (click)="sum()">Sum</button>
+  <button type="button" class="btn btn-primary" (click)="minus()">Minus</button>
+  <button type="button" class="btn btn-primary" (click)="multiply()">Multiply</button>
+  <button type="button" class="btn btn-primary" (click)="divide()">Divide</button>
+</div>
+
+<h4>Result: {{result}}</h4>
+
