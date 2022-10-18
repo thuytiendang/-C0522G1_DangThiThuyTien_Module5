@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/typescrip_variable.iml" filepath="$PROJECT_DIR$/.idea/typescrip_variable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/casestudy.iml" filepath="$PROJECT_DIR$/.idea/casestudy.iml" />
     </modules>
   </component>
 </project>
