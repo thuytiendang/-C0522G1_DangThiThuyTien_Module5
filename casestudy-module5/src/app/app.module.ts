@@ -5,7 +5,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { FacilityComponent } from './facility/facility.component';
+import { FacilityComponent } from './facility-list/facility.component';
+import { CreateFacilityComponent } from './create-facility/create-facility.component';
+import { UpdateFacilityComponent } from './update-facility/update-facility.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CreateCustomerComponent } from './create-customer/create-customer.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +18,12 @@ import { FacilityComponent } from './facility/facility.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    FacilityComponent
+    FacilityComponent,
+    CreateFacilityComponent,
+    UpdateFacilityComponent,
+    CustomerListComponent,
+    CreateCustomerComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule

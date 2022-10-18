@@ -1,0 +1,323 @@
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="https://media-exp1.licdn.com/dms/image/C4E16AQFiC2NLc-A7GQ/profile-displaybackgroundimage-shrink_200_800/0/1547525105746?e=2147483647&v=beta&t=dDzduk_bPiLT9hWfIdJi0kyTP5pq9sV-GFG5DCeu8Rw"
+         class="d-block w-100" style="height: 150px" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <h1 style="font-size: 60px">CUSTOMER LIST</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="p-3">
+    <nav class="navbar navbar-expand-lg pb-0 mb-0">
+      <div class="container-fluid">
+        <a>
+          <button class="btn btn-success btn-outline-secondary btn-sm">
+            <span class="fa-solid fa-person-circle-plus text-light h5 my-auto me-1"></span>
+            <span class="text-light"> Add new Customer</span>
+          </button>
+        </a>
+
+        <form class="d-flex my-2" role="search">
+          <input class="form-control me-2" type="text" placeholder="Input name" aria-label="Search"
+                 name="nameSearch">
+
+          <input class="form-control me-2" type="text" placeholder="Input address" aria-label="Search"
+                 name="addressSearch">
+
+
+          <input class="form-control me-2" type="text" placeholder="Input phone number" aria-label="Search"
+                 name="phoneSearch">
+
+          <button class="btn btn-outline-warning" type="submit" name="action" value="search">
+            <i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </nav>
+
+    <table class="table table-striped table-bordered" id="customerTable">
+      <thead>
+      <tr class="text-center bg-warning bg-opacity-50">
+        <th>Serial</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Id card</th>
+        <th>Phone number</th>
+        <th>Customer type</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>View</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>Huỳnh Trung Thuyên</td>
+        <td>Male</td>
+        <td>206236476</td>
+        <td>0905678453</td>
+        <td>Diamond</td>
+        <td style="text-align: center">
+          <a href="edit.html">
+            <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer">
+            <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#viewCustomer">
+            <span class="text-success"><i class="fa-solid fa-eye"></i></span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Dương Văn Quan</td>
+        <td>Male</td>
+        <td>543432111</td>
+        <td>0490039241</td>
+        <td>Diamond</td>
+        <td style="text-align: center">
+          <a href="edit.html">
+            <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer">
+            <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#viewCustomer">
+            <span class="text-success"><i class="fa-solid fa-eye"></i></span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>Hoàng Trần Nhi Anh</td>
+        <td>Female</td>
+        <td>096943753</td>
+        <td>0905467894</td>
+        <td>Diamond</td>
+        <td style="text-align: center">
+          <a href="edit.html">
+            <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer">
+            <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#viewCustomer">
+            <span class="text-success"><i class="fa-solid fa-eye"></i></span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>Hoàng Trần Nhi Nhi</td>
+        <td>Female</td>
+        <td>795453345</td>
+        <td>0312345678</td>
+        <td>Silver</td>
+        <td style="text-align: center">
+          <a href="edit.html">
+            <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer">
+            <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#viewCustomer">
+            <span class="text-success"><i class="fa-solid fa-eye"></i></span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>Nguyễn Hà Duyên</td>
+        <td>Female</td>
+        <td>206236476</td>
+        <td>0919436753</td>
+        <td>Diamond</td>
+        <td style="text-align: center">
+          <a href="edit.html">
+            <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer">
+            <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#viewCustomer">
+            <span class="text-success"><i class="fa-solid fa-eye"></i></span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>6</td>
+        <td>Nguyễn Tâm Đắc</td>
+        <td>Male</td>
+        <td>432341235</td>
+        <td>0643343433</td>
+        <td>Platinium</td>
+        <td style="text-align: center">
+          <a href="edit.html">
+            <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer">
+            <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#viewCustomer">
+            <span class="text-success"><i class="fa-solid fa-eye"></i></span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>7</td>
+        <td>Phạm Xuân Diệu</td>
+        <td>Male</td>
+        <td>865342123</td>
+        <td>0954333333</td>
+        <td>Gold</td>
+        <td style="text-align: center">
+          <a href="edit.html">
+            <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer">
+            <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
+          </a>
+        </td>
+        <td style="text-align: center">
+          <a data-bs-toggle="modal" data-bs-target="#viewCustomer">
+            <span class="text-success"><i class="fa-solid fa-eye"></i></span>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--    modal delete-->
+    <div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
+         aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel1">Are you sure to delete?</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <form>
+            <div class="modal-body">
+              <span class="h6">Customer:</span><strong id="nameDelete" class="text-danger ps-2"></strong>
+              <input type="hidden" name="id" id="idDelete"/>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-danger" value="delete">Delete</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--view-->
+    <div class="modal fade" id="viewCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
+         aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel2">Customer information</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-warning table-striped">
+              <tr>
+                <th>Name</th>
+                <td><span id="name"></span></td>
+              </tr>
+              <tr>
+                <th>Date of Birth</th>
+                <td><span id="dob"></span></td>
+              </tr>
+              <tr>
+                <th>Gender</th>
+                <td><span id="gender"></span></td>
+              </tr>
+              <tr>
+                <th>Id card</th>
+                <td><span id="idCard"></span></td>
+              </tr>
+              <tr>
+                <th>Phone number</th>
+                <td><span id="phone"></span></td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td><span id="email"></span></td>
+              </tr>
+              <tr>
+                <th>Address</th>
+                <td><span id="address"></span></td>
+              </tr>
+              <tr>
+                <th>Customer type</th>
+                <td><span id="customerType"></span></td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function remove(id, name) {
+      document.getElementById("idDelete").value = id;
+      document.getElementById("nameDelete").innerText = name;
+    }
+
+    function details(name, dob, gender, idCard, phone, email, address, customerType) {
+      document.getElementById("name").innerText = name;
+      document.getElementById("dob").innerText = dob;
+      if (gender == 0) {
+        document.getElementById("gender").innerText = "Female";
+      } else {
+        document.getElementById("gender").innerText = "Male";
+      }
+      document.getElementById("idCard").innerText = idCard;
+      document.getElementById("phone").innerText = phone;
+      document.getElementById("email").innerText = email;
+      document.getElementById("address").innerText = address;
+      document.getElementById("customerType").innerText = customerType;
+    }
+  </script>
+</div>
