@@ -20,17 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87422026-cfa7-4f3d-b6f7-970e1c2ff2ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../casestudy-module5/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy-module5/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy-module5/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy-module5/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy-module5/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy-module5/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy-module5/src/app/facility/facility.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy-module5/src/app/facility-list/facility.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy-module5/src/app/facility/facility.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy-module5/src/app/facility-list/facility.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy-module5/src/app/facility/facility.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy-module5/src/app/facility-list/facility.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy-module5/src/app/facility/facility.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy-module5/src/app/facility-list/facility.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy-module5/src/app/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy-module5/src/app/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy-module5/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy-module5/src/app/header/header.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss4_component/hackernews-app/src/app/article/article.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss4_component/hackernews-app/src/app/article/article.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +55,7 @@
       <workItem from="1665989907699" duration="4250000" />
       <workItem from="1666079610589" duration="52000" />
       <workItem from="1666079940649" duration="2815000" />
+      <workItem from="1666240506852" duration="638000" />
     </task>
     <servers />
   </component>
@@ -81,6 +72,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="106" key="FileChooserDialogImpl" timestamp="1666079661233">

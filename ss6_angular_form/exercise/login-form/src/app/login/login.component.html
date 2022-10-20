@@ -1,0 +1,56 @@
+<img
+  src="https://img.freepik.com/premium-photo/spa-beauty-massage-health-wellness-background-spa-thai-therapy-treatment-aromatherapy-body-woman-with-flower-nature-candle-relax-summer-time_35007-260.jpg?w=2000"
+  id="myVideo">
+
+<div class="content">
+  <h2 class="text-center fw-bold" style="color: #088e8e">REGISTER FORM</h2>
+  <div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 bg-success bg-opacity-25 rounded"
+          [formGroup]="loginFormGroup">
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="h6">Email:</label>
+        <div class="input-group">
+          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+                 aria-describedby="emailHelp">
+          <span class="input-group-text"> <i class="fa-solid fa-person-circle-question"></i></span>
+        </div>
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="loginFormGroup.controls.email.hasError('required')
+&& (loginFormGroup.controls.email.dirty || loginFormGroup.controls.email.touched)">
+        Please input email!
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="loginFormGroup.controls.email.hasError('email')
+&& (loginFormGroup.controls.email.dirty || loginFormGroup.controls.email.touched)">
+        Please input valid format!
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="password" class="h6">Password:</label>
+        <div class="input-group">
+          <input formControlName="password" type="password" class="form-control" id="password">
+          <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
+        </div>
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="loginFormGroup.controls.password.hasError('required')
+&& (loginFormGroup.controls.password.dirty || loginFormGroup.controls.password.touched)">
+        Please input password!
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="loginFormGroup.controls.password.hasError('minlength')
+&& (loginFormGroup.controls.password.dirty || loginFormGroup.controls.password.touched)">
+        Please input valid format!
+      </div>
+
+      <div class="mt-3 text-center">
+        <button type="submit" class="btn btn-info btn-sm border border-2 border-success"
+                (click)="getValue()" [disabled]="loginFormGroup.invalid">
+          REGISTER
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

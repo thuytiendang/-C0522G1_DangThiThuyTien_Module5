@@ -1,0 +1,153 @@
+<img
+  src="https://img.freepik.com/premium-photo/spa-beauty-massage-health-wellness-background-spa-thai-therapy-treatment-aromatherapy-body-woman-with-flower-nature-candle-relax-summer-time_35007-260.jpg?w=2000"
+  id="myVideo">
+
+<div class="content">
+  <h2 class="text-center fw-bold" style="color: #088e8e">REGISTER FORM</h2>
+  <div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 bg-success bg-opacity-25 rounded"
+          [formGroup]="registerFormGroup">
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="h6">Email address:</label>
+        <div class="input-group">
+          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+                 aria-describedby="emailHelp">
+          <span class="input-group-text"> <i class="fa-solid fa-person-circle-question"></i></span>
+        </div>
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="registerFormGroup.controls.email.hasError('required')
+&& (registerFormGroup.controls.email.dirty || registerFormGroup.controls.email.touched)">
+        Please input email!
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="registerFormGroup.controls.email.hasError('email')
+&& (registerFormGroup.controls.email.dirty || registerFormGroup.controls.email.touched)">
+        Please input valid format!
+      </div>
+
+      <div class="mt-3 form-group">
+        <label class="h6" for="country">Country:</label>
+        <div class="input-group">
+          <select formControlName="country" id="country" class="form-select" name="country">
+            <option>Vietnam</option>
+            <option>Singapore</option>
+            <option>ThaiLand</option>
+            <option>Australia</option>
+            <option>Malaysia</option>
+            <option>China</option>
+          </select>
+          <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
+        </div>
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="registerFormGroup.controls.country.hasError('required')
+&& (registerFormGroup.controls.country.dirty || registerFormGroup.controls.country.touched)">
+        Please choose country!
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="age" class="h6">Date of Birth:</label>
+        <input formControlName="age" type="date" class="form-control" id="age">
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="registerFormGroup.controls.age.hasError('required')
+&& (registerFormGroup.controls.age.dirty || registerFormGroup.controls.age.touched)">
+        Please input age!
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="registerFormGroup.controls.age.hasError('invalid18')
+&& (registerFormGroup.controls.age.dirty || registerFormGroup.controls.age.touched)">
+        Please input valid format!
+      </div>
+
+
+      <div class="mt-3 form-group">
+        <label class="h6">Gender:</label>
+        <div class="d-flex">
+          <label class="d-block me-4">
+            <input formControlName="gender" type="radio" name="gender" value="male">
+            <i class="fa-solid fa-mars"></i> Male
+          </label>
+          <label class="d-block">
+            <input formControlName="gender" type="radio" name="gender" value="female">
+            <i class="fa-solid fa-venus"></i> Female
+          </label>
+        </div>
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="registerFormGroup.controls.gender.hasError('required')
+&& (registerFormGroup.controls.gender.dirty || registerFormGroup.controls.gender.touched)">
+        Please choose country!
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="phone" class="h6">Phone number:</label>
+        <div class="input-group">
+          <input formControlName="phone" type="text" class="form-control" id="phone">
+          <span class="input-group-text"><i class="fa-solid fa-square-phone"></i></span>
+        </div>
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="registerFormGroup.controls.phone.hasError('required')
+&& (registerFormGroup.controls.phone.dirty || registerFormGroup.controls.phone.touched)">
+        Please input age!
+      </div>
+      <div class="form-group text-danger"
+           *ngIf="registerFormGroup.controls.phone.hasError('pattern')
+&& (registerFormGroup.controls.phone.dirty || registerFormGroup.controls.phone.touched)">
+        Please input valid format!
+      </div>
+
+      <div formGroupName="passwordGroup">
+        <div class="mt-3 form-group">
+          <label for="password" class="h6">Password:</label>
+          <div class="input-group">
+            <input formControlName="password" type="password" class="form-control" id="password">
+            <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
+          </div>
+        </div>
+        <div class="form-group text-danger"
+             *ngIf="registerFormGroup.get('passwordGroup').hasError('required', 'password')
+&& (registerFormGroup.get('passwordGroup').get('password').dirty || registerFormGroup.get('passwordGroup').get('password').touched)">
+          password input password!
+        </div>
+        <div class="form-group text-danger"
+             *ngIf="registerFormGroup.get('passwordGroup').hasError('minlength', 'password')
+&& (registerFormGroup.get('passwordGroup').get('password').dirty || registerFormGroup.get('passwordGroup').get('password').touched)">
+          password must >= 6!
+        </div>
+
+        <div class="mt-3 form-group">
+          <label for="confirmPassword" class="h6">Confirm Password:</label>
+          <div class="input-group">
+            <input formControlName="confirmPassword" type="text" class="form-control" id="confirmPassword">
+            <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
+          </div>
+        </div>
+        <div class="form-group text-danger"
+             *ngIf="registerFormGroup.get('passwordGroup').hasError('required', 'confirmPassword')
+&& (registerFormGroup.get('passwordGroup').get('confirmPassword').dirty || registerFormGroup.get('passwordGroup').get('confirmPassword').touched)">
+          password input confirmPassword!
+        </div>
+        
+        <div class="form-group text-danger"
+             *ngIf="registerFormGroup.controls.passwordGroup.hasError('invalidPass')
+&& (registerFormGroup.controls.passwordGroup.dirty || registerFormGroup.controls.passwordGroup.touched)">
+           password must be same!
+        </div>
+
+      </div>
+
+
+      <div class="mt-3 text-center">
+        <button type="submit" class="btn btn-info btn-sm border border-2 border-success"
+                (click)="getValue()" [disabled]="registerFormGroup.invalid">
+          REGISTER
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
