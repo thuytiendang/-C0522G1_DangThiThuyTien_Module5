@@ -1,0 +1,21 @@
+<h1 style="text-align: center; color: blue">DICTIONARY</h1>
+<div class="container-fluid">
+  <div class="p-3">
+    <table class="table table-striped table-bordered" id="customerTable">
+      <thead>
+      <tr class="text-center bg-warning bg-opacity-50">
+        <th>STT</th>
+        <th>word</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let word1 of words; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{word1.word}}</td>
+<!--        <td><button style="background-color: red" routerLink="/product/delete/{{product.id}}">Xóa</button></td>-->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
