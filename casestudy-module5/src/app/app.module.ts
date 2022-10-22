@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { FacilityComponent } from './facility-list/facility.component';
 import { CreateFacilityComponent } from './create-facility/create-facility.component';
 import { UpdateFacilityComponent } from './update-facility/update-facility.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
@@ -13,6 +12,8 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 import { CreateContractComponent } from './create-contract/create-contract.component';
 import { ContractListComponent } from './contract-list/contract-list.component';
+import { FacilityListComponent } from './facility-list/facility-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,17 +21,18 @@ import { ContractListComponent } from './contract-list/contract-list.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    FacilityComponent,
     CreateFacilityComponent,
     UpdateFacilityComponent,
     CustomerListComponent,
     CreateCustomerComponent,
     UpdateCustomerComponent,
     CreateContractComponent,
-    ContractListComponent
+    ContractListComponent,
+    FacilityListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
