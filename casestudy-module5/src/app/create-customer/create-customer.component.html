@@ -1,41 +1,62 @@
 <div class="content">
   <h2 class="text-center fw-bold" style="color: #e7e70b">ADD NEW CUSTOMER</h2>
   <div class="d-flex justify-content-center">
-    <form class="w-50 border border-2 border-success p-3 bg-success bg-opacity-25 rounded" method="post" >
+
+
+    <div class="w-50 border border-2 border-success p-3 bg-success bg-opacity-25 rounded" [formGroup]="formCreateCustomer" >
       <div class="form-group">
         <label for="name" class="h6">Name:</label>
         <div class="input-group">
           <input type="text" id="name" class="form-control"
-                 placeholder="Input name" name="customerName">
+                 placeholder="Input name" name="customerName" formControlName="customerName">
           <span class="input-group-text"> <i class="fa-solid fa-person-circle-question"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
+
+      <div class="mb-3 text-danger"
+           *ngIf="formCreateCustomer.controls.customerName.hasError('pattern')
+            && formCreateCustomer.controls.customerName.dirty">
+        Tên khách hàng không được chứa số, và các kí tự đầu tiên của mỗi từ phải viết hoa!
+      </div>
 
       <div class="mt-3 form-group">
         <label for="datepicker" class="h6">Date of Birth:</label>
         <input type="text" id="datepicker" class="form-control"
-               placeholder="Input birthday" name="customerBirthday">
+               placeholder="Input birthday" name="customerBirthday" formControlName="customerDateOfBirth">
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
+      <div class="mb-3 text-danger"
+           *ngIf="formCreateCustomer.controls.customerDateOfBirth.hasError('required')
+            && formCreateCustomer.controls.customerDateOfBirth.dirty">
+        Không Được Để Trống!
+      </div>
 
       <div class="mt-3 form-group">
-        <label class="h6">Gender:</label>
-        <div class="d-flex">
-          <label class="d-block me-4">
-            <input type="radio">
-            <i class="fa-solid fa-mars"></i>
-          </label>
-          <label class="d-block">
-            <input type="radio" name="customerGender">
-            <i class="fa-solid fa-venus"></i>
-          </label>
-        </div>
+        <label for="gender" class="h6">Gender:</label>
+        <input type="text" id="gender" class="form-control"
+               placeholder="Input Gender" name="gender" formControlName="customerGender">
       </div>
+
+      <div class="mb-3 text-danger"
+           *ngIf="formCreateCustomer.controls.customerGender.hasError('required')
+            && formCreateCustomer.controls.customerGender.dirty">
+        Không Được Để Trống.
+      </div>
+
+
+
+<!--      <div class="mt-3 form-group">-->
+<!--        <label class="h6">Gender:</label>-->
+<!--        <div class="d-flex">-->
+<!--          <label class="d-block me-4">-->
+<!--            <input type="radio">-->
+<!--            <i class="fa-solid fa-mars"></i>-->
+<!--          </label>-->
+<!--          <label class="d-block">-->
+<!--            <input type="radio" name="customerGender">-->
+<!--            <i class="fa-solid fa-venus"></i>-->
+<!--          </label>-->
+<!--        </div>-->
+<!--      </div>-->
       <!--            <div class="form-group text-danger">-->
       <!--                <p >Name Error</p>-->
       <!--            </div>-->
@@ -44,64 +65,86 @@
         <label for="idCard" class="h6">Identity card:</label>
         <div class="input-group">
           <input type="text" id="idCard" class="form-control" placeholder="Input Id card"
-                 name="customerIdCard">
+                 name="customerIdCard" formControlName="customerIdCard">
           <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
+
+      <div class="mb-3 text-danger"
+           *ngIf="formCreateCustomer.controls.customerIdCard.hasError('pattern')
+            && formCreateCustomer.controls.customerIdCard.dirty">
+        Số CMND/CCCD phải đúng định dạng XXXXXXXXX hoặc XXXXXXXXXXXX (X là số 0-9).
+      </div>
 
       <div class="mt-3 form-group">
         <label for="phone" class="h6">Phone number:</label>
         <div class="input-group">
           <input type="text" id="phone" class="form-control"
-                 placeholder="Input Phone number" name="customerPhone">
+                 placeholder="Input Phone number" name="customerPhone" formControlName="customerPhoneNumber">
           <span class="input-group-text"><i class="fa-solid fa-square-phone"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
+
+      <div class="mb-3 text-danger"
+           *ngIf="formCreateCustomer.controls.customerPhoneNumber.hasError('pattern')
+            && formCreateCustomer.controls.customerPhoneNumber.dirty">
+        Số điện thoại phải đúng định dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx.
+      </div>
 
       <div class="mt-3 form-group">
         <label for="email" class="h6">Email:</label>
         <div class="input-group">
-          <input type="text" id="email" class="form-control" placeholder="Input Email" name="customerEmail">
+          <input type="text" id="email" class="form-control" placeholder="Input Email" name="customerEmail"
+          formControlName="customerEmail">
           <span class="input-group-text"><i class="fa-solid fa-envelope-circle-check"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
+
+      <div class="mb-3 text-danger"
+           *ngIf="formCreateCustomer.controls.customerEmail.hasError('email')
+            && formCreateCustomer.controls.customerEmail.dirty">
+        email Phải Đúng Định Dạng!
+      </div>
 
       <div class="mt-3 form-group">
         <label for="address" class="h6">Address:</label>
         <div class="input-group">
-          <input type="text" id="address" class="form-control" placeholder="Input Address" name="customerAddress">
+          <input type="text" id="address" class="form-control" placeholder="Input Address" name="customerAddress"
+          formControlName="customerAddress">
           <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
+
+      <div class="mb-3 text-danger"
+           *ngIf="formCreateCustomer.controls.customerAddress.hasError('required')
+            && formCreateCustomer.controls.customerAddress.dirty">
+        Không Được Để Trống
+      </div>
 
       <div class="mt-3 form-group">
         <label class="h6" for="customerType">Customer Type:</label>
         <div class="input-group">
-          <select id="customerType" class="form-select" name="customerTypeId">
-            <option></option>
+          <select id="customerType" class="form-select" name="customerTypeId"
+                  formControlName="customerType">
+            <option *ngFor="let c of customerTypeList" [value]="c.id">{{c.name}}</option>
           </select>
           <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
         </div>
       </div>
 
+      <div class="mb-3 text-danger"
+           *ngIf="formCreateCustomer.controls.customerType.hasError('required')
+            && formCreateCustomer.controls.customerType.dirty">
+        Không Được Để Trống.
+      </div>
+
       <div class="mt-3 text-center">
-        <button type="submit" class="btn btn-info btn-sm border border-2 border-success">
+        <button type="submit" class="btn btn-info btn-sm border border-2 border-success" (click)="createCustomer()"
+        [disabled]="formCreateCustomer.invalid">
           -- Save <i class="fa-solid fa-floppy-disk"></i> --
         </button>
       </div>
-    </form>
+    </div>
   </div>
   <p class="text-center m-3">
     <a style="color: #75a8cd; font-size: 20px; font-weight: bolder" href="casestudy_module_5\home_page.html"><i
