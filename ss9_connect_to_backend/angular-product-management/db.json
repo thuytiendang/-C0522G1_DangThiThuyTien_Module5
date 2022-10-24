@@ -1,0 +1,90 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone 12",
+      "price": 2400000,
+      "description": "New pro",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "id": 4,
+      "name": "IPhone 8",
+      "price": 7540000,
+      "description": "98%",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "id": 5,
+      "name": "IPhone 11 Pro",
+      "price": 1895000,
+      "description": "Like new",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "id": 10,
+      "name": "ASUS",
+      "price": 2000000,
+      "description": "New pro",
+      "category": {
+        "id": 5,
+        "name": "Máy giặt"
+      }
+    }
+  ],
+  "categorise": [
+    {
+      "id": 1,
+      "name": "Điện thoại"
+    },
+    {
+      "id": 2,
+      "name": "Ti vi"
+    },
+    {
+      "id": 3,
+      "name": "Máy tính"
+    },
+    {
+      "id": 4,
+      "name": "Tủ lạnh"
+    },
+    {
+      "id": 5,
+      "name": "Máy giặt"
+    },
+    {
+      "id": 6,
+      "name": "Quần áo"
+    }
+  ]
+}

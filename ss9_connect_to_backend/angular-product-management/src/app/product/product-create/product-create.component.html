@@ -2,7 +2,7 @@
   <h2 class="text-center fw-bold" style="color: #e7e70b">Tạo sản phẩm mới</h2>
   <div class="d-flex justify-content-center">
     <form class="w-50 border border-2 border-success p-3 bg-success bg-opacity-25 rounded"
-          [formGroup]="productForm" (ngSubmit)="submit()" >
+          [formGroup]="productForm" (ngSubmit)="addProduct()" >
       <div class="form-group">
         <label for="code" class="h6">Mã sản phẩm:</label>
         <div class="input-group">
@@ -21,8 +21,18 @@
       <div class="mt-3 form-group">
         <label for="price" class="h6">Giá sản phẩm:</label>
         <div class="input-group">
-          <input type="number"  formControlName="price" id="price" class="form-control">
+          <input type="number" formControlName="price" id="price" class="form-control">
           <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="category" class="h6">Danh mục:</label>
+        <div class="input-group">
+          <select id="category" class="form-select" formControlName="category" >
+<!--            <option selected value="" disabled>Chọn danh mục sản phẩm</option>-->
+            <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+          </select>
         </div>
       </div>
 
