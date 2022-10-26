@@ -4,7 +4,7 @@
       "id": 1,
       "name": "IPhone 12",
       "price": 2400000,
-      "description": "New pro",
+      "description": "New ",
       "category": {
         "id": 1,
         "name": "Điện thoại"
@@ -48,16 +48,6 @@
       "category": {
         "id": 1,
         "name": "Điện thoại"
-      }
-    },
-    {
-      "id": 10,
-      "name": "ASUS",
-      "price": 2000000,
-      "description": "New pro",
-      "category": {
-        "id": 5,
-        "name": "Máy giặt"
       }
     }
   ],

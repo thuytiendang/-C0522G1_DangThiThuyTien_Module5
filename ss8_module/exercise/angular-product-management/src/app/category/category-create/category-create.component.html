@@ -1,0 +1,27 @@
+<div class="content">
+  <h2 class="text-center fw-bold" style="color: #e7e70b">Tạo danh mục mới</h2>
+  <div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 bg-success bg-opacity-25 rounded"
+          [formGroup]="categoryForm" (ngSubmit)="addCategory()" >
+      <div class="form-group">
+        <label for="code" class="h6">Mã danh mục:</label>
+        <div class="input-group">
+          <input type="number" formControlName="id" id="code" class="form-control">
+          <span class="input-group-text"> <i class="fa-solid fa-person-circle-question"></i></span>
+        </div>
+      </div>
+      <div class="mt-3 form-group">
+        <label for="name" class="h6">Tên danh mục:</label>
+        <div class="input-group">
+          <input type="text" formControlName="name" id="name" class="form-control">
+          <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
+        </div>
+      </div>
+      <div class="mt-3 text-center">
+        <button type="submit" class="btn btn-info btn-sm border border-2 border-success">
+          -- Save <i class="fa-solid fa-floppy-disk"></i> --
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

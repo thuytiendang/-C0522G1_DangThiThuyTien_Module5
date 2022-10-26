@@ -1,0 +1,51 @@
+<div class="content">
+  <h2 class="text-center fw-bold" style="color: #bf0202">Xóa sản phẩm</h2>
+  <div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 bg-success bg-opacity-25 rounded"
+          [formGroup]="productForm" (ngSubmit)="deleteProduct(productId)" >
+      <div class="form-group">
+        <label class="h6">Mã sản phẩm:</label>
+        <div class="input-group" >
+          <p>{{product.id}}</p>
+        </div>
+      </div>
+      <div class="mt-3 form-group">
+        <label  class="h6">Tên sản phẩm:</label>
+        <div class="input-group">
+          <p>{{product.name}}</p>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label class="h6">Giá sản phẩm:</label>
+        <div class="input-group">
+          <p>{{product.price}}</p>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label class="h6">Danh mục:</label>
+        <div class="input-group">
+          <p>{{product.category.name}}</p>
+        </div>
+      </div>
+
+
+      <div class="mt-3 form-group">
+        <label class="h6">Mô tả về sản phẩm:</label>
+        <div class="input-group">
+          <p>{{product.description}}</p>
+        </div>
+      </div>
+
+      <div class="mt-3 text-center">
+        <button type="submit" class="btn btn-danger btn-sm border border-2 border-danger m-2">
+          --Xóa--
+        </button>
+        <button routerLink="/product/list" class="btn btn-warning btn-sm border border-2 border-warning">
+          --Quay về list--
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

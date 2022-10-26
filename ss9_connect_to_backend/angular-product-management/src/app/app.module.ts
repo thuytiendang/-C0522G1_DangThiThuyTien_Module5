@@ -13,6 +13,9 @@ import { CategoryListComponent } from './category/category-list/category-list.co
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import { CategoryDeleteComponent } from './category/category-delete/category-delete.component';
 import { CategoryUpdateComponent } from './category/category-update/category-update.component';
+import {ProductModule} from './product/product.module';
+import {CategoryModule} from './category/category.module';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { CategoryUpdateComponent } from './category/category-update/category-upd
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductModule,
+    CategoryModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
