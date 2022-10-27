@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<div id="img_bg">
+  <h2 style="text-align: center;">Add Facility</h2>
+  <form class="w-50 container-fluid mt-3 shadow bg-light">
+    <div class="row">
+      <div class="mb-3">
+        <label class="form-label mt-3 text-success fw-bold">Chọn dịch vụ</label>
+        <select onchange="serviceInput()" id="select" name="service"
+                class="form-control">
+          <option value="0">None</option>
+          <option value="2">House</option>
+          <option value="3">Room</option>
+          <option value="1">Villa</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Tên dịch vụ</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Diện tích sử dụng</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Chi phí thuê</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Số lượng người tối đa</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Kiểu thuê</label>
+          <select class="form-control">
+            <option>Tháng</option>
+            <option>Năm</option>
+            <option>Giờ</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-6">
+        <div></div>
+        <div class="mb-3" id="s1" style="display: none ">
+          <label class="form-label text-success fw-bold">Tiêu chuẩn phòng</label>
+          <input type="text"  id="s1Input" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3" id="s4" style="display: none ">
+          <label class="form-label text-success fw-bold">Mô tả tiện nghi khác</label>
+          <input id="s4Input" type="text" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3" id="s3" style="display: none ">
+          <label class="form-label text-success fw-bold">Diện tích hồ bơi</label>
+          <input type="text" id="s3Input" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3" id="s2" style="display: none ">
+          <label class="form-label text-success fw-bold">Số tầng</label>
+          <input type="text"  id="s2Input" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3" id="s5" style="display: none ">
+          <label class="form-label text-success fw-bold">Dịch vụ miễn phí đi kèm</label>
+          <input id="s5Input" type="text" class="form-control" aria-describedby="emailHelp">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class CustomerListService {
-  API_URL = ' http://localhost:3000/customers';
+  API_URL = 'http://localhost:3000/customers';
 
   constructor(private http: HttpClient) {
   }
@@ -25,7 +25,7 @@ export class CustomerListService {
   }
 
   updateCustomer(customer: Customer): Observable<Customer> {
-    return this.http.patch<Customer>(this.API_URL + '/' + customer.customerId, customer);
+    return this.http.patch<Customer>(this.API_URL + '/' + customer.id, customer);
   }
 
   deleteCustomer(customerId: number): Observable<Customer> {

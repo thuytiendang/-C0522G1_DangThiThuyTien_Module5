@@ -1,0 +1,11 @@
+#navbar {
+  background: linear-gradient(to right, #3d7eaa, #ffe47a);
+}
+
+.text_nav {
+  font-family: cursive;
+  font-size: 18px;
+}
+button {
+  font-family: cursive;
+}

@@ -1,7 +1,7 @@
 {
   "facilities": [
     {
-      "facilityId": 1,
+      "id": 1,
       "facilityName": "Villa Beach Front",
       "facilityArea": 1000,
       "facilityCost": 1000000,
@@ -12,16 +12,16 @@
       "numberOfFloors": 5,
       "facilityFree": "",
       "rentType": {
-        "rentTypeId": 2,
+        "id": 2,
         "rentTypeName": "Month"
       },
       "facilityType": {
-        "facilityTypeId": 1,
+        "id": 1,
         "facilityTypeName": "Villa"
       }
     },
     {
-      "facilityId": 2,
+      "id": 2,
       "facilityName": "House Princess",
       "facilityArea": 1000,
       "facilityCost": 1000000,
@@ -32,16 +32,16 @@
       "numberOfFloors": 5,
       "facilityFree": "",
       "rentType": {
-        "rentTypeId": 2,
+        "id": 2,
         "rentTypeName": "Month"
       },
       "facilityType": {
-        "facilityTypeId": 2,
+        "id": 2,
         "facilityTypeName": "House"
       }
     },
     {
-      "facilityId": 3,
+      "id": 3,
       "facilityName": "Room Princess",
       "facilityArea": 1000,
       "facilityCost": 1000000,
@@ -52,16 +52,16 @@
       "numberOfFloors": 5,
       "facilityFree": "",
       "rentType": {
-        "rentTypeId": 3,
+        "id": 3,
         "rentTypeName": "Day"
       },
       "facilityType": {
-        "facilityTypeId": 3,
+        "id": 3,
         "facilityTypeName": "Room"
       }
     },
     {
-      "facilityId": 4,
+      "id": 4,
       "facilityName": "Villa Princess",
       "facilityArea": 1000,
       "facilityCost": 1000000,
@@ -72,16 +72,16 @@
       "numberOfFloors": 5,
       "facilityFree": "",
       "rentType": {
-        "rentTypeId": 3,
+        "id": 3,
         "rentTypeName": "Day"
       },
       "facilityType": {
-        "facilityTypeId": 1,
+        "id": 1,
         "facilityTypeName": "Villa"
       }
     },
     {
-      "facilityId": 5,
+      "id": 5,
       "facilityName": "Villa Beach Front",
       "facilityArea": 1000,
       "facilityCost": 1000000,
@@ -92,16 +92,16 @@
       "numberOfFloors": 5,
       "facilityFree": "",
       "rentType": {
-        "rentTypeId": 3,
+        "id": 3,
         "rentTypeName": "Day"
       },
       "facilityType": {
-        "facilityTypeId": 1,
+        "id": 1,
         "facilityTypeName": "Villa"
       }
     },
     {
-      "facilityId": 6,
+      "id": 6,
       "facilityName": "House Princess",
       "facilityArea": 1000,
       "facilityCost": 1000000,
@@ -112,16 +112,16 @@
       "numberOfFloors": 5,
       "facilityFree": "",
       "rentType": {
-        "rentTypeId": 2,
+        "id": 2,
         "rentTypeName": "Month"
       },
       "facilityType": {
-        "facilityTypeId": 2,
+        "id": 2,
         "facilityTypeName": "House"
       }
     },
     {
-      "facilityId": 7,
+      "id": 7,
       "facilityName": "Room Princess",
       "facilityArea": 1000,
       "facilityCost": 1000000,
@@ -132,16 +132,16 @@
       "numberOfFloors": 5,
       "facilityFree": "",
       "rentType": {
-        "rentTypeId": 3,
+        "id": 3,
         "rentTypeName": "Day"
       },
       "facilityType": {
-        "facilityTypeId": 3,
+        "id": 3,
         "facilityTypeName": "Room"
       }
     },
     {
-      "facilityId": 8,
+      "id": 8,
       "facilityName": "Villa Princess",
       "facilityArea": 1000,
       "facilityCost": 1000000,
@@ -152,64 +152,50 @@
       "numberOfFloors": 5,
       "facilityFree": "",
       "rentType": {
-        "rentTypeId": 3,
+        "id": 3,
         "rentTypeName": "Day"
       },
       "facilityType": {
-        "facilityTypeId": 1,
+        "id": 1,
         "facilityTypeName": "Villa"
       }
     }
   ],
   "rentTypes": [
     {
-      "rentTypeId": 1,
+      "id": 1,
       "rentTypeName": "Year"
     },
     {
-      "rentTypeId": 2,
+      "id": 2,
       "rentTypeName": "Month"
     },
     {
-      "rentTypeId": 3,
+      "id": 3,
       "rentTypeName": "Day"
     },
     {
-      "rentTypeId": 4,
+      "id": 4,
       "rentTypeName": "Time"
     }
   ],
   "facilityTypes": [
     {
-      "facilityTypeId": 1,
+      "id": 1,
       "facilityTypeName": "Villa"
     },
     {
-      "facilityTypeId": 2,
+      "id": 2,
       "facilityTypeName": "House"
     },
     {
-      "facilityTypeId": 3,
+      "id": 3,
       "facilityTypeName": "Room"
     }
   ],
   "customers": [
     {
-      "customerId": 1,
-      "customerName": "Huỳnh Trung Thuyên",
-      "customerBirthday": "1994-08-16",
-      "customerGender": "Male",
-      "customerIdCard": "206236476",
-      "customerPhone": "0905678453",
-      "customerEmail": "thuyen@gmail.com",
-      "customerAddress": "Da Nang",
-      "customerType": {
-        "customerTypeId": 2,
-        "customerTypeName": "Platinum"
-      }
-    },
-    {
-      "customerId": 2,
+      "id": 2,
       "customerName": "Dương Văn Quan",
       "customerBirthday": "1995-12-09",
       "customerGender": "Male",
@@ -218,12 +204,12 @@
       "customerEmail": "duongquan@gmail.com",
       "customerAddress": "K453/12 Lê Lợi, Đà Nẵng",
       "customerType": {
-        "customerTypeId": 1,
+        "id": 1,
         "customerTypeName": "Diamond"
       }
     },
     {
-      "customerId": 3,
+      "id": 3,
       "customerName": "Hoàng Trần Nhi Anh",
       "customerBirthday": "2000-03-20",
       "customerGender": "Female",
@@ -232,12 +218,12 @@
       "customerEmail": "thuytien2003@gmail.com",
       "customerAddress": "194 Vũ Miên",
       "customerType": {
-        "customerTypeId": 1,
+        "id": 1,
         "customerTypeName": "Diamond"
       }
     },
     {
-      "customerId": 4,
+      "id": 4,
       "customerName": "Hoàng Trần Nhi Nhi",
       "customerBirthday": "1995-12-09",
       "customerGender": "Female",
@@ -246,12 +232,12 @@
       "customerEmail": "nhinhi123@gmail.com",
       "customerAddress": "224 Lý Thái Tổ, Gia Lai",
       "customerType": {
-        "customerTypeId": 4,
+        "id": 4,
         "customerTypeName": "Silver"
       }
     },
     {
-      "customerId": 5,
+      "id": 5,
       "customerName": "Nguyễn Hà Duyên",
       "customerBirthday": "2000-07-23",
       "customerGender": "Female",
@@ -260,12 +246,12 @@
       "customerEmail": "dndgh@gmail.com",
       "customerAddress": "hòa Khánh",
       "customerType": {
-        "customerTypeId": 1,
+        "id": 1,
         "customerTypeName": "Diamond"
       }
     },
     {
-      "customerId": 6,
+      "id": 6,
       "customerName": "Nguyễn Tâm Đắc",
       "customerBirthday": "1989-07-01",
       "customerGender": "Male",
@@ -274,12 +260,12 @@
       "customerEmail": "dactam@gmail.com",
       "customerAddress": "22 Ngô Quyền, Đà Nẵng",
       "customerType": {
-        "customerTypeId": 2,
+        "id": 2,
         "customerTypeName": "Platinum"
       }
     },
     {
-      "customerId": 7,
+      "id": 7,
       "customerName": "Phạm Xuân Diệu",
       "customerBirthday": "1992-08-08",
       "customerGender": "Male",
@@ -288,44 +274,58 @@
       "customerEmail": "xuandieu92@gmail.com",
       "customerAddress": "K77/22 Thái Phiên, Quảng Trị",
       "customerType": {
-        "customerTypeId": 3,
+        "id": 3,
         "customerTypeName": "Gold"
       }
     },
     {
-      "customerId": 8,
-      "customerName": "Nguyễn Mỹ Kim",
-      "customerBirthday": "1984-04-08",
-      "customerGender": "Female",
-      "customerIdCard": "856453123",
-      "customerPhone": "0912345698",
-      "customerEmail": "kimcuong84@gmail.com",
-      "customerAddress": "K123/45 Lê Lợi, Hồ Chí Minh",
+      "customerName": "Thuy Tien",
+      "customerBirthday": "20/03/2000",
+      "customerGender": "female",
+      "customerIdCard": "093279214712",
+      "customerPhone": "0905467894",
+      "customerEmail": "thuyen@gmail.com",
+      "customerAddress": "Hà Nội",
       "customerType": {
-        "customerTypeId": 3,
+        "id": 2,
+        "customerTypeName": "Platinum"
+      },
+      "id": 8
+    },
+    {
+      "customerName": "Thuy Tien cute",
+      "customerBirthday": "20/03/2000",
+      "customerGender": "female",
+      "customerIdCard": "093279214712",
+      "customerPhone": "0905467894",
+      "customerEmail": "thuytien2003@gmail.com",
+      "customerAddress": "hòa Khánh",
+      "customerType": {
+        "id": 3,
         "customerTypeName": "Gold"
-      }
+      },
+      "id": 10
     }
   ],
   "customerType": [
     {
-      "customerTypeId": 1,
+      "id": 1,
       "customerTypeName": "Diamond"
     },
     {
-      "customerTypeId": 2,
+      "id": 2,
       "customerTypeName": "Platinum"
     },
     {
-      "customerTypeId": 3,
+      "id": 3,
       "customerTypeName": "Gold"
     },
     {
-      "customerTypeId": 4,
+      "id": 4,
       "customerTypeName": "Silver"
     },
     {
-      "customerTypeId": 5,
+      "id": 5,
       "customerTypeName": "Member"
     }
   ],

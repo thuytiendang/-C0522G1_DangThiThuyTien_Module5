@@ -1,4 +1,4 @@
 export interface RentType {
-  rentTypeId?: number;
+  id?: number;
   rentTypeName?: string;
 }

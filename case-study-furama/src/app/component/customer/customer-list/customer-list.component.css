@@ -1,0 +1,48 @@
+#navbar {
+  background: linear-gradient(to right, #3d7eaa, #ffe47a);
+}
+
+.text_nav {
+  font-family: cursive;
+  font-size: 18px;
+}
+
+button {
+  font-family: cursive;
+}
+
+p {
+  font-family: cursive;
+}
+
+.bg_all {
+  background: linear-gradient(to right, #3d7eaa, #ffe47a);
+}
+
+span {
+  color: white;
+  font-family: cursive;
+  font-size: 18px;
+}
+
+.text_foot {
+  font-family: cursive;
+  color: grey;
+}
+
+#img_bg {
+  background-image: url("https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg");
+  background-position: right bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 15;
+}
+label,input {
+  font-family: "Sofia", sans-serif;
+  font-size: 20px;
+}
+h3 {
+  font-family: "Sofia", sans-serif;
+  font-size: 40px;
+}

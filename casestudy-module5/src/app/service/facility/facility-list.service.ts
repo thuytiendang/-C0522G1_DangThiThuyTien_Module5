@@ -25,7 +25,7 @@ export class FacilityListService {
   }
 
   updateFacility(facility: Facility): Observable<Facility> {
-    return this.http.patch<Facility>(this.API_URL + '/' + facility.facilityId, facility);
+    return this.http.patch<Facility>(this.API_URL + '/' + facility.id, facility);
   }
 
   deleteProduct(facilityId: number): Observable<Facility> {

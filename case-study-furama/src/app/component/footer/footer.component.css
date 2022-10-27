@@ -1,0 +1,18 @@
+
+p {
+  font-family: cursive;
+}
+
+.bg_all {
+  background: linear-gradient(to right, #3d7eaa, #ffe47a);
+}
+
+span {
+  color: white;
+  font-family: cursive;
+  font-size: 18px;
+}
+.text_foot {
+  font-family: cursive;
+  color: grey;
+}

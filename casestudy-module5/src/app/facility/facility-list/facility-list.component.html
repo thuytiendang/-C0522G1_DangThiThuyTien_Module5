@@ -19,8 +19,8 @@
 
       <form class="d-flex my-2" role="search">
         <input class="form-control me-2" type="text" placeholder="Input name" aria-label="Search"
-               name="facilityName">
-        <button class="btn btn-outline-success" type="submit" name="action" value="search">
+               name="facilityName" [(ngModel)]="facilityNameSearch">
+        <button (click)="searchByName()" class="btn btn-outline-success" type="submit" name="action" value="search">
           <i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
     </div>
@@ -39,11 +39,10 @@
       <th>Type of facility</th>
       <th>Update</th>
       <th>Delete</th>
-      <th>View</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let facility of facilities; index as i">
+    <tr *ngFor="let facility of facilityListPaging; index as i">
       <td>{{i + 1}}</td>
       <td>{{facility.facilityName}}</td>
       <td>{{facility.facilityCost}}</td>
@@ -53,7 +52,7 @@
       <td>{{facility.rentType.rentTypeName}}</td>
       <td>{{facility.facilityType.facilityTypeName}}</td>
       <td class="text-center">
-        <a routerLink="/facility/update/{{facility.facilityId}}">
+        <a routerLink="/facility/update/{{facility.id}}">
           <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
         </a>
       </td>
@@ -62,14 +61,30 @@
           <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
         </a>
       </td>
-      <td class="text-center">
-        <a>
-          <span class="text-success"><i class="fa-solid fa-eye"></i></span>
-        </a>
-      </td>
     </tr>
     </tbody>
   </table>
+
+  <nav aria-label="..." class="justify-content-center d-flex">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="previous()" *ngIf="curPage > 1">&laquo; Previous</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage <= 1">
+        <a class="page-link">&laquo;</a>
+      </li>
+      ​
+      <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage"></a>
+      </li>
+      ​
+      <li class="page-item">
+        <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Next &raquo;</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage >= totalPage">
+        <a class="page-link">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
 
   <!--    modal delete-->
   <div class="modal fade" id="deleteFacility" tabindex="-1" aria-labelledby="exampleModalLabel1"
@@ -95,78 +110,5 @@
       </div>
     </div>
   </div>
-
-  <!--view-->
-  <div class="modal fade" id="viewFacility" tabindex="-1" aria-labelledby="exampleModalLabel1"
-       aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLabel2">Facility information</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table table-success table-striped">
-            <tr>
-              <th>Name</th>
-              <td><span id="name"></span></td>
-            </tr>
-            <tr>
-              <th>Area</th>
-              <td><span id="area"></span></td>
-            </tr>
-            <tr>
-              <th>Price</th>
-              <td><span id="cost"></span></td>
-            </tr>
-            <tr>
-              <th>Max people</th>
-              <td><span id="maxPeople"></span></td>
-            </tr>
-            <tr>
-              <th>Standard room</th>
-              <td><span id="standardRoom"></span></td>
-            </tr>
-            <tr>
-              <th>Other convenience</th>
-              <td><span id="OtherConvenience"></span></td>
-            </tr>
-            <tr>
-              <th>Pool area</th>
-              <td><span id="poolArea"></span></td>
-            </tr>
-            <tr>
-              <th>Floor</th>
-              <td><span id="floor"></span></td>
-            </tr>
-            <tr>
-              <th>Facility free</th>
-              <td><span id="facilityFree"></span></td>
-            </tr>
-            <tr>
-              <th>Rent type</th>
-              <td><span id="rentType"></span></td>
-            </tr>
-            <tr>
-              <th>Facility type</th>
-              <td><span id="facilityType"></span></td>
-            </tr>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-<nav aria-label="Page navigation example" style="margin-top: 20px">
-  <ul class="pagination justify-content-center">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
 

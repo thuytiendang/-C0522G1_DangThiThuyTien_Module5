@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<table class="table table-striped table-hover mt-3 w-75 m-auto">
+  <thead class="table-primary">
+  <th scope="col">#</th>
+  <th scope="col">Ngày Bắt Đầu</th>
+  <th scope="col">Ngày Kết Thúc</th>
+  <th scope="col">Tiền đặt cọc</th>
+  <th scope="col">Tổng tiền</th>
+  <th scope="col">Các dịch vụ đi kèm</th>
+  </thead>
+  <tr *ngFor="let ct of contract">
+    <td>{{ct.contractCode}}}</td>
+    <td>{{ct.startDate}}</td>
+    <td>{{ct.endDate}}</td>
+    <td>{{ct.deposit}}</td>
+    <td>{{ct.total}}</td>
+    <td>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+      >
+        +
+      </button>
+      <button type="button" class="btn btn-primary"
+              data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Danh sách các dịch vụ đi kèm
+      </button>
+    </td>
+  </tr>
+  <tbody>
+</table>
+
+<app-footer></app-footer>

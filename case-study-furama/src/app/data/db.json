@@ -1,0 +1,110 @@
+{
+  "customer": [
+    {
+      "id": 3,
+      "customerName": "Nguyễn Thị Hào",
+      "dateOfBirth": "7/11/1970",
+      "gender": "nữ",
+      "identify": "643431213",
+      "phoneNumber": "0945423362",
+      "email": "123",
+      "customerType": {
+        "id": 3,
+        "name": "Member"
+      },
+      "address": "23 Nguyễn Hoàng, Đà Nẵng"
+    },
+    {
+      "id": 4,
+      "customerName": "Haf Duyen",
+      "dateOfBirth": "2022-10-15",
+      "gender": "nữ",
+      "identify": "2345678",
+      "phoneNumber": "2345678",
+      "email": "nguyenhaduyen23@gmail.com",
+      "customerType": {
+        "id": 3,
+        "name": "Member"
+      },
+      "address": "dsfgh"
+    },
+    {
+      "id": 6,
+      "customerName": "xcx",
+      "dateOfBirth": "2022-10-13",
+      "gender": "nữ",
+      "identify": "23456789",
+      "phoneNumber": "23456789",
+      "email": "nguyenhaduyen23@gmail.com",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "address": "sdfghjkl"
+    },
+    {
+      "id": 7,
+      "customerName": "123",
+      "dateOfBirth": "1212-03-12",
+      "gender": "nữ",
+      "identify": "123",
+      "phoneNumber": "123",
+      "email": "123",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "address": "lxjncx"
+    },
+    {
+      "id": 8,
+      "customerName": "Hà Duyên",
+      "dateOfBirth": "2022-10-05",
+      "gender": "Nam",
+      "identify": "123123123",
+      "phoneNumber": "0897789",
+      "email": "nguyenhaduyen23@gmail.com",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "address": "gam cau"
+    },
+    {
+      "id": 9,
+      "customerName": "Hà Duyên",
+      "dateOfBirth": "2022-10-30",
+      "gender": "nữ",
+      "identify": "213153",
+      "phoneNumber": "21351313",
+      "email": "nguyenhaduyen23@gmail.com",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "address": "2153"
+    }
+  ],
+  "typeCustomer": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Member"
+    },
+    {
+      "id": 4,
+      "name": "Gold"
+    },
+    {
+      "id": 5,
+      "name": "Silver"
+    }
+  ]
+}

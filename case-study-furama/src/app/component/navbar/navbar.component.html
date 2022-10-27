@@ -1,0 +1,82 @@
+<nav id="navbar" class="navbar navbar-expand-lg  bg-success p-0 ">
+  <div class="col-1"></div>
+  <div class="col-1"><img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" width="45px">
+  </div>
+  <div class="col-6">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="col-1">
+          <li class="nav-item">
+            <a class="nav-link active text-light text_nav" aria-current="page" href="/">Home</a>
+          </li>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light text_nav" href="#" id="navbarDropdown2"
+               role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Exam
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+              <li><a class="dropdown-item text_nav" href="/listEmployee">List Employee</a></li>
+            </ul>
+          </li>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2">
+          <li class="nav-item dropdown">
+            <a class="text_nav nav-link dropdown-toggle text-light" href="#" id="navbarDropdown1"
+               role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Customer
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+              <li><a class="dropdown-item text_nav" routerLink="/customer/list">List</a></li>
+              <li><a class="dropdown-item text_nav" href="/customer/create">
+                Add New Customer
+              </a></li>
+            </ul>
+          </li>
+        </div>
+        <div class="col-1"></div>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light text_nav" href="#" id="navbarDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Service
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item text_nav" href="/listFacility">List</a></li>
+            <li><a class="dropdown-item text_nav" href="/addFacility">
+              Add New Service
+            </a></li>
+          </ul>
+        </li>
+        <div class="col-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light text_nav" href="#" id="navbarDropdown3"
+               role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Contact
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+              <li><a class="dropdown-item text_nav" href="/listContract">List Contact</a></li>
+              <li><a class="dropdown-item text_nav" href="contact/add_new_contact.jsp">
+                Add New Contact
+              </a></li>
+            </ul>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="d-flex">
+      <input class="form-control me-2 mt-3 rounded-end  " type="search" placeholder="Search"
+             aria-label="Search"
+             width="100%">
+      <button class="btn btn-outline-success mt-3" type="submit">Search</button>
+    </div>
+  </div>
+  <div class="col-1"></div>
+</nav>

@@ -1,0 +1,96 @@
+#img_bg {
+  background-image: url("https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg");
+  background-position: right bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 15;
+}
+
+#navbar {
+  background: linear-gradient(to right, #3d7eaa, #ffe47a);
+}
+
+.text_nav {
+  font-family: cursive;
+  font-size: 18px;
+}
+
+input {
+  font-family: cursive;
+}
+
+button {
+  font-family: cursive;
+}
+
+p {
+  font-family: "Bookman Old Style";
+  color: black;
+}
+
+.bg_all {
+  background: linear-gradient(to right, #3d7eaa, #ffe47a);
+}
+
+span {
+  color: white;
+  font-family: cursive;
+  font-size: 18px;
+}
+
+.text_foot {
+  font-family: cursive;
+  color: grey;
+}
+
+.text_food {
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+}
+
+#background_max {
+  background-image: url("https://cdn.azvd.asia/images/furama/bg-villas-tienich.jpg");
+  z-index: 1;
+}
+
+#phone {
+  margin-left: 50px;
+  width: 180px;
+  height: 45px;
+  background: linear-gradient(to right, #3d7eaa, #ffe47a);
+  box-shadow: 0 0 1px #86b7fe;
+  border-radius: 45px;
+  line-height: 40px;
+  position: fixed;
+  border: none;
+  outline: none;
+}
+
+#phone_sub {
+  background: white;
+  padding: 10px;
+  border-radius: 100%;
+  animation: phoneA 1.5s infinite;
+}
+
+@keyframes phoneA  {
+  from {
+    box-shadow:0 0 2px black;
+  }
+  to {
+    box-shadow:0 0 50px black;
+  }
+}
+#background_max {
+  animation: img1 1.5s;
+}
+@keyframes img1 {
+  from {
+    margin: 200px;
+
+  }
+  to {
+    margin: 0px;
+  }
+}

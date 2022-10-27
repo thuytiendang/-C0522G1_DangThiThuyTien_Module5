@@ -1,4 +1,4 @@
 export interface FacilityType {
-  facilityTypeId?: number;
+  id?: number;
   facilityTypeName?: string;
 }

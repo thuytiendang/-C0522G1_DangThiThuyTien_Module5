@@ -2,7 +2,7 @@ import {RentType} from './rent-type';
 import {FacilityType} from './facility-type';
 
 export interface Facility {
-  facilityId?: number;
+  id?: number;
   facilityName?: string;
   facilityArea?: number;
   facilityCost?: number;

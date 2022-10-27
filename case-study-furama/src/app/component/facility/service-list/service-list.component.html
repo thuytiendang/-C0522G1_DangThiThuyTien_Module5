@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<h2 style="text-align: center;">List Facility</h2>
+<div class="container">
+  <div class="row ">
+    <div class=" col-4 mb-2"  *ngFor="let f of facility">
+      <div class="card p-2">
+        <img [src] = "f.img">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{f.facilityName}}</h5>
+          <p class="card-text">Giá: {{f.facilityCost}}</p>
+          <a href="#" class="btn btn-primary">Chi tiết</a>
+          <a href="#" class="btn btn-success">Sửa</a>
+          <a href="#" class="btn btn-danger">Xóa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

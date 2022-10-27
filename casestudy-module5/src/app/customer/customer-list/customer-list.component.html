@@ -21,16 +21,16 @@
 
         <form class="d-flex my-2" role="search">
           <input class="form-control me-2" type="text" placeholder="Input name" aria-label="Search"
-                 name="nameSearch">
+                 name="nameSearch" [(ngModel)]="customerNameSearch">
 
           <input class="form-control me-2" type="text" placeholder="Input address" aria-label="Search"
-                 name="addressSearch">
+                 name="addressSearch" [(ngModel)]="customerAddressSearch">
 
 
           <input class="form-control me-2" type="text" placeholder="Input phone number" aria-label="Search"
-                 name="phoneSearch">
+                 name="phoneSearch" [(ngModel)]="customerPhoneSearch">
 
-          <button class="btn btn-outline-warning" type="submit" name="action" value="search">
+          <button class="btn btn-outline-warning" (click)="searchByMore()">
             <i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
@@ -44,39 +44,56 @@
         <th>Gender</th>
         <th>Id card</th>
         <th>Phone number</th>
+        <th>Address</th>
         <th>Customer type</th>
         <th>Update</th>
         <th>Delete</th>
-        <th>View</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let customer of customers; index as i">
+      <tr *ngFor="let customer of customerListPaging; index as i">
         <td>{{i + 1}}</td>
         <td>{{customer.customerName}}</td>
         <td>{{customer.customerGender}}</td>
         <td>{{customer.customerIdCard}}</td>
         <td>{{customer.customerPhone}}</td>
+        <td>{{customer.customerAddress}}</td>
         <td>{{customer.customerType.customerTypeName}}</td>
         <td style="text-align: center">
-          <a routerLink="/customer/update">
+          <a routerLink="/customer/update/{{customer.id}}">
             <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
           </a>
         </td>
         <td style="text-align: center">
-          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer">
+          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer"
+          (click)="getInfoCustomerDelete(customer.id, customer.customerName)">
             <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
-          </a>
-        </td>
-        <td style="text-align: center">
-          <a data-bs-toggle="modal" data-bs-target="#viewCustomer">
-            <span class="text-success"><i class="fa-solid fa-eye"></i></span>
           </a>
         </td>
       </tr>
       </tbody>
     </table>
 
+    <nav aria-label="..." class="justify-content-center d-flex">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" (click)="previous()" *ngIf="curPage > 1">&laquo; Previous</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage <= 1">
+          <a class="page-link">&laquo;</a>
+        </li>
+        ​
+        <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage"></a>
+        </li>
+        ​
+        <li class="page-item">
+          <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Next &raquo;</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage >= totalPage">
+          <a class="page-link">&raquo;</a>
+        </li>
+      </ul>
+    </nav>
     <!--    modal delete-->
     <div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
          aria-hidden="true">
@@ -89,100 +106,18 @@
 
           <form>
             <div class="modal-body">
-              <span class="h6">Customer:</span><strong id="nameDelete" class="text-danger ps-2"></strong>
+              <span class="h6">Customer:</span><strong id="nameDelete" class="text-danger ps-2">{{customerNameDelete}}</strong>
               <input type="hidden" name="id" id="idDelete"/>
             </div>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-danger" value="delete">Delete</button>
+              <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" value="delete" (click)="deleteCustomer()">Delete</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-
-    <!--view-->
-    <div class="modal fade" id="viewCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
-         aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel2">Customer information</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <table class="table table-warning table-striped">
-              <tr>
-                <th>Name</th>
-                <td><span id="name"></span></td>
-              </tr>
-              <tr>
-                <th>Date of Birth</th>
-                <td><span id="dob"></span></td>
-              </tr>
-              <tr>
-                <th>Gender</th>
-                <td><span id="gender"></span></td>
-              </tr>
-              <tr>
-                <th>Id card</th>
-                <td><span id="idCard"></span></td>
-              </tr>
-              <tr>
-                <th>Phone number</th>
-                <td><span id="phone"></span></td>
-              </tr>
-              <tr>
-                <th>Email</th>
-                <td><span id="email"></span></td>
-              </tr>
-              <tr>
-                <th>Address</th>
-                <td><span id="address"></span></td>
-              </tr>
-              <tr>
-                <th>Customer type</th>
-                <td><span id="customerType"></span></td>
-              </tr>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-
-<!--  <script>-->
-<!--    function remove(id, name) {-->
-<!--      document.getElementById("idDelete").value = id;-->
-<!--      document.getElementById("nameDelete").innerText = name;-->
-<!--    }-->
-
-<!--    function details(name, dob, gender, idCard, phone, email, address, customerType) {-->
-<!--      document.getElementById("name").innerText = name;-->
-<!--      document.getElementById("dob").innerText = dob;-->
-<!--      if (gender == 0) {-->
-<!--        document.getElementById("gender").innerText = "Female";-->
-<!--      } else {-->
-<!--        document.getElementById("gender").innerText = "Male";-->
-<!--      }-->
-<!--      document.getElementById("idCard").innerText = idCard;-->
-<!--      document.getElementById("phone").innerText = phone;-->
-<!--      document.getElementById("email").innerText = email;-->
-<!--      document.getElementById("address").innerText = address;-->
-<!--      document.getElementById("customerType").innerText = customerType;-->
-<!--    }-->
-<!--  </script>-->
 </div>
-<nav aria-label="Page navigation example" style="margin-top: 20px">
-  <ul class="pagination justify-content-center">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
+

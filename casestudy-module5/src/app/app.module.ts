@@ -16,6 +16,9 @@ import {FacilityListComponent} from './facility/facility-list/facility-list.comp
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {ContractModule} from './contract/contract.module';
+import {CustomerModule} from './customer/customer.module';
+import {FacilityModule} from './facility/facility.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ContractModule,
+    CustomerModule,
+    FacilityModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+
+<div class="row text-center mt-3 ">
+  <h3 style="color: #146c43">Add new contract</h3></div>
+<div class="modal-body">
+  <form action="/saveContract" method="post">
+    <div class="mb-3">
+      <label class="form-label">Nhân Viên</label>
+      <select>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+        <option>E</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Khách Hàng</label>
+      <select>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+        <option>E</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Ngày Bắt Đầu</label>
+      <input class="form-control" type="date">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Ngày Kết Thúc</label>
+      <input class="form-control" type="date">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Loại dịch vụ</label>
+      <select>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+        <option>E</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Tiền Đặt Cọc</label>
+      <input class="form-control" type="text">
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>
