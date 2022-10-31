@@ -25,15 +25,7 @@ import {FacilityModule} from './facility/facility.module';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    CreateFacilityComponent,
-    UpdateFacilityComponent,
-    CustomerListComponent,
-    CreateCustomerComponent,
-    UpdateCustomerComponent,
-    CreateContractComponent,
-    ContractListComponent,
-    FacilityListComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
