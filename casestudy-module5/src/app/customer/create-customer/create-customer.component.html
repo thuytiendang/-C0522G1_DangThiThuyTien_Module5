@@ -111,8 +111,9 @@
         <label class="h6" for="customerType">Customer Type:</label>
         <div class="input-group">
           <select id="customerType" class="form-select" name="customerTypeId"
-                  formControlName="customerType">
-            <option *ngFor="let customerType of customerTypes" [ngValue]="customerType">{{customerType.customerTypeName}}</option>
+                  formControlName="customerType" >
+            <option value="">Select Customer Type</option>
+            <option *ngFor="let c of customerTypes" [value]="c">{{c.customerTypeName}} </option>
           </select>
           <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
         </div>

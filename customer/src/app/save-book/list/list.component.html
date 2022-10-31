@@ -1,0 +1,104 @@
+<div class="p-3 px-5">
+  <h2 style="color: #77e893" class="text-center fw-bold mt-3">
+    SAVE BOOK LIST </h2>
+
+  <nav class="navbar navbar-expand-lg py-0 my-0">
+    <div class="container-fluid">
+      <div class="d-flex my-2" role="search">
+        <input class="form-control me-2" type="text" placeholder="Input Name.." aria-label="Search"
+               [(ngModel)]="customerNameSearch">
+        <button style="background-color: #68ad7e" class="btn btn-outline-primary" (click)="searchByMore()">
+          <i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <table class="table table-light table-striped table-bordered" id="customerTable">
+    <thead>
+    <tr class="table-success text-dark text-center">
+      <th class="text-center">Book id</th>
+      <th>customer id</th>
+      <th>customer name</th>
+      <th>open date</th>
+      <th>start date</th>
+      <th>Due date</th>
+      <th>Money</th>
+      <th>Interest</th>
+      <th>More benefit</th>
+      <th class="text-center">Update</th>
+      <th class="text-center">Delete</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let item of saveBookListPaging">
+<!--      <td class="text-center">{{i + 1 + (curPage - 1) * numberRecord}}</td>-->
+      <td>{{item.id}}</td>
+      <td>{{item.customer.id}}</td>
+      <td>{{item.customer.customerName | titlecase}}</td>
+      <td>{{item.openDate}}</td>
+      <td>{{item.startDate}}</td>
+      <td>{{item.dueDate}}</td>
+      <td>{{item.money}}</td>
+      <td>{{item.interest}}</td>
+      <td>{{item.moreBenefit}}</td>
+      <td class="text-center">
+        <a routerLink="/update/{{item.id}}">
+          <button class="btn btn-success btn-outline-secondary btn-sm">
+            <span class="fa-solid fa-user-pen text-light h6 m-auto px-2"></span>
+          </button>
+        </a>
+      </td>
+      <td class="text-center">
+        <button data-bs-toggle="modal" data-bs-target="#deleteCustomer"
+                class="btn btn-danger btn-outline-secondary btn-sm"
+                (click)="getInfoSaveBookDelete(item.id)">
+          <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2"></span>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <nav aria-label="..." class="justify-content-center d-flex" >
+    <ul class="pagination" >
+      <li class="page-item">
+        <a class="page-link" (click)="previous()" *ngIf="curPage > 1">&laquo; Previous</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage <= 1">
+        <a class="page-link">&laquo;</a>
+      </li>
+
+      <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage" *ngIf="curPage <= totalPage"></a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Next &raquo;</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage >= totalPage">
+        <a class="page-link">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modalCSS">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Are you sure to delete?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <span class="h6">Save book id:</span><strong class="text-danger ps-2">{{saveBookIdDelete}}</strong>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteSaveBook()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

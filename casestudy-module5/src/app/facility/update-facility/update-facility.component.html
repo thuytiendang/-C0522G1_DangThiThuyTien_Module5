@@ -1,142 +1,181 @@
-<div class="content">
-  <h2 class="text-center fw-bold" style="color: #e7e70b">UPDATE FACILITY</h2>
+<div class="mx-5 px-5 pt-4 mb-5" *ngIf="facilityFormGroup != undefined">
+  <h2 class="text-center fw-bold .text-warning">Edit Facility</h2>
+
+  <p class="text-center">
+    <a routerLink="/facility/list"><i class="fa-solid fa-backward"></i> Back To List</a>
+  </p>
+
   <div class="d-flex justify-content-center">
-    <form class="w-50 border border-2 border-success p-3 bg-success bg-opacity-25 rounded"
-          action="@{/facility/update}"
-          method="post">
-
-      <!--            <input type="hidden" th:field="*{facilityId}" readonly/>-->
-
-      <input type="hidden" readonly/>
+    <form class="w-50 border border-2 border-success p-3 rounded formCSS"
+          [formGroup]="facilityFormGroup" (ngSubmit)="updateFacility(facilityId)">
       <div class="form-group">
-        <label class="h6">Facility Type:</label>
+        <label for="facilityType" class="h6">Loại dịch vụ:</label>
         <div class="input-group">
-          <input type="text" class="form-control"
+          <input type="text" id="facilityType" class="form-control" value="{{facilityTypeDisplay}}"
                  readonly style="background-color: #b6bac2"/>
           <span class="input-group-text"><i class="fa-solid fa-house-user"></i></span>
         </div>
       </div>
 
-
       <div class="mt-3 form-group">
-        <label for="facilityName" class="h6">Facility name:</label>
+        <label for="name" class="h6">Tên dịch vụ:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.facilityName.hasError('required') &&
+                      facilityFormGroup.controls.facilityName.touched">
+          Tên dịch vụ không được để trống!
+        </div>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.facilityName.hasError('pattern') &&
+                      facilityFormGroup.controls.facilityName.touched">
+          Tên dịch vụ phải là tiếng Anh và không được chứa số!
+        </div>
         <div class="input-group">
-          <input type="text" id="facilityName" class="form-control"
-                 placeholder="Input Facility name"
-                 name="facilityName">
+          <input type="text" id="name" class="form-control" placeholder="Nhập tên dịch vụ.."
+                 formControlName="facilityName"/>
           <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
 
       <div class="mt-3 form-group">
-        <label for="area" class="h6">Area (m<sup>2</sup>):</label>
+        <label for="image" class="h6">Hình ảnh:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.facilityImage.hasError('required') &&
+                      facilityFormGroup.controls.facilityImage.touched">
+          Hình ảnh dịch vụ không được để trống!
+        </div>
         <div class="input-group">
-          <input type="number" id="area" class="form-control"
-                 placeholder="Input Facility area"
-                 name="facilityArea">
+          <input type="text" id="image" class="form-control" placeholder="Link ảnh.."
+                 formControlName="facilityImage"/>
+          <span class="input-group-text"><i class="fa-solid fa-image"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="area" class="h6">Diện tích sử dụng (m<sup>2</sup>):</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.facilityArea.hasError('required') &&
+                      facilityFormGroup.controls.facilityArea.touched">
+          Diện tích sử dụng không được để trống!
+        </div>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.facilityArea.hasError('pattern') &&
+                      facilityFormGroup.controls.facilityArea.touched">
+          Diện tích sử dụng phải là số nguyên dương!
+        </div>
+        <div class="input-group">
+          <input type="number" id="area" class="form-control" placeholder="Nhập diện tích sử dụng.."
+                 formControlName="facilityArea"/>
           <span class="input-group-text"><i class="fa-solid fa-chart-area"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
 
       <div class="mt-3 form-group">
-        <label for="cost" class="h6">Cost:</label>
+        <label for="cost" class="h6">Chi phí thuê (VNĐ):</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.rentCost.hasError('required') &&
+                      facilityFormGroup.controls.rentCost.touched">
+          Chi phí thuê không được để trống!
+        </div>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.rentCost.hasError('pattern') &&
+                      facilityFormGroup.controls.rentCost.touched">
+          Chi phí thuê phải là số nguyên dương!
+        </div>
         <div class="input-group">
-          <input type="text" id="cost" class="form-control"
-                 placeholder="Input Cost"
-                 name="facilityCost">
+          <input type="number" id="cost" class="form-control" placeholder="Nhập chi phí thuê.."
+                 formControlName="rentCost"/>
           <span class="input-group-text"><i class="fa-solid fa-dollar-sign"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
 
       <div class="mt-3 form-group">
-        <label for="maxPeople" class="h6">Maximum number of people:</label>
+        <label for="maxPeople" class="h6">Số người tối đa:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.maxPeople.hasError('required') &&
+                      facilityFormGroup.controls.maxPeople.touched">
+          Số người tối đa không được để trống!
+        </div>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.maxPeople.hasError('pattern') &&
+                      facilityFormGroup.controls.maxPeople.touched">
+          Số người tối đa phải là số nguyên dương!
+        </div>
         <div class="input-group">
-          <input type="number" id="maxPeople" class="form-control"
-                 placeholder="Input maximum number of people"
-                 name="maxPeople">
+          <input type="number" id="maxPeople" class="form-control" placeholder="Nhập số người tối đa.."
+                 formControlName="maxPeople"/>
           <span class="input-group-text"><i class="fa-solid fa-person"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
 
-      <div class="mt-3 form-group" id="standardRoomForm">
-        <label for="standardRoom" class="h6">Standard room:</label>
+      <div class="mt-3 form-group" id="standardRoomForm"
+           *ngIf="facilityTypeDisplay === 'Villa' || facilityTypeDisplay === 'House'">
+        <label for="standardRoom" class="h6">Tiêu chuẩn phòng:</label>
         <div class="input-group">
-          <input type="text" id="standardRoom" class="form-control"
-                 name="standardRoom" value=" -">
+          <input type="text" id="standardRoom" class="form-control" placeholder="Nhập tiêu chuẩn phòng.."
+                 formControlName="standardRoom"/>
           <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
         </div>
       </div>
 
-      <div class="mt-3 form-group" id="descriptionForm">
-        <label for="description" class="h6">Description other convenience:</label>
+      <div class="mt-3 form-group" id="descriptionForm"
+           *ngIf="facilityTypeDisplay === 'Villa' || facilityTypeDisplay === 'House'">
+        <label for="description" class="h6">Mô tả tiện nghi khác:</label>
         <div class="input-group">
-          <input type="text" id="description" class="form-control"
-                 name="otherConvenience" value=" -">
+          <input type="text" id="description" class="form-control" placeholder="Nhập mô tả tiện nghi khác.."
+                 formControlName="descriptionOtherConvenience"/>
           <span class="input-group-text"><i class="fa-solid fa-book"></i></span>
         </div>
       </div>
 
-      <div class="mt-3 form-group" id="poolAreaForm">
-        <label for="poolArea" class="h6">Pool area (m<sup>2</sup>):</label>
+      <div class="mt-3 form-group" id="poolAreaForm" *ngIf="facilityTypeDisplay === 'Villa'">
+        <label for="poolArea" class="h6">Diện tích hồ bơi (m<sup>2</sup>):</label>
         <div class="input-group">
-          <input type="text" id="poolArea" class="form-control"  name="poolArea"
-                 value="0">
+          <input type="number" id="poolArea" class="form-control" placeholder="Nhập diện tích hồ bơi.."
+                 formControlName="poolArea"/>
           <span class="input-group-text"><i class="fa-solid fa-person-swimming"></i></span>
         </div>
       </div>
 
-      <div class="mt-3 form-group" id="numberOfFloorsForm">
-        <label for="numberOfFloors" class="h6">Number of floors:</label>
+      <div class="mt-3 form-group" id="numberOfFloorsForm"
+           *ngIf="facilityTypeDisplay === 'Villa' || facilityTypeDisplay === 'House'">
+        <label for="numberOfFloors" class="h6">Số tầng:</label>
         <div class="input-group">
-          <input type="number" id="numberOfFloors" class="form-control"
-                 name="numberOfFloor" value="0">
+          <input type="number" id="numberOfFloors" class="form-control" placeholder="Nhập số tầng.."
+                 formControlName="numberOfFloors"/>
           <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
         </div>
       </div>
-      <!--            <div class="form-group text-danger">-->
-      <!--                <p>Name Error</p>-->
-      <!--            </div>-->
 
-      <div class="mt-3 form-group" id="facilityFreeForm" style="display: none">
-        <label for="facilityFree" class="h6">Facility free:</label>
+      <div class="mt-3 form-group" id="facilityFreeForm" *ngIf="facilityTypeDisplay === 'Room'">
+        <label for="facilityFree" class="h6">Dịch vụ miễn phí đi kèm:</label>
         <div class="input-group">
-          <input type="text" id="facilityFree" class="form-control"
-                 name="facilityFree"
-                 value=" -">
+          <input type="text" id="facilityFree" class="form-control" placeholder="Nhập dịch vụ miễn phí đi kèm.."
+                 formControlName="facilityFree"/>
           <span class="input-group-text"><i class="fa-solid fa-gift"></i></span>
         </div>
       </div>
 
       <div class="mt-3 form-group">
-        <label class="h6" for="rentType">Rent Type:</label>
+        <label class="h6" for="rentType">Kiểu thuê:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="facilityFormGroup.controls.rentType.hasError('required') &&
+                      facilityFormGroup.controls.rentType.touched">
+          Vui lòng chọn kiểu thuê!
+        </div>
         <div class="input-group">
-          <select id="rentType" class="form-select" name="rentTypeId" >
-            <option></option>
+          <select id="rentType" class="form-select" formControlName="rentType" [compareWith]="compareWithId">
+            <option [ngValue]="item" *ngFor="let item of rentTypeList">{{item.rentTypeName}}</option>
           </select>
-          <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
+          <span class="input-group-text"><i class="fa-solid fa-business-time"></i></span>
         </div>
       </div>
 
       <div class="mt-3 text-center">
-        <button class="btn btn-info btn-outline-warning btn-sm border border-2 border-success text-dark">
-          -- Update <i class="fa-solid fa-floppy-disk"></i> --
+        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark"
+                [disabled]="facilityFormGroup.invalid">
+          -- Lưu <i class="fa-solid fa-floppy-disk"></i> --
         </button>
       </div>
     </form>
   </div>
-  <p class="text-center m-3">
-    <a style="color: #75a8cd; font-size: 20px; font-weight: bolder" href="home_page.html"><i class="fa-solid fa-backward"></i> Back to Facility list</a>
-  </p>
 </div>

@@ -1,114 +1,99 @@
-<div class="carousel-inner">
-  <div class="carousel-item active">
-    <img src="http://new-hls.s3.amazonaws.com/hls/data/845/website/general/bn/normal_newphoto1-622821586.jpg"
-         class="d-block w-100" style="height: 150px" alt="...">
-    <div class="carousel-caption d-none d-md-block">
-      <h1 style="font-size: 60px">FACILITY</h1>
+<div class="py-3 px-5">
+  <div class="px-5">
+    <h2 class="text-center fw-bold text-warning
+  mt-3">FACILITY LIST <i class="fa-solid fa-house"></i></h2>
+
+    <nav class="navbar navbar-expand-lg py-0 my-0">
+      <div class="container-fluid">
+        <a routerLink="/facility/create">
+          <button class="btn btn-primary btn-outline-secondary">
+            <span class="fa-solid fa-house-medical text-light h5 my-auto me-1"></span>
+            <span class="text-light"> Create Facility</span>
+          </button>
+        </a>
+
+        <div class="d-flex my-2" role="search">
+          <input class="form-control me-2" type="text" placeholder="Input Facility.." aria-label="Search"
+                 [(ngModel)]="facilityNameSearch">
+          <button class="btn btn-light btn-outline-primary" (click)="searchName()">
+            <i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="col-sm-4 mb-4" *ngFor="let item of facilityPageList">
+        <div class="card facilityCSS">
+          <img height="250px"
+               src="{{item.facilityImage}}"
+               class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{item.facilityName | uppercase}}</h5>
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <span class="card-text">Loại dịch vụ: {{item.facilityType.facilityTypeName | uppercase}}</span><br>
+                <span class="card-text">Diện tích: {{item.facilityArea}} m<sup>2</sup></span><br>
+                <span class="card-text">Chí phí thuê: {{item.rentCost | currency: "VND"}}</span>
+              </div>
+              <div class="col-sm-6">
+                <span class="card-text">Số người tối đa: {{item.maxPeople}}</span><br>
+                <span class="card-text">Kiểu thuê: {{item.rentType.rentTypeName}}</span>
+              </div>
+            </div>
+            <a routerLink="/facility/update/{{item.id}}" class="me-2">
+              <button class="btn btn-warning btn-outline-secondary text-dark">Chỉnh sửa</button>
+            </a>
+            <button class="btn btn-danger btn-outline-secondary text-light"
+                    data-bs-toggle="modal" data-bs-target="#deleteFacility"
+                    (click)="getInfoFacilityDelete(item.facilityImage, item.facilityName, item.id)">Xóa
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <nav aria-label="..." class="justify-content-center d-flex">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" (click)="previous()" *ngIf="curPage > 1">&laquo; Trang trước</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage <= 1">
+          <a class="page-link">&laquo;</a>
+        </li>
+
+        <li class="page-item"><a class="page-link disabled" href=""
+                                 [text]="curPage + ' / ' + totalPage" *ngIf="curPage <= totalPage"></a>
+        </li>
+
+        <li class="page-item">
+          <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Trang sau &raquo;</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage >= totalPage">
+          <a class="page-link">&raquo;</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>
-<div class="p-3">
-  <nav class="navbar navbar-expand-lg pb-0 mb-0">
-    <div class="container-fluid">
-      <a routerLink="/facility/create">
-        <button class="btn btn-success btn-outline-secondary btn-sm">
-          <span class="fa-solid fa-person-circle-plus text-light h5 my-auto me-1"></span>
-          <span class="text-light"> Add new Facility</span>
-        </button>
-      </a>
 
-      <form class="d-flex my-2" role="search">
-        <input class="form-control me-2" type="text" placeholder="Input name" aria-label="Search"
-               name="facilityName" [(ngModel)]="facilityNameSearch">
-        <button (click)="searchByName()" class="btn btn-outline-success" type="submit" name="action" value="search">
-          <i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-    </div>
-  </nav>
+<div class="modal fade" id="deleteFacility" tabindex="-1" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modalCSS">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Bạn có chắc chắn muốn xóa?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
-  <table class="table table-striped table-bordered" id="facilityTable">
-    <thead>
-    <tr class="text-center bg-warning bg-opacity-50">
-      <th>Serial</th>
-      <th>Name</th>
-      <th>Cost</th>
-      <th>Max people</th>
-      <th>Standard room</th>
-      <th>Floor</th>
-      <th>Type of rent</th>
-      <th>Type of facility</th>
-      <th>Update</th>
-      <th>Delete</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let facility of facilityListPaging; index as i">
-      <td>{{i + 1}}</td>
-      <td>{{facility.facilityName}}</td>
-      <td>{{facility.facilityCost}}</td>
-      <td>{{facility.maxPeople}}</td>
-      <td>{{facility.standardRoom}}</td>
-      <td>{{facility.numberOfFloors}}</td>
-      <td>{{facility.rentType.rentTypeName}}</td>
-      <td>{{facility.facilityType.facilityTypeName}}</td>
-      <td class="text-center">
-        <a routerLink="/facility/update/{{facility.id}}">
-          <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
-        </a>
-      </td>
-      <td class="text-center">
-        <a data-bs-toggle="modal" data-bs-target="#deleteFacility">
-          <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
-        </a>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+      <div class="modal-body">
+        <img class="img-fluid pb-3" src="{{facilityImageDelete}}" alt="...">
+        <span class="h6">Dịch vụ:</span><strong class="text-danger ps-2">{{facilityNameDelete | uppercase}}</strong>
+      </div>
 
-  <nav aria-label="..." class="justify-content-center d-flex">
-    <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link" (click)="previous()" *ngIf="curPage > 1">&laquo; Previous</a>
-      </li>
-      <li class="page-item disabled" *ngIf="curPage <= 1">
-        <a class="page-link">&laquo;</a>
-      </li>
-      ​
-      <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage"></a>
-      </li>
-      ​
-      <li class="page-item">
-        <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Next &raquo;</a>
-      </li>
-      <li class="page-item disabled" *ngIf="curPage >= totalPage">
-        <a class="page-link">&raquo;</a>
-      </li>
-    </ul>
-  </nav>
-
-  <!--    modal delete-->
-  <div class="modal fade" id="deleteFacility" tabindex="-1" aria-labelledby="exampleModalLabel1"
-       aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLabel1">Are you sure to delete?</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-
-        <form>
-          <div class="modal-body">
-            <span class="h6">Facility:</span><strong id="nameDelete" class="text-danger ps-2"></strong>
-            <input type="hidden" name="id" id="idDelete"/>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-danger" value="delete">Delete</button>
-          </div>
-        </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteFacility()">Xóa</button>
       </div>
     </div>
   </div>
 </div>
-

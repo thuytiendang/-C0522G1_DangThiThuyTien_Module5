@@ -1,0 +1,111 @@
+<div class="mx-5 px-5 pt-3 pb-5">
+  <h2 style="color: #98ecae" class="text-center fw-bold text-success">UPDATE SAVE BOOK</h2>
+
+  <p class="text-center">
+    <a style="color: #98ecae" routerLink=""><i class="fa-solid fa-backward"></i> Back to save book list</a>
+  </p>
+
+  <div class="d-flex justify-content-center" >
+    <form style="background-color: #98ecae" class="w-50 border border-2 border-success p-3 rounded formCSS" novalidate="novalidate"
+          [formGroup]="saveBookFormGroup" (ngSubmit)="updateSaveBook(saveBookId)">
+      <div class="mt-3 form-group">
+        <label for="saveId" class="h6">Save book id:</label>
+        <input type="text" id="saveId" class="form-control" formControlName="id" readonly/>
+      </div>
+<!--      <div class="mt-3 form-group">-->
+<!--        <label for="cusId" class="h6">Customer id:</label>-->
+<!--        <input type="text" id="cusId" class="form-control" formControlName="customerId" readonly/>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="name" class="h6">Tên khách hàng:</label>-->
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="saveBookFormGroup.controls.customerName.hasError('required') &&-->
+<!--                      saveBookFormGroup.controls.customerName.touched">-->
+<!--          Customer name not be blank!-->
+<!--        </div>-->
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="saveBookFormGroup.controls.customerName.hasError('invalidName') &&-->
+<!--                      saveBookFormGroup.controls.customerName.touched">-->
+<!--          Tên khách hàng phải viết hoa mỗi chữ cái đầu và không đươch chứa số!-->
+<!--        </div>-->
+<!--        <div class="input-group">-->
+<!--          <input type="text" id="name" class="form-control" placeholder="Input customer name.."-->
+<!--                 formControlName="customerName"/>-->
+<!--          <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="mt-3 form-group">
+        <label for="openDate" class="h6">Open date:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="saveBookFormGroup.controls.openDate.hasError('required') &&
+                      saveBookFormGroup.controls.openDate.touched">
+          Not be blank!
+        </div>
+        <input type="date" id="openDate" class="form-control" formControlName="openDate"/>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="starDate" class="h6">Start date:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="saveBookFormGroup.controls.startDate.hasError('required') &&
+                      saveBookFormGroup.controls.startDate.touched">
+          Not be blank!
+        </div>
+        <input type="date" id="starDate" class="form-control" formControlName="startDate"/>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="dueDate" class="h6">Due date:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="saveBookFormGroup.controls.dueDate.hasError('required') &&
+                      saveBookFormGroup.controls.dueDate.touched">
+          Not be blank!
+        </div>
+        <input type="text" id="dueDate" class="form-control" formControlName="dueDate"/>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="money" class="h6">Money:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="saveBookFormGroup.controls.money.hasError('required') &&
+                      saveBookFormGroup.controls.money.touched">
+          Not be blank!
+        </div>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="saveBookFormGroup.controls.money.hasError('min') &&
+                      saveBookFormGroup.controls.money.touched">
+          Money must >= 10000000!
+        </div>
+        <input type="text" id="money" class="form-control" formControlName="money"/>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="interest" class="h6">Interest:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="saveBookFormGroup.controls.interest.hasError('required') &&
+                      saveBookFormGroup.controls.interest.touched">
+          Not be blank!
+        </div>
+        <input type="text" id="interest" class="form-control" formControlName="interest"/>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="moreBenefit" class="h6">More benefit:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="saveBookFormGroup.controls.moreBenefit.hasError('required') &&
+                      saveBookFormGroup.controls.moreBenefit.touched">
+          Not be blank!
+        </div>
+        <input type="text" id="moreBenefit" class="form-control" formControlName="moreBenefit"/>
+      </div>
+
+      <div class="mt-3 text-center">
+        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark"
+                [disabled]="saveBookFormGroup.invalid">
+          -- Update <i class="fa-solid fa-floppy-disk"></i> --
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

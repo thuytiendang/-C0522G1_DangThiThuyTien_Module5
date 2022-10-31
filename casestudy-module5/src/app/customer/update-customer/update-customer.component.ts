@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerType} from '../../model/customer/customer-type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomerListService} from '../../service/customer/customer-list.service';
-import {CustomerTypeService} from '../../service/customer/customer-type.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Customer} from '../../model/customer/customer';
+import {CustomerService} from '../../service/customer/customer.service';
 
 @Component({
   selector: 'app-update-customer',
@@ -17,8 +16,7 @@ export class UpdateCustomerComponent implements OnInit {
   customer: Customer;
   id: number;
 
-  constructor(private customerListService: CustomerListService,
-              private customerTypeService: CustomerTypeService,
+  constructor(private customerListService: CustomerService,
               private activatedRoute: ActivatedRoute,
               private router: Router) {
   }
@@ -27,7 +25,7 @@ export class UpdateCustomerComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(value => {
       this.id = Number(value.get('id'));
     });
-    this.customerListService.findById(this.id).subscribe(value => {
+    this.customerListService.getById(this.id).subscribe(value => {
       this.customer = value;
       this.formUpdateCustomer.patchValue(this.customer);
     });
@@ -59,7 +57,7 @@ export class UpdateCustomerComponent implements OnInit {
   }
 
   getCustomerType(): void {
-    this.customerTypeService.getAll().subscribe(value => {
+    this.customerListService.findAllCustomerType().subscribe(value => {
       this.customerTypes = value;
     });
   }

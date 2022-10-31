@@ -1,0 +1,80 @@
+{
+  "SaveBook": [
+    {
+      "id": 2,
+      "openDate": "2022-10-08",
+      "startDate": "2022-10-08",
+      "dueDate": "3 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customerId": 2,
+      "customerName": "Đặng Thị Thủy Tiên"
+    },
+    {
+      "id": 3,
+      "openDate": "2022-10-07",
+      "startDate": "2022-10-07",
+      "dueDate": "3 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa",
+      "customer": {
+        "id": 3,
+        "customerName": "Đặng Ngọc Huy"
+      }
+    },
+    {
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 4,
+        "customerName": "Moon DangBX"
+      },
+      "id": 5
+    },
+    {
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 4,
+        "customerName": "Moon DangBX"
+      },
+      "id": 7
+    },
+    {
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 4,
+        "customerName": "Moon DangBX"
+      },
+      "id": 8
+    },
+    {
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 4,
+        "customerName": "Moon DangBX"
+      },
+      "id": 4
+    }
+  ]
+}

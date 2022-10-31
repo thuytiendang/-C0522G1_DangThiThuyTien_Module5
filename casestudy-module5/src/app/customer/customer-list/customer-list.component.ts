@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer/customer';
-import {CustomerListService} from '../../service/customer/customer-list.service';
+import Swal from 'sweetalert2';
+import {CustomerService} from '../../service/customer/customer.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -8,66 +9,82 @@ import {CustomerListService} from '../../service/customer/customer-list.service'
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-  customers: Customer[] = [];
-  customerListPaging: Customer[];
-  curPage = 1;
-  totalPage: number;
-  customerNameDelete: string;
-  customerIdDelete: number;
-
   customerNameSearch = '';
   customerAddressSearch = '';
   customerPhoneSearch = '';
 
-  constructor(private customerListService: CustomerListService) {
+  customerListPaging: Customer[];
+  numberRecord = 5;
+  curPage = 1;
+  totalPage: number;
+
+  customerNameDelete: string;
+  customerIdDelete: number;
+
+  constructor(private customerService: CustomerService) {
   }
 
   ngOnInit(): void {
-    this.customerListService.getAll().subscribe(value => {
-      this.totalPage = Math.ceil(value.length / 5);
-      this.customerListPaging = value.slice(0, 5);
-      this.customers = value;
+    this.customerService.findAllCustomerSearch(this.customerNameSearch, this.customerAddressSearch, this.customerPhoneSearch)
+      .subscribe(list => {
+        this.totalPage = Math.ceil(list.length / this.numberRecord);
+      }, error => {
+        console.log(error);
+      }, () => {
+        console.log('OK!');
+      });
+
+    this.customerService.findCustomerSearchPaging(this.numberRecord, this.curPage,
+      this.customerNameSearch, this.customerAddressSearch, this.customerPhoneSearch).subscribe(pagingList => {
+      this.customerListPaging = pagingList;
     }, error => {
       console.log(error);
     }, () => {
-      console.log('Complete');
+      console.log('Hiển thị khách hàng ở trang ' + this.curPage);
     });
   }
 
   next(): void {
     this.curPage++;
-    this.customerListPaging = this.customers.slice((this.curPage - 1) * 5,
-      this.curPage * 5);
+    this.ngOnInit();
   }
 
   previous(): void {
     this.curPage--;
-    this.customerListPaging = this.customers.slice((this.curPage - 1) * 5, this.curPage * 5);
+    this.ngOnInit();
   }
 
-  getInfoCustomerDelete(customerId: number, customerName: string): void {
-    this.customerIdDelete = customerId;
+  getInfoCustomerDelete(customerName: string, customerId: number): void {
     this.customerNameDelete = customerName;
+    this.customerIdDelete = customerId;
   }
 
   deleteCustomer(): void {
-    this.customerListService.deleteCustomer(this.customerIdDelete).subscribe(value => {
+    this.curPage = 1;
+    this.customerService.deleteCustomer(this.customerIdDelete).subscribe(() => {
+      // 1 thông báo vip-pro:
+      Swal.fire({
+        icon: 'success',
+        title: 'Xóa thành công!',
+        text: 'Khách hàng: ' + this.customerNameDelete,
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+
       this.ngOnInit();
     }, error => {
-
+      console.log(error);
     }, () => {
-      alert('delete successfully!');
-      // this.router.navigateByUrl('/customer/list');
+      console.log('Xóa khách hàng thành công!');
     });
   }
 
   searchByMore(): void {
-    this.customerListService.getAll().subscribe(value => {
-      this.customers = value.filter(item => item.customerName.toLowerCase().includes(this.customerNameSearch.toLowerCase())
-        && item.customerAddress.toLowerCase().includes(this.customerAddressSearch.toLowerCase())
-        && item.customerPhone.toLowerCase().includes(this.customerPhoneSearch.toLowerCase()));
-      this.totalPage = Math.ceil(this.customers.length / 5);
-      this.customerListPaging = this.customers.slice(0, 5);
-    });
+    this.curPage = 1;
+    this.ngOnInit();
   }
 }

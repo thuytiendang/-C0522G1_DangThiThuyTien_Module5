@@ -1,0 +1,21 @@
+a {
+  text-decoration: none;
+  color: #bad8ff;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #bad8ff;
+}
+
+body {
+  background-image: url("https://i.pinimg.com/736x/fd/43/ba/fd43ba15add1508edb9ca76f3ddad9fd.jpg");
+}
+
+.formCSS {
+  background-image: url("https://i0.wp.com/i.pinimg.com/originals/4c/72/0f/4c720f820fb641c7ee25a26d7bbddea7.png?resize=160,120");
+}
+
+.modalCSS {
+  background-image: url("https://i.pinimg.com/originals/c7/cf/33/c7cf33586d2e5f32cc075d2f101c5bf7.gif");
+}

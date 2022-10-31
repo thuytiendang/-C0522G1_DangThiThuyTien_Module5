@@ -2,181 +2,192 @@
   "facilities": [
     {
       "id": 1,
-      "facilityName": "Villa Beach Front",
-      "facilityArea": 1000,
-      "facilityCost": 1000000,
-      "maxPeople": 10,
-      "standardRoom": "Vip",
-      "descriptionOtherConvenience": "Có hồ bơi",
-      "poolArea": 200,
-      "numberOfFloors": 5,
-      "facilityFree": "",
+      "facilityName": "Studio Queen Script",
+      "facilityArea": 100,
+      "rentCost": 500000,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
       "rentType": {
-        "id": 2,
-        "rentTypeName": "Month"
-      },
-      "facilityType": {
         "id": 1,
-        "facilityTypeName": "Villa"
-      }
-    },
-    {
-      "id": 2,
-      "facilityName": "House Princess",
-      "facilityArea": 1000,
-      "facilityCost": 1000000,
-      "maxPeople": 10,
-      "standardRoom": "Vip",
-      "descriptionOtherConvenience": "Có hồ bơi",
-      "poolArea": 200,
-      "numberOfFloors": 5,
-      "facilityFree": "",
-      "rentType": {
-        "id": 2,
-        "rentTypeName": "Month"
-      },
-      "facilityType": {
-        "id": 2,
-        "facilityTypeName": "House"
-      }
-    },
-    {
-      "id": 3,
-      "facilityName": "Room Princess",
-      "facilityArea": 1000,
-      "facilityCost": 1000000,
-      "maxPeople": 10,
-      "standardRoom": "Vip",
-      "descriptionOtherConvenience": "Có hồ bơi",
-      "poolArea": 200,
-      "numberOfFloors": 5,
-      "facilityFree": "",
-      "rentType": {
-        "id": 3,
-        "rentTypeName": "Day"
+        "rentTypeName": "Giờ"
       },
       "facilityType": {
         "id": 3,
         "facilityTypeName": "Room"
-      }
+      },
+      "facilityImage": "https://www.furama.com/images/FRF_studioroom_ibe4.jpg"
+    },
+    {
+      "facilityName": "Superior Angular",
+      "facilityArea": 150,
+      "rentCost": 400000,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Giờ"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/ibe_Superior.jpg",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "facilityName": "Deluxe Ajax",
+      "facilityArea": 200,
+      "rentCost": 1000000,
+      "maxPeople": 3,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 2,
+        "rentTypeName": "Ngày"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/ibe-Deluxe-Room.jpg"
     },
     {
       "id": 4,
-      "facilityName": "Villa Princess",
-      "facilityArea": 1000,
-      "facilityCost": 1000000,
-      "maxPeople": 10,
+      "facilityName": "Villa Beach Back Jquery",
+      "facilityArea": 1200,
+      "rentCost": 7500000,
+      "maxPeople": 7,
       "standardRoom": "Vip",
       "descriptionOtherConvenience": "Có hồ bơi",
-      "poolArea": 200,
-      "numberOfFloors": 5,
+      "poolArea": 80,
+      "numberOfFloors": 4,
       "facilityFree": "",
       "rentType": {
-        "id": 3,
-        "rentTypeName": "Day"
+        "id": 2,
+        "rentTypeName": "Ngày"
       },
       "facilityType": {
         "id": 1,
         "facilityTypeName": "Villa"
-      }
+      },
+      "facilityImage": "https://media-cdn.tripadvisor.com/media/vr-splice-j/02/8e/d7/b8.jpg"
     },
     {
-      "id": 5,
-      "facilityName": "Villa Beach Front",
-      "facilityArea": 1000,
-      "facilityCost": 1000000,
-      "maxPeople": 10,
+      "facilityName": "Villa Beach Front Thymeleaf",
+      "facilityArea": 2000,
+      "rentCost": 10500000,
+      "maxPeople": 8,
       "standardRoom": "Vip",
       "descriptionOtherConvenience": "Có hồ bơi",
-      "poolArea": 200,
-      "numberOfFloors": 5,
+      "poolArea": 100,
+      "numberOfFloors": 4,
       "facilityFree": "",
       "rentType": {
-        "id": 3,
-        "rentTypeName": "Day"
+        "id": 2,
+        "rentTypeName": "Ngày"
       },
       "facilityType": {
         "id": 1,
         "facilityTypeName": "Villa"
-      }
+      },
+      "facilityImage": "https://pix10.agoda.net/hotelImages/2601996/0/7b0a95ae1cbf0f0650ff89ff15cbfbfb.jpg?ca=7&ce=1&s=1024x768",
+      "id": 5
     },
     {
       "id": 6,
-      "facilityName": "House Princess",
-      "facilityArea": 1000,
-      "facilityCost": 1000000,
-      "maxPeople": 10,
+      "facilityName": "Spring Framework House 01",
+      "facilityArea": 500,
+      "rentCost": 7000000,
+      "maxPeople": 5,
       "standardRoom": "Vip",
-      "descriptionOtherConvenience": "Có hồ bơi",
-      "poolArea": 200,
-      "numberOfFloors": 5,
+      "descriptionOtherConvenience": "Có ghế tình yêu",
+      "poolArea": 0,
+      "numberOfFloors": 3,
       "facilityFree": "",
       "rentType": {
-        "id": 2,
-        "rentTypeName": "Month"
+        "id": 3,
+        "rentTypeName": "Tháng"
       },
       "facilityType": {
         "id": 2,
         "facilityTypeName": "House"
-      }
+      },
+      "facilityImage": "https://i.pinimg.com/736x/a7/b3/c6/a7b3c60afae4a89a3fb12fc8d054156d.jpg"
     },
     {
       "id": 7,
-      "facilityName": "Room Princess",
-      "facilityArea": 1000,
-      "facilityCost": 1000000,
-      "maxPeople": 10,
-      "standardRoom": "Vip",
-      "descriptionOtherConvenience": "Có hồ bơi",
-      "poolArea": 200,
-      "numberOfFloors": 5,
-      "facilityFree": "",
+      "facilityName": "Family Room Static",
+      "facilityArea": 300,
+      "rentCost": 1500000,
+      "maxPeople": 4,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Đánh bài quỳ vỏ mít",
       "rentType": {
-        "id": 3,
-        "rentTypeName": "Day"
+        "id": 2,
+        "rentTypeName": "Ngày"
       },
       "facilityType": {
         "id": 3,
         "facilityTypeName": "Room"
-      }
+      },
+      "facilityImage": "https://www.furama.com/images/ibe_Family.jpg"
     },
     {
       "id": 8,
-      "facilityName": "Villa Princess",
-      "facilityArea": 1000,
-      "facilityCost": 1000000,
-      "maxPeople": 10,
-      "standardRoom": "Vip",
-      "descriptionOtherConvenience": "Có hồ bơi",
-      "poolArea": 200,
-      "numberOfFloors": 5,
-      "facilityFree": "",
+      "facilityName": "Premier Family Room",
+      "facilityArea": 300,
+      "rentCost": 1250000,
+      "maxPeople": 4,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Dắt chó đi dạo",
       "rentType": {
-        "id": 3,
-        "rentTypeName": "Day"
+        "id": 2,
+        "rentTypeName": "Ngày"
       },
       "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/FRF_studioroom_ibe9.jpg"
+    },
+    {
+      "id": 9,
+      "facilityName": "Executive Suite",
+      "facilityArea": 150,
+      "rentCost": 350000,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
         "id": 1,
-        "facilityTypeName": "Villa"
-      }
-    }
-  ],
-  "rentTypes": [
-    {
-      "id": 1,
-      "rentTypeName": "Year"
-    },
-    {
-      "id": 2,
-      "rentTypeName": "Month"
-    },
-    {
-      "id": 3,
-      "rentTypeName": "Day"
-    },
-    {
-      "id": 4,
-      "rentTypeName": "Time"
+        "rentTypeName": "Giờ"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/ibe_frf_Executive-Suite.jpg"
     }
   ],
   "facilityTypes": [
@@ -191,6 +202,24 @@
     {
       "id": 3,
       "facilityTypeName": "Room"
+    }
+  ],
+  "rentTypes": [
+    {
+      "id": 1,
+      "rentTypeName": "Giờ"
+    },
+    {
+      "id": 2,
+      "rentTypeName": "Ngày"
+    },
+    {
+      "id": 3,
+      "rentTypeName": "Tháng"
+    },
+    {
+      "id": 4,
+      "rentTypeName": "Năm"
     }
   ],
   "customers": [

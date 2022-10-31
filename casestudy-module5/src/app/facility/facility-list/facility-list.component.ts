@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Facility} from '../../model/facility/facility';
-import {FacilityListService} from '../../service/facility/facility-list.service';
+import {FacilityService} from '../../service/facility/facility.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-facility-list',
@@ -8,42 +9,74 @@ import {FacilityListService} from '../../service/facility/facility-list.service'
   styleUrls: ['./facility-list.component.css']
 })
 export class FacilityListComponent implements OnInit {
-  facilities: Facility[] = [];
-  facilityListPaging: Facility[];
+  facilityPageList: Facility[];
+  numberRecord = 6;
   curPage = 1;
   totalPage: number;
   facilityNameSearch = '';
 
-  constructor(private facilityListService: FacilityListService) { }
+  facilityNameDelete: string;
+  facilityImageDelete: string;
+  facilityIdDelete: number;
+
+  constructor(private facilityService: FacilityService) {
+  }
 
   ngOnInit(): void {
-    this.facilityListService.getAll().subscribe(value => {
-      this.totalPage = Math.ceil(value.length / 5);
-      this.facilityListPaging = value.slice(0, 5);
-      this.facilities = value;
-    }, error => {
-      console.log(error);
-    }, () => {
-      console.log('Complete');
+    this.facilityService.findAllFacilitySearch(this.facilityNameSearch).subscribe(value => {
+      this.totalPage = Math.ceil(value.length / this.numberRecord);
+
     });
+    this.facilityService.findFacilitySearchPaging(this.numberRecord, this.curPage, this.facilityNameSearch)
+      .subscribe(pageList => {
+        this.facilityPageList = pageList;
+      });
   }
 
   next(): void {
     this.curPage++;
-    this.facilityListPaging = this.facilities.slice((this.curPage - 1) * 5,
-      this.curPage * 5);
+    this.ngOnInit();
   }
 
   previous(): void {
     this.curPage--;
-    this.facilityListPaging = this.facilities.slice((this.curPage - 1) * 5, this.curPage * 5);
+    this.ngOnInit();
   }
 
-  searchByName(): void {
-    this.facilityListService.getAll().subscribe(value => {
-      this.facilities = value.filter(item => item.facilityName.toLowerCase().includes(this.facilityNameSearch.toLowerCase()));
-      this.totalPage = Math.ceil(this.facilities.length / 5);
-      this.facilityListPaging = this.facilities.slice(0, 5);
+  getInfoFacilityDelete(facilityImage: string, facilityName: string, facilityId: number): void {
+    this.facilityImageDelete = facilityImage;
+    this.facilityNameDelete = facilityName;
+    this.facilityIdDelete = facilityId;
+  }
+
+  deleteFacility(): void {
+    this.curPage = 1;
+    this.facilityService.deleteFacility(this.facilityIdDelete).subscribe(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Xóa thành công!',
+        text: 'Dịch vụ: ' + this.facilityNameDelete,
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `
+        rgba(0,0,123,0.4)
+        url("/images/nyan-cat.gif")
+        left top
+        no-repeat
+      `
+      });
+      this.ngOnInit();
+    }, error => {
+      console.log(error);
+    }, () => {
+      console.log('Xóa dịch vụ thành công!');
     });
+  }
+
+  searchName(): void {
+    this.curPage = 1;
+    this.ngOnInit();
   }
 }
