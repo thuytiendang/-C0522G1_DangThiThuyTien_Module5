@@ -7,6 +7,13 @@
       <div class="d-flex my-2" role="search">
         <input class="form-control me-2" type="text" placeholder="Input Name.." aria-label="Search"
                [(ngModel)]="customerNameSearch">
+
+        <select class="form-control me-2" [(ngModel)]="idSearch">
+          <option value="{{idSearch}}" disabled>Save-book id...</option>
+          <option *ngFor="let item of saveBookListPaging" [ngValue]="item.id">{{item.id}}</option>
+        </select>
+        <button class="btn btn-light btn-outline-primary me-2" (click)="resetSearchInput()">
+          <i class="fa-solid fa-xmark"></i></button>
         <button style="background-color: #68ad7e" class="btn btn-outline-primary" (click)="searchByMore()">
           <i class="fa-solid fa-magnifying-glass"></i></button>
       </div>

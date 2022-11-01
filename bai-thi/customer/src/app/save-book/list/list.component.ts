@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Customer} from "../../model/customer";
+import {Component, OnInit} from '@angular/core';
 import {SaveBook} from "../../model/save-book";
 import {SaveBookService} from "../../service/save-book.service";
 import Swal from "sweetalert2";
@@ -11,6 +10,7 @@ import Swal from "sweetalert2";
 })
 export class ListComponent implements OnInit {
   customerNameSearch = '';
+  idSearch = '';
 
   saveBookListPaging: SaveBook[];
   numberRecord = 5;
@@ -20,14 +20,16 @@ export class ListComponent implements OnInit {
   saveBookIdDelete: number;
 
 
-  constructor(private saveBookService: SaveBookService) { }
+  constructor(private saveBookService: SaveBookService) {
+  }
 
   ngOnInit(): void {
-    this.saveBookService.findSaveBookSearch(this.customerNameSearch).subscribe(value => {
+    this.saveBookService.findSaveBookSearch(this.customerNameSearch, this.idSearch).subscribe(value => {
       this.totalPage = Math.ceil(value.length / this.numberRecord);
+      console.log(value)
     });
 
-    this.saveBookService.findSaveBookSearchPaging(this.numberRecord, this.curPage, this.customerNameSearch)
+    this.saveBookService.findSaveBookSearchPaging(this.numberRecord, this.curPage, this.customerNameSearch, this.idSearch)
       .subscribe(value => {
         this.saveBookListPaging = value;
       });
@@ -51,7 +53,6 @@ export class ListComponent implements OnInit {
     this.saveBookService.deleteSaveBook(this.saveBookIdDelete).subscribe(() => {
       Swal.fire({
         title: 'Delete successfully!',
-        // text: 'Khách hàng: ' + this.customerNameDelete,
         imageUrl: 'https://i.imgur.com/TBFaI9w.gif',
         imageHeight: 250,
         imageWidth: 400
@@ -62,6 +63,13 @@ export class ListComponent implements OnInit {
   }
 
   searchByMore(): void {
+    this.curPage = 1;
+    this.ngOnInit();
+  }
+
+  resetSearchInput() {
+    this.customerNameSearch = '';
+    this.idSearch = '';
     this.curPage = 1;
     this.ngOnInit();
   }

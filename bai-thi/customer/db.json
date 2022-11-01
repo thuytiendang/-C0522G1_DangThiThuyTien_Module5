@@ -1,0 +1,142 @@
+{
+  "SaveBook": [
+    {
+      "id": 1,
+      "openDate": "2022-10-07",
+      "startDate": "2022-10-07",
+      "dueDate": "Không kỳ hạn",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa",
+      "customer": {
+        "id": 1,
+        "customerName": "Đặng Ngọc Huy"
+      }
+    },
+    {
+      "id": 2,
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 2,
+        "customerName": "Đặng Thị Thủy Tiên"
+      }
+    },
+    {
+      "id": 3,
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 3,
+        "customerName": "Moon DangBX"
+      }
+    },
+    {
+      "id": 4,
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 4,
+        "customerName": "Võ Văn Tý"
+      }
+    },
+    {
+      "id": 5,
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 5,
+        "customerName": "Huỳnh Trung Thuyên"
+      }
+    },
+    {
+      "id": 6,
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 6,
+        "customerName": "Lê Đại Lợi"
+      }
+    },
+    {
+      "id": 7,
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 7,
+        "customerName": "Nguyễn Tất Thành"
+      }
+    },
+    {
+      "id": 8,
+      "openDate": "2022-10-11",
+      "startDate": "2022-10-20",
+      "dueDate": "6 tháng",
+      "money": 200000000,
+      "interest": "8%/năm",
+      "moreBenefit": "áo mưa 1",
+      "customer": {
+        "id": 8,
+        "customerName": "Huỳnh Văn Nam"
+      }
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "customerName": "Đặng Ngọc Huy"
+    },
+    {
+      "id": 2,
+      "customerName": "Đặng Thị Thủy Tiên"
+    },
+    {
+      "id": 3,
+      "customerName": "Moon DangBX"
+    },
+    {
+      "id": 4,
+      "customerName": "Võ Văn Tý"
+    },
+    {
+      "id": 5,
+      "customerName": "Huỳnh Trung Thuyên"
+    },
+    {
+      "id": 6,
+      "customerName": "Lê Đại Lợi"
+    },
+    {
+      "id": 7,
+      "customerName": "Nguyễn Tất Thành"
+    },
+    {
+      "id": 8,
+      "customerName": "Huỳnh Văn Nam"
+    }
+  ]
+}
