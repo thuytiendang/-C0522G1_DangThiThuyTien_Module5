@@ -10,12 +10,11 @@ import Swal from "sweetalert2";
 })
 export class ListComponent implements OnInit {
   customerNameSearch = '';
-  idSearch = '';
 
   saveBookListPaging: SaveBook[];
-  numberRecord = 5;
-  curPage = 1;
   totalPage: number;
+  countTotalPage: number[];
+  number: number;
 
   saveBookIdDelete: number;
 
@@ -24,25 +23,37 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.saveBookService.findSaveBookSearch(this.customerNameSearch, this.idSearch).subscribe(value => {
-      this.totalPage = Math.ceil(value.length / this.numberRecord);
-      console.log(value)
-    });
-
-    this.saveBookService.findSaveBookSearchPaging(this.numberRecord, this.curPage, this.customerNameSearch, this.idSearch)
-      .subscribe(value => {
-        this.saveBookListPaging = value;
-      });
+   this.getSaveBook(this.customerNameSearch, 0);
   }
 
+  getSaveBook(name: string, page: number) {
+    this.saveBookService.findSaveBookSearch(name, page).subscribe((value: SaveBook[])  => {
+      // @ts-ignore
+      this.saveBookListPaging = value.content;
+      // @ts-ignore
+      this.totalPage = value.totalPages;
+      // @ts-ignore
+      this.number = value.number;
+      // @ts-ignore
+      this.countTotalPage = new Array(value.totalPages);
+    });
+  }
+
+
   next(): void {
-    this.curPage++;
-    this.ngOnInit();
+    let numberPage: number = this.number;
+    if (numberPage < this.totalPage - 1){
+      numberPage++;
+    }
+    this.getSaveBook(this.customerNameSearch, numberPage);
   }
 
   previous(): void {
-    this.curPage--;
-    this.ngOnInit();
+    let numberPage: number = this.number;
+    if (numberPage > 0) {
+      numberPage--;
+    }
+    this.getSaveBook(this.customerNameSearch, numberPage);
   }
 
   getInfoSaveBookDelete(saveBookId: number): void {
@@ -57,20 +68,20 @@ export class ListComponent implements OnInit {
         imageHeight: 250,
         imageWidth: 400
       });
-      this.curPage = 1;
       this.ngOnInit();
     });
   }
 
   searchByMore(): void {
-    this.curPage = 1;
-    this.ngOnInit();
+    this.getSaveBook(this.customerNameSearch, 0);
   }
 
   resetSearchInput() {
     this.customerNameSearch = '';
-    this.idSearch = '';
-    this.curPage = 1;
     this.ngOnInit();
+  }
+
+  goItem(i: number) {
+    this.getSaveBook(this.customerNameSearch, i);
   }
 }

@@ -8,10 +8,10 @@
         <input class="form-control me-2" type="text" placeholder="Input Name.." aria-label="Search"
                [(ngModel)]="customerNameSearch">
 
-        <select class="form-control me-2" [(ngModel)]="idSearch">
-          <option value="{{idSearch}}" disabled>Save-book id...</option>
-          <option *ngFor="let item of saveBookListPaging" [ngValue]="item.id">{{item.id}}</option>
-        </select>
+        <!--        <select class="form-control me-2" [(ngModel)]="idSearch">-->
+        <!--          <option value="{{idSearch}}" disabled>Save-book id...</option>-->
+        <!--          <option *ngFor="let item of saveBookListPaging" [ngValue]="item.id">{{item.id}}</option>-->
+        <!--        </select>-->
         <button class="btn btn-light btn-outline-primary me-2" (click)="resetSearchInput()">
           <i class="fa-solid fa-xmark"></i></button>
         <button style="background-color: #68ad7e" class="btn btn-outline-primary" (click)="searchByMore()">
@@ -39,7 +39,6 @@
 
     <tbody>
     <tr *ngFor="let item of saveBookListPaging">
-<!--      <td class="text-center">{{i + 1 + (curPage - 1) * numberRecord}}</td>-->
       <td>{{item.id}}</td>
       <td>{{item.customer.id}}</td>
       <td>{{item.customer.customerName | titlecase}}</td>
@@ -67,26 +66,42 @@
     </tbody>
   </table>
 
-  <nav aria-label="..." class="justify-content-center d-flex" >
-    <ul class="pagination" >
-      <li class="page-item">
-        <a class="page-link" (click)="previous()" *ngIf="curPage > 1">&laquo; Previous</a>
-      </li>
-      <li class="page-item disabled" *ngIf="curPage <= 1">
-        <a class="page-link">&laquo;</a>
-      </li>
-
-      <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage" *ngIf="curPage <= totalPage"></a>
-      </li>
-
-      <li class="page-item">
-        <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Next &raquo;</a>
-      </li>
-      <li class="page-item disabled" *ngIf="curPage >= totalPage">
-        <a class="page-link">&raquo;</a>
-      </li>
+  <div class="container-fluid mt-3">
+    <ul class="pagination float-end">
+      <div *ngIf="number == 0">
+        <li class="page-item disabled">
+          <button class="page-link" hidden>Previous</button>
+        </li>
+      </div>
+      <div *ngIf="number != 0">
+        <li class="page-item">
+          <button class="page-link" (click)="previous()">Previous</button>
+        </li>
+      </div>
+      <div *ngFor="let count of countTotalPage; index as i">
+        <div *ngIf="i == number">
+          <li class="page-item active">
+            <button class="page-link" (click)="goItem(i)">{{i + 1}}</button>
+          </li>
+        </div>
+        <div *ngIf="i != number">
+          <li class="page-item">
+            <button class="page-link" (click)="goItem(i)">{{i + 1}}</button>
+          </li>
+        </div>
+      </div>
+      <div *ngIf="number == totalPage - 1">
+        <li class="page-item disabled">
+          <button class="page-link" hidden>Next</button>
+        </li>
+      </div>
+      <div *ngIf="number != totalPage - 1">
+        <li class="page-item">
+          <button class="page-link" (click)="next()">Next</button>
+        </li>
+      </div>
     </ul>
-  </nav>
+  </div>
 </div>
 
 <div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"

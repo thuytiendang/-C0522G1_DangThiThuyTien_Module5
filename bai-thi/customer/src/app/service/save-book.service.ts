@@ -9,6 +9,7 @@ import {Customer} from "../model/customer";
 })
 export class SaveBookService {
   private API_URL = 'http://localhost:3000/';
+  private API_BACKEND = 'http://localhost:8080/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,28 +17,23 @@ export class SaveBookService {
     return this.httpClient.get<Customer[]>(this.API_URL + 'customer');
   }
 
-  findSaveBookSearch(customerNameSearch: string, idSearch: string): Observable<SaveBook[]> {
-    console.log(idSearch);
-    if(Number(idSearch)>0){
-      return this.httpClient.get<SaveBook[]>(this.API_URL +
-        'SaveBook?customer.customerName_like=' + customerNameSearch + '&id=' + idSearch );
-    }
-    return this.httpClient.get<SaveBook[]>(this.API_URL +
-      'SaveBook?customer.customerName_like=' + customerNameSearch );
+  findSaveBookSearch(customerNameSearch: string, page: number): Observable<SaveBook[]> {
+    return this.httpClient.get<SaveBook[]>(this.API_BACKEND +
+      '?nameSearch=' + customerNameSearch + '&page=' + page );
   }
 
-  findSaveBookSearchPaging(numberRecord: number, curPage: number,
-                           customerNameSearch: string, idSearch: string): Observable<SaveBook[]> {
-    if(Number(idSearch)>0){
-      return this.httpClient.get<SaveBook[]>(this.API_URL + 'SaveBook?_page=' + curPage + '&_limit=' + numberRecord +
-        '&customer.customerName_like=' + customerNameSearch + '&id=' + idSearch);
-    }
-    return this.httpClient.get<SaveBook[]>(this.API_URL + 'SaveBook?_page=' + curPage + '&_limit=' + numberRecord +
-      '&customer.customerName_like=' + customerNameSearch );
-  }
+  // findSaveBookSearchPaging(numberRecord: number, curPage: number,
+  //                          customerNameSearch: string, idSearch: string): Observable<SaveBook[]> {
+  //   if(Number(idSearch)>0){
+  //     return this.httpClient.get<SaveBook[]>(this.API_URL + 'SaveBook?_page=' + curPage + '&_limit=' + numberRecord +
+  //       '&customer.customerName_like=' + customerNameSearch + '&id=' + idSearch);
+  //   }
+  //   return this.httpClient.get<SaveBook[]>(this.API_URL + 'SaveBook?_page=' + curPage + '&_limit=' + numberRecord +
+  //     '&customer.customerName_like=' + customerNameSearch );
+  // }
 
   deleteSaveBook(id: number): Observable<SaveBook> {
-    return this.httpClient.delete<SaveBook>(this.API_URL + 'SaveBook/' + id);
+    return this.httpClient.delete<SaveBook>(this.API_BACKEND + '/' + id);
   }
 
   getById(id: number): Observable<SaveBook> {
@@ -46,5 +42,9 @@ export class SaveBookService {
 
   updateSaveBook(id: number, saveBook: SaveBook): Observable<SaveBook> {
     return this.httpClient.put<SaveBook>(this.API_URL + 'SaveBook/' + id, saveBook);
+  }
+
+  addSaveBook(saveBook): Observable<SaveBook> {
+    return this.httpClient.post<SaveBook>(this.API_URL + 'SaveBook', saveBook);
   }
 }

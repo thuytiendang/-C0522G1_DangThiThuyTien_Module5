@@ -1,0 +1,93 @@
+package com.example.backend.dto;
+
+import com.example.backend.model.Customer;
+
+public class SaveBookDto {
+    private int id;
+    private String openDate;
+    private String startDate;
+    private String dueDate;
+    private double money;
+    private String interest;
+    private String moreBenefit;
+    private Customer customer;
+
+    public SaveBookDto() {
+    }
+
+    public SaveBookDto(int id, String openDate, String startDate, String dueDate, double money, String interest,
+                       String moreBenefit, Customer customer) {
+        this.id = id;
+        this.openDate = openDate;
+        this.startDate = startDate;
+        this.dueDate = dueDate;
+        this.money = money;
+        this.interest = interest;
+        this.moreBenefit = moreBenefit;
+        this.customer = customer;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getOpenDate() {
+        return openDate;
+    }
+
+    public void setOpenDate(String openDate) {
+        this.openDate = openDate;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public double getMoney() {
+        return money;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
+    }
+
+    public String getInterest() {
+        return interest;
+    }
+
+    public void setInterest(String interest) {
+        this.interest = interest;
+    }
+
+    public String getMoreBenefit() {
+        return moreBenefit;
+    }
+
+    public void setMoreBenefit(String moreBenefit) {
+        this.moreBenefit = moreBenefit;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        table {
+            border: solid 3px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="~{/home::header}"></div>
+<div class="container-fluid">
+<div class="p-3">
+    <h2 class="text-center fw-bold text-success">CUSTOMER LIST</h2>
+
+    <div class="notify" style="text-align: center; color: red">
+        <div th:if="${mess}">
+            <span th:text="${mess}"></span>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg pb-0 mb-0">
+        <div class="container-fluid">
+            <a th:href="@{/customer/create}">
+                <button class="btn btn-success btn-outline-secondary btn-sm">
+                    <span class="fa-solid fa-person-circle-plus text-light h5 my-auto me-1"></span>
+                    <span class="text-light"> Add new Customer</span>
+                </button>
+            </a>
+
+            <form class="d-flex my-2" role="search" th:action="@{/customer/list}">
+                <input class="form-control me-2" type="text" placeholder="Input name" aria-label="Search"
+                       name="nameSearch" th:value="${nameSearch}">
+
+                <input class="form-control me-2" type="text" placeholder="Input address" aria-label="Search"
+                       name="addressSearch" th:value="${addressSearch}">
+
+
+                <input class="form-control me-2" type="text" placeholder="Input phone number" aria-label="Search"
+                       name="phoneSearch" th:value="${phoneSearch}">
+
+                <button class="btn btn-outline-success" type="submit" name="action" value="search">
+                    <i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </nav>
+
+    <table class="table table-striped table-bordered" id="customerTable">
+        <thead>
+        <tr class="text-center bg-success">
+            <th>Serial</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Id card</th>
+            <th>Phone number</th>
+            <th>Customer type</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th>View</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer, status : ${customerList}">
+            <td th:text="${customerList.number * 5 + status.count}"></td>
+            <td th:text="${customer.customerName}"></td>
+            <td th:if="${customer.customerGender== '1'}" th:text="Male"></td>
+            <td th:if="${customer.customerGender == '0'}" th:text="Female"></td>
+            <td th:text="${customer.customerIdCard}"></td>
+            <td th:text="${customer.customerPhone}"></td>
+            <td th:text="${customer.customerType.customerTypeName}"></td>
+            <td class="text-center">
+                <a th:href="@{/customer/edit/__${customer.customerId}__}">
+                    <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>
+                </a>
+            </td>
+            <td class="text-center">
+                <a data-bs-toggle="modal" data-bs-target="#deleteCustomer"
+                   th:attr="onclick=|remove('${customer.customerId}', '${customer.customerName}')|">
+                    <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>
+                </a>
+            </td>
+            <td class="text-center">
+                <a th:attr="onclick=|details('${customer.customerName}', '${customer.customerBirthday}',
+                '${customer.customerGender}', '${customer.customerIdCard}', '${customer.customerPhone}',
+                '${customer.customerEmail}', '${customer.customerAddress}',
+                '${customer.customerType.customerTypeName}')|" data-bs-toggle="modal" data-bs-target="#viewCustomer">
+                    <span class="text-success"><i class="fa-solid fa-eye"></i></span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!--    modal delete-->
+    <div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel1">Are you sure to delete?</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form th:action="@{/customer/delete}">
+                    <div class="modal-body">
+                        <span class="h6">Customer:</span><strong id="nameDelete" class="text-danger ps-2"></strong>
+                        <input type="hidden" name="id" id="idDelete"/>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger" value="delete">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--view-->
+    <div class="modal fade" id="viewCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel2">Customer information</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-success table-striped">
+                        <tr>
+                            <th>Name</th>
+                            <td><span id="name"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Date of Birth</th>
+                            <td><span id="dob"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Gender</th>
+                            <td><span id="gender"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Id card</th>
+                            <td><span id="idCard"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Phone number</th>
+                            <td><span id="phone"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td><span id="email"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td><span id="address"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Customer type</th>
+                            <td><span id="customerType"></span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" th:href="@{'/customer/list'(page=${customerList.number - 1}, nameSearch=${nameSearch},
+                 addressSearch=${addressSearch}, phoneSearch=${phoneSearch})}"
+                   th:if="${customerList.hasPrevious()}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo; Previous</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" th:text="${customerList.number }"
+
+                                     th:href="@{'/customer/list'(page=${customerList.number - 1}, nameSearch=${nameSearch},
+                 addressSearch=${addressSearch}, phoneSearch=${phoneSearch})}"
+                                     th:if="${customerList.hasPrevious()}"></a></li>
+
+            <li class="page-item"><a class="page-link" th:text="${customerList.number + 1}"></a></li>
+
+            <li class="page-item"><a class="page-link" th:text="${customerList.number + 2}"
+                                     th:href="@{'/customer/list'(page=${customerList.number + 1}, nameSearch=${nameSearch},
+                   addressSearch=${addressSearch}, phoneSearch=${phoneSearch})}"
+                                     th:if="${customerList.hasNext()}"></a></li>
+            <li class="page-item">
+                <a class="page-link"
+                   th:href="@{'/customer/list'(page=${customerList.number + 1}, nameSearch=${nameSearch},
+                   addressSearch=${addressSearch}, phoneSearch=${phoneSearch})}"
+                   th:if="${customerList.hasNext()}" aria-label="Next">
+                    <span aria-hidden="true">Next &raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    function remove(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = name;
+    }
+
+    function details(name, dob, gender, idCard, phone, email, address, customerType) {
+        document.getElementById("name").innerText = name;
+        document.getElementById("dob").innerText = dob;
+        if (gender == 0) {
+            document.getElementById("gender").innerText = "Female";
+        } else {
+            document.getElementById("gender").innerText = "Male";
+        }
+        document.getElementById("idCard").innerText = idCard;
+        document.getElementById("phone").innerText = phone;
+        document.getElementById("email").innerText = email;
+        document.getElementById("address").innerText = address;
+        document.getElementById("customerType").innerText = customerType;
+    }
+
+    // function deleteCustomer(value) {
+    //     console.log(value);
+    //     document.getElementById("idDelete").value = value.customerId;
+    //     document.getElementById("nameDelete").innerText = value.customerName;
+    // }
+</script>
+</div>
+</body>
+</html>
