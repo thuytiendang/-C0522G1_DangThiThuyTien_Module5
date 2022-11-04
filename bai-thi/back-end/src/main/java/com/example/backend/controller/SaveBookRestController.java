@@ -37,4 +37,10 @@ public class SaveBookRestController {
         iSaveBookService.delete(iSaveBookService.findById(id));
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PutMapping("/id")
+    public ResponseEntity<Void> update(@RequestBody SaveBook saveBook){
+        iSaveBookService.update(saveBook);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

@@ -33,7 +33,7 @@ export class SaveBookService {
   // }
 
   deleteSaveBook(id: number): Observable<SaveBook> {
-    return this.httpClient.delete<SaveBook>(this.API_BACKEND + '/' + id);
+    return this.httpClient.delete<SaveBook>(this.API_BACKEND + id);
   }
 
   getById(id: number): Observable<SaveBook> {
@@ -41,7 +41,7 @@ export class SaveBookService {
   }
 
   updateSaveBook(id: number, saveBook: SaveBook): Observable<SaveBook> {
-    return this.httpClient.put<SaveBook>(this.API_URL + 'SaveBook/' + id, saveBook);
+    return this.httpClient.put<SaveBook>(this.API_BACKEND +  id, saveBook);
   }
 
   addSaveBook(saveBook): Observable<SaveBook> {
