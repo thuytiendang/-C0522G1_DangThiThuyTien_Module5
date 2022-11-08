@@ -1,24 +1,24 @@
 package projectbackend.dto.room;
 
 public class RoomDto {
-    private int id;
+    private Integer id;
     private String name;
     private boolean isDelete;
 
     public RoomDto() {
     }
 
-    public RoomDto(int id, String name, boolean isDelete) {
+    public RoomDto(Integer id, String name, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

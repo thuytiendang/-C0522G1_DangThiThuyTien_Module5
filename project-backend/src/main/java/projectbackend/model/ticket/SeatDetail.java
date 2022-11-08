@@ -9,7 +9,7 @@ public class SeatDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private boolean isDelete;
     private boolean statusSeat;
 
@@ -20,18 +20,18 @@ public class SeatDetail {
     public SeatDetail() {
     }
 
-    public SeatDetail(int id, boolean isDelete, boolean statusSeat, ShowTimes showTimes) {
+    public SeatDetail(Integer id, boolean isDelete, boolean statusSeat, ShowTimes showTimes) {
         this.id = id;
         this.isDelete = isDelete;
         this.statusSeat = statusSeat;
         this.showTimes = showTimes;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

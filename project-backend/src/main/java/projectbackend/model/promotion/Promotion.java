@@ -10,7 +10,7 @@ public class Promotion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private boolean isDelete;
     private String image;
@@ -22,8 +22,8 @@ public class Promotion {
     public Promotion() {
     }
 
-    public Promotion(int id, String name, boolean isDelete, String image, String startTime,
-                     String endTime, String detail, String discount) {
+    public Promotion(Integer id, String name, boolean isDelete, String image, String startTime, String endTime,
+                     String detail, String discount) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
@@ -34,11 +34,11 @@ public class Promotion {
         this.discount = discount;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

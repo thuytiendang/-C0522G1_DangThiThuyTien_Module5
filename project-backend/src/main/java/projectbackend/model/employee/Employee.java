@@ -9,9 +9,9 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
-    private int gender;
+    private Integer gender;
     private String email;
     private String address;
     private String phoneNumber;
@@ -27,8 +27,8 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String name, int gender, String email, String address, String phoneNumber, String idCard,
-                    String dayOfBirth, String image, boolean isDelete, User user) {
+    public Employee(Integer id, String name, Integer gender, String email, String address, String phoneNumber,
+                    String idCard, String dayOfBirth, String image, boolean isDelete, User user) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -42,11 +42,11 @@ public class Employee {
         this.user = user;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -58,11 +58,11 @@ public class Employee {
         this.name = name;
     }
 
-    public int getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
     }
 
@@ -129,5 +129,4 @@ public class Employee {
     public void setUser(User user) {
         this.user = user;
     }
-
 }

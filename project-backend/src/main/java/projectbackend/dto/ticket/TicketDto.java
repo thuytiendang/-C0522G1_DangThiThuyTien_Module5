@@ -4,7 +4,7 @@ import projectbackend.model.customer.Customer;
 import projectbackend.model.ticket.SeatDetail;
 
 public class TicketDto {
-    private int id;
+    private Integer id;
     private boolean isDelete;
     private boolean statusTicket;
     private String ticketBookingTime;
@@ -14,8 +14,8 @@ public class TicketDto {
     public TicketDto() {
     }
 
-    public TicketDto(int id, boolean isDelete, boolean statusTicket, String ticketBookingTime, SeatDetail seatDetail,
-                     Customer customer) {
+    public TicketDto(Integer id, boolean isDelete, boolean statusTicket, String ticketBookingTime,
+                     SeatDetail seatDetail, Customer customer) {
         this.id = id;
         this.isDelete = isDelete;
         this.statusTicket = statusTicket;
@@ -24,19 +24,11 @@ public class TicketDto {
         this.customer = customer;
     }
 
-    public String getTicketBookingTime() {
-        return ticketBookingTime;
-    }
-
-    public void setTicketBookingTime(String ticketBookingTime) {
-        this.ticketBookingTime = ticketBookingTime;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -54,6 +46,14 @@ public class TicketDto {
 
     public void setStatusTicket(boolean statusTicket) {
         this.statusTicket = statusTicket;
+    }
+
+    public String getTicketBookingTime() {
+        return ticketBookingTime;
+    }
+
+    public void setTicketBookingTime(String ticketBookingTime) {
+        this.ticketBookingTime = ticketBookingTime;
     }
 
     public SeatDetail getSeatDetail() {

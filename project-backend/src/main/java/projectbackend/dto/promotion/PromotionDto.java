@@ -1,7 +1,7 @@
 package projectbackend.dto.promotion;
 
 public class PromotionDto {
-    private int id;
+    private Integer id;
     private String name;
     private boolean isDelete;
     private String image;
@@ -13,7 +13,7 @@ public class PromotionDto {
     public PromotionDto() {
     }
 
-    public PromotionDto(int id, String name, boolean isDelete, String image, String startTime, String endTime,
+    public PromotionDto(Integer id, String name, boolean isDelete, String image, String startTime, String endTime,
                         String detail, String discount) {
         this.id = id;
         this.name = name;
@@ -25,11 +25,11 @@ public class PromotionDto {
         this.discount = discount;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

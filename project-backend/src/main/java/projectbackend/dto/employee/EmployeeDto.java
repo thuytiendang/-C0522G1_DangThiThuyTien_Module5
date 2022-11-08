@@ -3,9 +3,9 @@ package projectbackend.dto.employee;
 import projectbackend.model.decentralization.User;
 
 public class EmployeeDto {
-    private int id;
+    private Integer id;
     private String name;
-    private int gender;
+    private Integer gender;
     private String email;
     private String address;
     private String phoneNumber;
@@ -18,7 +18,7 @@ public class EmployeeDto {
     public EmployeeDto() {
     }
 
-    public EmployeeDto(int id, String name, int gender, String email, String address, String phoneNumber,
+    public EmployeeDto(Integer id, String name, Integer gender, String email, String address, String phoneNumber,
                        String idCard, String dayOfBirth, String image, boolean isDelete, User user) {
         this.id = id;
         this.name = name;
@@ -33,11 +33,11 @@ public class EmployeeDto {
         this.user = user;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -49,11 +49,11 @@ public class EmployeeDto {
         this.name = name;
     }
 
-    public int getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
     }
 

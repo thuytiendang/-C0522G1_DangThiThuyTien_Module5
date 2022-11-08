@@ -9,11 +9,11 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private boolean isDelete;
     private String dayOfBirth;
-    private int gender;
+    private Integer gender;
     private String idCard;
     private String email;
     private String address;
@@ -30,8 +30,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int id, String name, boolean isDelete, String dayOfBirth, int gender, String idCard, String email,
-                    String address, String phoneNumber, CustomerType customerType, User user) {
+    public Customer(Integer id, String name, boolean isDelete, String dayOfBirth, Integer gender, String idCard,
+                    String email, String address, String phoneNumber, CustomerType customerType, User user) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
@@ -45,11 +45,11 @@ public class Customer {
         this.user = user;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -77,11 +77,11 @@ public class Customer {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public int getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
     }
 

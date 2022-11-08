@@ -11,7 +11,7 @@ public class ShowTimes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private boolean isDelete;
     private Date dateProjection;
 
@@ -31,7 +31,7 @@ public class ShowTimes {
     public ShowTimes() {
     }
 
-    public ShowTimes(int id, boolean isDelete, Date dateProjection, Movie movie, Times times, Room room) {
+    public ShowTimes(Integer id, boolean isDelete, Date dateProjection, Movie movie, Times times, Room room) {
         this.id = id;
         this.isDelete = isDelete;
         this.dateProjection = dateProjection;
@@ -40,11 +40,11 @@ public class ShowTimes {
         this.room = room;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

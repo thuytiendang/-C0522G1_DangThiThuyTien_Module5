@@ -5,7 +5,7 @@ import projectbackend.model.room.Seat;
 import projectbackend.model.room.SeatType;
 
 public class SeatRoomDto {
-    private int id;
+    private Integer id;
     private boolean isDelete;
     private Room room;
     private Seat seat;
@@ -14,7 +14,7 @@ public class SeatRoomDto {
     public SeatRoomDto() {
     }
 
-    public SeatRoomDto(int id, boolean isDelete, Room room, Seat seat, SeatType seatType) {
+    public SeatRoomDto(Integer id, boolean isDelete, Room room, Seat seat, SeatType seatType) {
         this.id = id;
         this.isDelete = isDelete;
         this.room = room;
@@ -22,11 +22,11 @@ public class SeatRoomDto {
         this.seatType = seatType;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

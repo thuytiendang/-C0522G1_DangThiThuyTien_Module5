@@ -7,8 +7,8 @@ public class SavingPoint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private int point;
+    private Integer id;
+    private Integer point;
     private String dayBooking;
 
     @ManyToOne
@@ -18,26 +18,26 @@ public class SavingPoint {
     public SavingPoint() {
     }
 
-    public SavingPoint(int id, int point, String dayBooking, Customer customer) {
+    public SavingPoint(Integer id, Integer point, String dayBooking, Customer customer) {
         this.id = id;
         this.point = point;
         this.dayBooking = dayBooking;
         this.customer = customer;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getPoint() {
+    public Integer getPoint() {
         return point;
     }
 
-    public void setPoint(int point) {
+    public void setPoint(Integer point) {
         this.point = point;
     }
 

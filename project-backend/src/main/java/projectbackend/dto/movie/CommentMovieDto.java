@@ -3,9 +3,9 @@ package projectbackend.dto.movie;
 import projectbackend.model.movie.Movie;
 
 public class CommentMovieDto {
-    private int id;
+    private Integer id;
     private String timeComment;
-    private int pointComment;
+    private Integer pointComment;
     private String contentComment;
     private boolean isDelete;
     private Movie movie;
@@ -13,7 +13,8 @@ public class CommentMovieDto {
     public CommentMovieDto() {
     }
 
-    public CommentMovieDto(int id, String timeComment, int pointComment, String contentComment, boolean isDelete, Movie movie) {
+    public CommentMovieDto(Integer id, String timeComment, Integer pointComment, String contentComment,
+                           boolean isDelete, Movie movie) {
         this.id = id;
         this.timeComment = timeComment;
         this.pointComment = pointComment;
@@ -22,19 +23,11 @@ public class CommentMovieDto {
         this.movie = movie;
     }
 
-    public String getContentComment() {
-        return contentComment;
-    }
-
-    public void setContentComment(String contentComment) {
-        this.contentComment = contentComment;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -46,12 +39,20 @@ public class CommentMovieDto {
         this.timeComment = timeComment;
     }
 
-    public int getPointComment() {
+    public Integer getPointComment() {
         return pointComment;
     }
 
-    public void setPointComment(int pointComment) {
+    public void setPointComment(Integer pointComment) {
         this.pointComment = pointComment;
+    }
+
+    public String getContentComment() {
+        return contentComment;
+    }
+
+    public void setContentComment(String contentComment) {
+        this.contentComment = contentComment;
     }
 
     public boolean isDelete() {

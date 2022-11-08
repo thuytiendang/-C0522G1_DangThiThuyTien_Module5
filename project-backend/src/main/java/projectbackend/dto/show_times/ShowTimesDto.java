@@ -7,7 +7,7 @@ import projectbackend.model.show_times.Times;
 import java.sql.Date;
 
 public class ShowTimesDto {
-    private int id;
+    private Integer id;
     private boolean isDelete;
     private Date dateProjection;
     private Movie movie;
@@ -17,7 +17,7 @@ public class ShowTimesDto {
     public ShowTimesDto() {
     }
 
-    public ShowTimesDto(int id, boolean isDelete, Date dateProjection, Movie movie, Times times, Room room) {
+    public ShowTimesDto(Integer id, boolean isDelete, Date dateProjection, Movie movie, Times times, Room room) {
         this.id = id;
         this.isDelete = isDelete;
         this.dateProjection = dateProjection;
@@ -26,11 +26,11 @@ public class ShowTimesDto {
         this.room = room;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class PromotionDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private boolean isDelete;
 
     @ManyToOne
@@ -23,18 +23,18 @@ public class PromotionDetail {
     public PromotionDetail() {
     }
 
-    public PromotionDetail(int id, boolean isDelete, Promotion promotion, CustomerType customerType) {
+    public PromotionDetail(Integer id, boolean isDelete, Promotion promotion, CustomerType customerType) {
         this.id = id;
         this.isDelete = isDelete;
         this.promotion = promotion;
         this.customerType = customerType;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

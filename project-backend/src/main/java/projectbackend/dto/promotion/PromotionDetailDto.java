@@ -4,7 +4,7 @@ import projectbackend.model.customer.CustomerType;
 import projectbackend.model.promotion.Promotion;
 
 public class PromotionDetailDto {
-    private int id;
+    private Integer id;
     private boolean isDelete;
     private Promotion promotion;
     private CustomerType customerType;
@@ -12,18 +12,18 @@ public class PromotionDetailDto {
     public PromotionDetailDto() {
     }
 
-    public PromotionDetailDto(int id, boolean isDelete, Promotion promotion, CustomerType customerType) {
+    public PromotionDetailDto(Integer id, boolean isDelete, Promotion promotion, CustomerType customerType) {
         this.id = id;
         this.isDelete = isDelete;
         this.promotion = promotion;
         this.customerType = customerType;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

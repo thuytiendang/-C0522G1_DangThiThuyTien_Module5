@@ -4,28 +4,28 @@ import projectbackend.model.employee.Employee;
 import projectbackend.model.movie.MovieType;
 
 public class MovieDto {
-    private int id;
+    private Integer id;
     private String name;
     private boolean isDelete;
     private String image;
     private String startDay;
     private String endDay;
     private String director;
-    private int filmTime;
+    private Integer filmTime;
     private String trailer;
     private String content;
     private String filmStudio;
     private String actor;
-    private int version;
+    private Integer version;
     private MovieType movieType;
     private Employee employee;
 
     public MovieDto() {
     }
 
-    public MovieDto(int id, String name, boolean isDelete, String image, String startDay, String endDay, String director,
-                    int filmTime, String trailer, String content, String filmStudio, String actor, int version,
-                    MovieType movieType, Employee employee) {
+    public MovieDto(Integer id, String name, boolean isDelete, String image, String startDay, String endDay,
+                    String director, Integer filmTime, String trailer, String content, String filmStudio,
+                    String actor, Integer version, MovieType movieType, Employee employee) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
@@ -43,11 +43,11 @@ public class MovieDto {
         this.employee = employee;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -99,11 +99,11 @@ public class MovieDto {
         this.director = director;
     }
 
-    public int getFilmTime() {
+    public Integer getFilmTime() {
         return filmTime;
     }
 
-    public void setFilmTime(int filmTime) {
+    public void setFilmTime(Integer filmTime) {
         this.filmTime = filmTime;
     }
 
@@ -139,11 +139,11 @@ public class MovieDto {
         this.actor = actor;
     }
 
-    public int getVersion() {
+    public Integer getVersion() {
         return version;
     }
 
-    public void setVersion(int version) {
+    public void setVersion(Integer version) {
         this.version = version;
     }
 

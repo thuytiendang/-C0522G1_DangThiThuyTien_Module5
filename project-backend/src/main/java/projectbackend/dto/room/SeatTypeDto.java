@@ -1,26 +1,26 @@
 package projectbackend.dto.room;
 
 public class SeatTypeDto {
-    private int id;
+    private Integer id;
     private String name;
-    private int price;
+    private Integer price;
     private boolean isDelete;
 
     public SeatTypeDto() {
     }
 
-    public SeatTypeDto(int id, String name, int price, boolean isDelete) {
+    public SeatTypeDto(Integer id, String name, Integer price, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.isDelete = isDelete;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -32,11 +32,11 @@ public class SeatTypeDto {
         this.name = name;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 

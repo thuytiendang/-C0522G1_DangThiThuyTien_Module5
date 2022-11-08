@@ -1,24 +1,24 @@
 package projectbackend.dto.movie;
 
 public class MovieTypeDto {
-    private int id;
+    private Integer id;
     private String name;
     private boolean isDelete;
 
     public MovieTypeDto() {
     }
 
-    public MovieTypeDto(int id, String name, boolean isDelete) {
+    public MovieTypeDto(Integer id, String name, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -37,5 +37,4 @@ public class MovieTypeDto {
     public void setDelete(boolean delete) {
         isDelete = delete;
     }
-
 }

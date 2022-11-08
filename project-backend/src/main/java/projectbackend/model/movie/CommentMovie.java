@@ -7,9 +7,9 @@ public class CommentMovie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String timeComment;
-    private int pointComment;
+    private Integer pointComment;
     private String contentComment;
     private boolean isDelete;
 
@@ -20,7 +20,7 @@ public class CommentMovie {
     public CommentMovie() {
     }
 
-    public CommentMovie(int id, String timeComment, int pointComment, String contentComment,
+    public CommentMovie(Integer id, String timeComment, Integer pointComment, String contentComment,
                         boolean isDelete, Movie movie) {
         this.id = id;
         this.timeComment = timeComment;
@@ -30,11 +30,11 @@ public class CommentMovie {
         this.movie = movie;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -46,11 +46,11 @@ public class CommentMovie {
         this.timeComment = timeComment;
     }
 
-    public int getPointComment() {
+    public Integer getPointComment() {
         return pointComment;
     }
 
-    public void setPointComment(int pointComment) {
+    public void setPointComment(Integer pointComment) {
         this.pointComment = pointComment;
     }
 

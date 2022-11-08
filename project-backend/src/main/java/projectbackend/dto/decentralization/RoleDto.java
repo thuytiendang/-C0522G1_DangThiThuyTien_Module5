@@ -1,24 +1,24 @@
 package projectbackend.dto.decentralization;
 
 public class RoleDto {
-    private int id;
+    private Integer id;
     private String name;
     private boolean isDelete;
 
     public RoleDto() {
     }
 
-    public RoleDto(int id, String name, boolean isDelete) {
+    public RoleDto(Integer id, String name, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

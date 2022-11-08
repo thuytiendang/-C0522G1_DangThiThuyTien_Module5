@@ -4,7 +4,7 @@ import projectbackend.model.show_times.ShowTimes;
 import projectbackend.model.ticket.Ticket;
 
 public class SeatDetailDto {
-    private int id;
+    private Integer id;
     private boolean isDelete;
     private boolean statusSeat;
     private ShowTimes showTimes;
@@ -12,18 +12,18 @@ public class SeatDetailDto {
     public SeatDetailDto() {
     }
 
-    public SeatDetailDto(int id, boolean isDelete, boolean statusSeat, ShowTimes showTimes) {
+    public SeatDetailDto(Integer id, boolean isDelete, boolean statusSeat, ShowTimes showTimes) {
         this.id = id;
         this.isDelete = isDelete;
         this.statusSeat = statusSeat;
         this.showTimes = showTimes;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -50,5 +50,4 @@ public class SeatDetailDto {
     public void setShowTimes(ShowTimes showTimes) {
         this.showTimes = showTimes;
     }
-
 }

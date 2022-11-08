@@ -7,7 +7,7 @@ public class SeatRoom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private boolean isDelete;
 
 
@@ -26,7 +26,7 @@ public class SeatRoom {
     public SeatRoom() {
     }
 
-    public SeatRoom(int id, boolean isDelete, Room room, Seat seat, SeatType seatType) {
+    public SeatRoom(Integer id, boolean isDelete, Room room, Seat seat, SeatType seatType) {
         this.id = id;
         this.isDelete = isDelete;
         this.room = room;
@@ -34,11 +34,11 @@ public class SeatRoom {
         this.seatType = seatType;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

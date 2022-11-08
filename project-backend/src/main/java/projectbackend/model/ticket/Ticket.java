@@ -9,9 +9,9 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private boolean isDelete;
-    private int statusTicket;
+    private Integer statusTicket;
     private String ticketBookingTime;
 
     @OneToOne
@@ -25,7 +25,7 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(int id, boolean isDelete, int statusTicket, String ticketBookingTime, SeatDetail seatDetail,
+    public Ticket(Integer id, boolean isDelete, Integer statusTicket, String ticketBookingTime, SeatDetail seatDetail,
                   Customer customer) {
         this.id = id;
         this.isDelete = isDelete;
@@ -35,11 +35,11 @@ public class Ticket {
         this.customer = customer;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,11 +51,11 @@ public class Ticket {
         isDelete = delete;
     }
 
-    public int getStatusTicket() {
+    public Integer getStatusTicket() {
         return statusTicket;
     }
 
-    public void setStatusTicket(int statusTicket) {
+    public void setStatusTicket(Integer statusTicket) {
         this.statusTicket = statusTicket;
     }
 

@@ -10,24 +10,24 @@ public class Times {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private boolean isDelete;
     private String startTime;
 
     public Times() {
     }
 
-    public Times(int id, boolean isDelete, String startTime) {
+    public Times(Integer id, boolean isDelete, String startTime) {
         this.id = id;
         this.isDelete = isDelete;
         this.startTime = startTime;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

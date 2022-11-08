@@ -3,34 +3,34 @@ package projectbackend.dto.customer;
 import projectbackend.model.customer.Customer;
 
 public class SavingPointDto {
-    private int id;
-    private int point;
+    private Integer id;
+    private Integer point;
     private String dayBooking;
     private Customer customer;
 
     public SavingPointDto() {
     }
 
-    public SavingPointDto(int id, int point, String dayBooking, Customer customer) {
+    public SavingPointDto(Integer id, Integer point, String dayBooking, Customer customer) {
         this.id = id;
         this.point = point;
         this.dayBooking = dayBooking;
         this.customer = customer;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getPoint() {
+    public Integer getPoint() {
         return point;
     }
 
-    public void setPoint(int point) {
+    public void setPoint(Integer point) {
         this.point = point;
     }
 

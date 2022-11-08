@@ -1,24 +1,24 @@
 package projectbackend.dto.show_times;
 
 public class TimesDto {
-    private int id;
+    private Integer id;
     private boolean isDelete;
     private String startTime;
 
     public TimesDto() {
     }
 
-    public TimesDto(int id, boolean isDelete, String startTime) {
+    public TimesDto(Integer id, boolean isDelete, String startTime) {
         this.id = id;
         this.isDelete = isDelete;
         this.startTime = startTime;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -37,5 +37,4 @@ public class TimesDto {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
-
 }
