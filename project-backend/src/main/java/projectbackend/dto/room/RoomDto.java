@@ -4,16 +4,14 @@ public class RoomDto {
     private int id;
     private String name;
     private boolean isDelete;
-    private int numberOfSeat;
 
     public RoomDto() {
     }
 
-    public RoomDto(int id, String name, boolean isDelete, int numberOfSeat) {
+    public RoomDto(int id, String name, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
-        this.numberOfSeat = numberOfSeat;
     }
 
     public int getId() {
@@ -38,13 +36,5 @@ public class RoomDto {
 
     public void setDelete(boolean delete) {
         isDelete = delete;
-    }
-
-    public int getNumberOfSeat() {
-        return numberOfSeat;
-    }
-
-    public void setNumberOfSeat(int numberOfSeat) {
-        this.numberOfSeat = numberOfSeat;
     }
 }

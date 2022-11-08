@@ -7,18 +7,29 @@ public class TicketDto {
     private int id;
     private boolean isDelete;
     private boolean statusTicket;
+    private String ticketBookingTime;
     private SeatDetail seatDetail;
     private Customer customer;
 
     public TicketDto() {
     }
 
-    public TicketDto(int id, boolean isDelete, boolean statusTicket, SeatDetail seatDetail, Customer customer) {
+    public TicketDto(int id, boolean isDelete, boolean statusTicket, String ticketBookingTime, SeatDetail seatDetail,
+                     Customer customer) {
         this.id = id;
         this.isDelete = isDelete;
         this.statusTicket = statusTicket;
+        this.ticketBookingTime = ticketBookingTime;
         this.seatDetail = seatDetail;
         this.customer = customer;
+    }
+
+    public String getTicketBookingTime() {
+        return ticketBookingTime;
+    }
+
+    public void setTicketBookingTime(String ticketBookingTime) {
+        this.ticketBookingTime = ticketBookingTime;
     }
 
     public int getId() {

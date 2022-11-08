@@ -8,17 +8,15 @@ public class SeatDetailDto {
     private boolean isDelete;
     private boolean statusSeat;
     private ShowTimes showTimes;
-    private Ticket ticket;
 
     public SeatDetailDto() {
     }
 
-    public SeatDetailDto(int id, boolean isDelete, boolean statusSeat, ShowTimes showTimes, Ticket ticket) {
+    public SeatDetailDto(int id, boolean isDelete, boolean statusSeat, ShowTimes showTimes) {
         this.id = id;
         this.isDelete = isDelete;
         this.statusSeat = statusSeat;
         this.showTimes = showTimes;
-        this.ticket = ticket;
     }
 
     public int getId() {
@@ -53,11 +51,4 @@ public class SeatDetailDto {
         this.showTimes = showTimes;
     }
 
-    public Ticket getTicket() {
-        return ticket;
-    }
-
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
-    }
 }

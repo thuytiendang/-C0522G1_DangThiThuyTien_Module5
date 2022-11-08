@@ -6,18 +6,28 @@ public class CommentMovieDto {
     private int id;
     private String timeComment;
     private int pointComment;
+    private String contentComment;
     private boolean isDelete;
     private Movie movie;
 
     public CommentMovieDto() {
     }
 
-    public CommentMovieDto(int id, String timeComment, int pointComment, boolean isDelete, Movie movie) {
+    public CommentMovieDto(int id, String timeComment, int pointComment, String contentComment, boolean isDelete, Movie movie) {
         this.id = id;
         this.timeComment = timeComment;
         this.pointComment = pointComment;
+        this.contentComment = contentComment;
         this.isDelete = isDelete;
         this.movie = movie;
+    }
+
+    public String getContentComment() {
+        return contentComment;
+    }
+
+    public void setContentComment(String contentComment) {
+        this.contentComment = contentComment;
     }
 
     public int getId() {

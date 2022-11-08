@@ -9,7 +9,7 @@ import java.sql.Date;
 public class ShowTimesDto {
     private int id;
     private boolean isDelete;
-    private Date dauBegin;
+    private Date dateProjection;
     private Movie movie;
     private Times times;
     private Room room;
@@ -17,10 +17,10 @@ public class ShowTimesDto {
     public ShowTimesDto() {
     }
 
-    public ShowTimesDto(int id, boolean isDelete, Date dauBegin, Movie movie, Times times, Room room) {
+    public ShowTimesDto(int id, boolean isDelete, Date dateProjection, Movie movie, Times times, Room room) {
         this.id = id;
         this.isDelete = isDelete;
-        this.dauBegin = dauBegin;
+        this.dateProjection = dateProjection;
         this.movie = movie;
         this.times = times;
         this.room = room;
@@ -42,12 +42,12 @@ public class ShowTimesDto {
         isDelete = delete;
     }
 
-    public Date getDauBegin() {
-        return dauBegin;
+    public Date getDateProjection() {
+        return dateProjection;
     }
 
-    public void setDauBegin(Date dauBegin) {
-        this.dauBegin = dauBegin;
+    public void setDateProjection(Date dateProjection) {
+        this.dateProjection = dateProjection;
     }
 
     public Movie getMovie() {
