@@ -12,15 +12,25 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private Integer maximumSeatsInRoom;
     private boolean isDelete;
 
     public Room() {
     }
 
-    public Room(Integer id, String name, boolean isDelete) {
+    public Room(Integer id, String name, Integer maximumSeatsInRoom, boolean isDelete) {
         this.id = id;
         this.name = name;
+        this.maximumSeatsInRoom = maximumSeatsInRoom;
         this.isDelete = isDelete;
+    }
+
+    public Integer getMaximumSeatsInRoom() {
+        return maximumSeatsInRoom;
+    }
+
+    public void setMaximumSeatsInRoom(Integer maximumSeatsInRoom) {
+        this.maximumSeatsInRoom = maximumSeatsInRoom;
     }
 
     public Integer getId() {
