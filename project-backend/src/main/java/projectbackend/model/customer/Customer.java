@@ -1,10 +1,8 @@
 package projectbackend.model.customer;
 
-import projectbackend.model.ticket.Ticket;
 import projectbackend.model.decentralization.User;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class Customer {
@@ -21,15 +19,15 @@ public class Customer {
     private String address;
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "customer")
-    private Set<Ticket> tickets;
+//    @OneToMany(mappedBy = "customer")
+//    private Set<Ticket> tickets;
 
     @ManyToOne
     @JoinColumn(name = "customer_type_id", referencedColumnName = "id")
     private CustomerType customerType;
 
-    @OneToMany(mappedBy = "customer")
-    private Set<SavingPoint> savingPoints;
+//    @OneToMany(mappedBy = "customer")
+//    private Set<SavingPoint> savingPoints;
 
     @OneToOne
     @JoinColumn(name = "user_name", referencedColumnName = "userName")
@@ -39,8 +37,7 @@ public class Customer {
     }
 
     public Customer(int id, String name, boolean isDelete, String dayOfBirth, int gender, String idCard, String email,
-                    String address, String phoneNumber, Set<Ticket> tickets, CustomerType customerType,
-                    Set<SavingPoint> savingPoints, User user) {
+                    String address, String phoneNumber, CustomerType customerType, User user) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
@@ -50,9 +47,7 @@ public class Customer {
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.tickets = tickets;
         this.customerType = customerType;
-        this.savingPoints = savingPoints;
         this.user = user;
     }
 
@@ -128,28 +123,12 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public Set<Ticket> getTickets() {
-        return tickets;
-    }
-
-    public void setTickets(Set<Ticket> tickets) {
-        this.tickets = tickets;
-    }
-
     public CustomerType getCustomerType() {
         return customerType;
     }
 
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
-    }
-
-    public Set<SavingPoint> getSavingPoints() {
-        return savingPoints;
-    }
-
-    public void setSavingPoints(Set<SavingPoint> savingPoints) {
-        this.savingPoints = savingPoints;
     }
 
     public User getUser() {

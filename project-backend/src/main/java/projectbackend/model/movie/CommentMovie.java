@@ -1,7 +1,5 @@
 package projectbackend.model.movie;
 
-import projectbackend.model.movie.Movie;
-
 import javax.persistence.*;
 
 @Entity

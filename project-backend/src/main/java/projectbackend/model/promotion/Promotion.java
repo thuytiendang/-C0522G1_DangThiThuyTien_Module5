@@ -1,7 +1,9 @@
 package projectbackend.model.promotion;
 
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Promotion {
@@ -17,14 +19,14 @@ public class Promotion {
     private String detail;
     private String discount;
 
-    @OneToMany(mappedBy = "promotion")
-    private Set<PromotionDetail> promotionDetails;
+//    @OneToMany(mappedBy = "promotion")
+//    private Set<PromotionDetail> promotionDetails;
 
     public Promotion() {
     }
 
     public Promotion(int id, String name, boolean isDelete, String image, String startTime,
-                     String endTime, String detail, String discount, Set<PromotionDetail> promotionDetails) {
+                     String endTime, String detail, String discount) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
@@ -33,7 +35,6 @@ public class Promotion {
         this.endTime = endTime;
         this.detail = detail;
         this.discount = discount;
-        this.promotionDetails = promotionDetails;
     }
 
     public int getId() {
@@ -98,13 +99,5 @@ public class Promotion {
 
     public void setDiscount(String discount) {
         this.discount = discount;
-    }
-
-    public Set<PromotionDetail> getPromotionDetails() {
-        return promotionDetails;
-    }
-
-    public void setPromotionDetails(Set<PromotionDetail> promotionDetails) {
-        this.promotionDetails = promotionDetails;
     }
 }

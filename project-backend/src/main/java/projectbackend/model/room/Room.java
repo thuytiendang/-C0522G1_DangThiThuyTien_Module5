@@ -1,9 +1,9 @@
 package projectbackend.model.room;
 
-import projectbackend.model.show_times.ShowTimes;
-
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Room {
@@ -15,30 +15,20 @@ public class Room {
     private boolean isDelete;
     private int numberOfSeat;
 
-    @OneToMany(mappedBy = "room")
-    private Set<SeatRoom> seatRooms;
-
-    @OneToMany(mappedBy = "room")
-    private Set<ShowTimes> showTimes;
+//    @OneToMany(mappedBy = "room")
+//    private Set<SeatRoom> seatRooms;
+//
+//    @OneToMany(mappedBy = "room")
+//    private Set<ShowTimes> showTimes;
 
     public Room() {
     }
 
-    public Room(int id, String name, boolean isDelete, int numberOfSeat, Set<SeatRoom> seatRooms, Set<ShowTimes> showTimes) {
+    public Room(int id, String name, boolean isDelete, int numberOfSeat) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
         this.numberOfSeat = numberOfSeat;
-        this.seatRooms = seatRooms;
-        this.showTimes = showTimes;
-    }
-
-    public Set<ShowTimes> getShowTimes() {
-        return showTimes;
-    }
-
-    public void setShowTimes(Set<ShowTimes> showTimes) {
-        this.showTimes = showTimes;
     }
 
     public int getId() {
@@ -73,11 +63,4 @@ public class Room {
         this.numberOfSeat = numberOfSeat;
     }
 
-    public Set<SeatRoom> getSeatRooms() {
-        return seatRooms;
-    }
-
-    public void setSeatRooms(Set<SeatRoom> seatRooms) {
-        this.seatRooms = seatRooms;
-    }
 }

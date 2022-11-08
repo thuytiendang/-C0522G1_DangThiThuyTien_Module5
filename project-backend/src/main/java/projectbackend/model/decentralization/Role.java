@@ -1,7 +1,9 @@
 package projectbackend.model.decentralization;
 
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Role {
@@ -12,17 +14,16 @@ public class Role {
     private String name;
     private boolean isDelete;
 
-    @OneToMany(mappedBy = "role")
-    private Set<UserRole> userRoles;
+//    @OneToMany(mappedBy = "role")
+//    private Set<UserRole> userRoles;
 
     public Role() {
     }
 
-    public Role(int id, String name, boolean isDelete, Set<UserRole> userRoles) {
+    public Role(int id, String name, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
-        this.userRoles = userRoles;
     }
 
     public int getId() {
@@ -47,13 +48,5 @@ public class Role {
 
     public void setDelete(boolean delete) {
         isDelete = delete;
-    }
-
-    public Set<UserRole> getUserRoles() {
-        return userRoles;
-    }
-
-    public void setUserRoles(Set<UserRole> userRoles) {
-        this.userRoles = userRoles;
     }
 }

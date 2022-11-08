@@ -15,7 +15,7 @@ public class ShowTimes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private boolean isDelete;
-    private Date dauBegin;
+    private Date dayBegin;
 
     @ManyToOne
     @JoinColumn(name = "movie_id", referencedColumnName = "id")
@@ -25,8 +25,8 @@ public class ShowTimes {
     @JoinColumn(name = "times_id", referencedColumnName = "id")
     private Times times;
 
-    @OneToMany(mappedBy = "showTimes")
-    private Set<SeatDetail> seatDetails;
+//    @OneToMany(mappedBy = "showTimes")
+//    private Set<SeatDetail> seatDetails;
 
     @ManyToOne
     @JoinColumn(name = "room_id", referencedColumnName = "id")
@@ -36,13 +36,12 @@ public class ShowTimes {
     public ShowTimes() {
     }
 
-    public ShowTimes(int id, boolean isDelete, Date dauBegin, Movie movie, Times times, Set<SeatDetail> seatDetails, Room room) {
+    public ShowTimes(int id, boolean isDelete, Date dayBegin, Movie movie, Times times, Room room) {
         this.id = id;
         this.isDelete = isDelete;
-        this.dauBegin = dauBegin;
+        this.dayBegin = dayBegin;
         this.movie = movie;
         this.times = times;
-        this.seatDetails = seatDetails;
         this.room = room;
     }
 
@@ -62,12 +61,12 @@ public class ShowTimes {
         isDelete = delete;
     }
 
-    public Date getDauBegin() {
-        return dauBegin;
+    public Date getDayBegin() {
+        return dayBegin;
     }
 
-    public void setDauBegin(Date dauBegin) {
-        this.dauBegin = dauBegin;
+    public void setDayBegin(Date dayBegin) {
+        this.dayBegin = dayBegin;
     }
 
     public Movie getMovie() {
@@ -84,14 +83,6 @@ public class ShowTimes {
 
     public void setTimes(Times times) {
         this.times = times;
-    }
-
-    public Set<SeatDetail> getSeatDetails() {
-        return seatDetails;
-    }
-
-    public void setSeatDetails(Set<SeatDetail> seatDetails) {
-        this.seatDetails = seatDetails;
     }
 
     public Room getRoom() {

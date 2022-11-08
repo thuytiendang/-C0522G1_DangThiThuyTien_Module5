@@ -1,9 +1,9 @@
 package projectbackend.model.movie;
 
-import projectbackend.model.movie.Movie;
-
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class MovieType {
@@ -14,17 +14,16 @@ public class MovieType {
     private String name;
     private boolean isDelete;
 
-    @OneToMany(mappedBy = "movieType")
-    private Set<Movie> movies;
+//    @OneToMany(mappedBy = "movieType")
+//    private Set<Movie> movies;
 
     public MovieType() {
     }
 
-    public MovieType(int id, String name, boolean isDelete, Set<Movie> movies) {
+    public MovieType(int id, String name, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
-        this.movies = movies;
     }
 
     public int getId() {
@@ -49,13 +48,5 @@ public class MovieType {
 
     public void setDelete(boolean delete) {
         isDelete = delete;
-    }
-
-    public Set<Movie> getMovies() {
-        return movies;
-    }
-
-    public void setMovies(Set<Movie> movies) {
-        this.movies = movies;
     }
 }

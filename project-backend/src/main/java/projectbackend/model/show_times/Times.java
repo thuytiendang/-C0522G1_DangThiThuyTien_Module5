@@ -1,7 +1,9 @@
 package projectbackend.model.show_times;
 
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Times {
@@ -12,17 +14,16 @@ public class Times {
     private boolean isDelete;
     private String startTime;
 
-    @OneToMany(mappedBy = "times")
-    private Set<ShowTimes> showTimes;
+//    @OneToMany(mappedBy = "times")
+//    private Set<ShowTimes> showTimes;
 
     public Times() {
     }
 
-    public Times(int id, boolean isDelete, String startTime, Set<ShowTimes> showTimes) {
+    public Times(int id, boolean isDelete, String startTime) {
         this.id = id;
         this.isDelete = isDelete;
         this.startTime = startTime;
-        this.showTimes = showTimes;
     }
 
     public int getId() {
@@ -47,13 +48,5 @@ public class Times {
 
     public void setStartTime(String startTime) {
         this.startTime = startTime;
-    }
-
-    public Set<ShowTimes> getShowTimes() {
-        return showTimes;
-    }
-
-    public void setShowTimes(Set<ShowTimes> showTimes) {
-        this.showTimes = showTimes;
     }
 }

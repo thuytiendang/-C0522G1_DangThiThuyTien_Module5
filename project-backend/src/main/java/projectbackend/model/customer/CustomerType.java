@@ -1,9 +1,9 @@
 package projectbackend.model.customer;
 
-import projectbackend.model.promotion.PromotionDetail;
-
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class CustomerType {
@@ -14,21 +14,19 @@ public class CustomerType {
     private String name;
     private boolean isDelete;
 
-    @OneToMany(mappedBy = "customerType")
-    private Set<Customer> customers;
+//    @OneToMany(mappedBy = "customerType")
+//    private Set<Customer> customers;
 
-    @OneToMany(mappedBy = "customerType")
-    private Set<PromotionDetail> promotionDetails;
+//    @OneToMany(mappedBy = "customerType")
+//    private Set<PromotionDetail> promotionDetails;
 
     public CustomerType() {
     }
 
-    public CustomerType(int id, String name, boolean isDelete, Set<Customer> customers, Set<PromotionDetail> promotionDetails) {
+    public CustomerType(int id, String name, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
-        this.customers = customers;
-        this.promotionDetails = promotionDetails;
     }
 
     public int getId() {
@@ -53,21 +51,5 @@ public class CustomerType {
 
     public void setDelete(boolean delete) {
         isDelete = delete;
-    }
-
-    public Set<Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(Set<Customer> customers) {
-        this.customers = customers;
-    }
-
-    public Set<PromotionDetail> getPromotionDetails() {
-        return promotionDetails;
-    }
-
-    public void setPromotionDetails(Set<PromotionDetail> promotionDetails) {
-        this.promotionDetails = promotionDetails;
     }
 }

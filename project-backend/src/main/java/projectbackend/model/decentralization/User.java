@@ -3,8 +3,9 @@ package projectbackend.model.decentralization;
 import projectbackend.model.customer.Customer;
 import projectbackend.model.employee.Employee;
 
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User {
@@ -20,19 +21,18 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Employee employee;
 
-    @OneToMany(mappedBy = "user")
-    private Set<UserRole> userRoles;
+//    @OneToMany(mappedBy = "user")
+//    private Set<UserRole> userRoles;
 
     public User() {
     }
 
-    public User(String userName, String password, boolean isDelete, Customer customer, Employee employee, Set<UserRole> userRoles) {
+    public User(String userName, String password, boolean isDelete, Customer customer, Employee employee) {
         this.userName = userName;
         this.password = password;
         this.isDelete = isDelete;
         this.customer = customer;
         this.employee = employee;
-        this.userRoles = userRoles;
     }
 
     public String getUserName() {
@@ -73,13 +73,5 @@ public class User {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
-    }
-
-    public Set<UserRole> getUserRoles() {
-        return userRoles;
-    }
-
-    public void setUserRoles(Set<UserRole> userRoles) {
-        this.userRoles = userRoles;
     }
 }

@@ -1,7 +1,5 @@
 package projectbackend.model.customer;
 
-import projectbackend.model.customer.Customer;
-
 import javax.persistence.*;
 
 @Entity

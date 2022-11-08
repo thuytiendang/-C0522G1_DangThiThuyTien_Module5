@@ -1,9 +1,9 @@
 package projectbackend.model.room;
 
-import projectbackend.model.room.SeatRoom;
-
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Seat {
@@ -13,18 +13,17 @@ public class Seat {
     private int id;
     private String name;
     private boolean isDelete;
-
-    @OneToMany(mappedBy = "seat")
-    private Set<SeatRoom> seatRooms;
+//
+//    @OneToMany(mappedBy = "seat")
+//    private Set<SeatRoom> seatRooms;
 
     public Seat() {
     }
 
-    public Seat(int id, String name, boolean isDelete, Set<SeatRoom> seatRooms) {
+    public Seat(int id, String name, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
-        this.seatRooms = seatRooms;
     }
 
     public int getId() {
@@ -49,13 +48,5 @@ public class Seat {
 
     public void setDelete(boolean delete) {
         isDelete = delete;
-    }
-
-    public Set<SeatRoom> getSeatRooms() {
-        return seatRooms;
-    }
-
-    public void setSeatRooms(Set<SeatRoom> seatRooms) {
-        this.seatRooms = seatRooms;
     }
 }

@@ -1,10 +1,8 @@
 package projectbackend.model.employee;
 
-import projectbackend.model.movie.Movie;
 import projectbackend.model.decentralization.User;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class Employee {
@@ -13,7 +11,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private Number gender;
+    private int gender;
     private String email;
     private String address;
     private String phoneNumber;
@@ -26,14 +24,14 @@ public class Employee {
     @JoinColumn(name = "user_name", referencedColumnName = "userName")
     private User user;
 
-    @OneToMany(mappedBy = "employee")
-    private Set<Movie> movies;
+//    @OneToMany(mappedBy = "employee")
+//    private Set<Movie> movies;
 
     public Employee() {
     }
 
-    public Employee(int id, String name, Number gender, String email, String address, String phoneNumber, String idCard,
-                    String dayOfBirth, String image, boolean isDelete, User user, Set<Movie> movies) {
+    public Employee(int id, String name, int gender, String email, String address, String phoneNumber, String idCard,
+                    String dayOfBirth, String image, boolean isDelete, User user) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -45,7 +43,6 @@ public class Employee {
         this.image = image;
         this.isDelete = isDelete;
         this.user = user;
-        this.movies = movies;
     }
 
     public int getId() {
@@ -64,11 +61,11 @@ public class Employee {
         this.name = name;
     }
 
-    public Number getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(Number gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 
@@ -136,11 +133,4 @@ public class Employee {
         this.user = user;
     }
 
-    public Set<Movie> getMovies() {
-        return movies;
-    }
-
-    public void setMovies(Set<Movie> movies) {
-        this.movies = movies;
-    }
 }
