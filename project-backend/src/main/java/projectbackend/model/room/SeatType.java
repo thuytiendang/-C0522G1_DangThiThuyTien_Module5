@@ -15,9 +15,6 @@ public class SeatType {
     private int price;
     private boolean isDelete;
 
-//    @OneToMany(mappedBy = "seatType")
-//    private Set<SeatRoom> seatRooms;
-
     public SeatType() {
     }
 

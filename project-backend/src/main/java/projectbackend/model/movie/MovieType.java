@@ -14,9 +14,6 @@ public class MovieType {
     private String name;
     private boolean isDelete;
 
-//    @OneToMany(mappedBy = "movieType")
-//    private Set<Movie> movies;
-
     public MovieType() {
     }
 

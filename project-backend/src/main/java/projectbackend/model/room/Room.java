@@ -13,22 +13,14 @@ public class Room {
     private int id;
     private String name;
     private boolean isDelete;
-    private int numberOfSeat;
-
-//    @OneToMany(mappedBy = "room")
-//    private Set<SeatRoom> seatRooms;
-//
-//    @OneToMany(mappedBy = "room")
-//    private Set<ShowTimes> showTimes;
 
     public Room() {
     }
 
-    public Room(int id, String name, boolean isDelete, int numberOfSeat) {
+    public Room(int id, String name, boolean isDelete) {
         this.id = id;
         this.name = name;
         this.isDelete = isDelete;
-        this.numberOfSeat = numberOfSeat;
     }
 
     public int getId() {
@@ -54,13 +46,4 @@ public class Room {
     public void setDelete(boolean delete) {
         isDelete = delete;
     }
-
-    public int getNumberOfSeat() {
-        return numberOfSeat;
-    }
-
-    public void setNumberOfSeat(int numberOfSeat) {
-        this.numberOfSeat = numberOfSeat;
-    }
-
 }

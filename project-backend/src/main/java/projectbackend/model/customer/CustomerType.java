@@ -14,12 +14,6 @@ public class CustomerType {
     private String name;
     private boolean isDelete;
 
-//    @OneToMany(mappedBy = "customerType")
-//    private Set<Customer> customers;
-
-//    @OneToMany(mappedBy = "customerType")
-//    private Set<PromotionDetail> promotionDetails;
-
     public CustomerType() {
     }
 

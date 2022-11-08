@@ -24,9 +24,6 @@ public class Employee {
     @JoinColumn(name = "user_name", referencedColumnName = "userName")
     private User user;
 
-//    @OneToMany(mappedBy = "employee")
-//    private Set<Movie> movies;
-
     public Employee() {
     }
 

@@ -14,9 +14,6 @@ public class Role {
     private String name;
     private boolean isDelete;
 
-//    @OneToMany(mappedBy = "role")
-//    private Set<UserRole> userRoles;
-
     public Role() {
     }
 

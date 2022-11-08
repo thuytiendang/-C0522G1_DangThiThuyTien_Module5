@@ -11,7 +11,8 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private boolean isDelete;
-    private boolean statusTicket;
+    private int statusTicket;
+    private String ticketBookingTime;
 
     @OneToOne
     @JoinColumn(name = "seat_detail_id", referencedColumnName = "id")
@@ -24,10 +25,12 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(int id, boolean isDelete, boolean statusTicket, SeatDetail seatDetail, Customer customer) {
+    public Ticket(int id, boolean isDelete, int statusTicket, String ticketBookingTime, SeatDetail seatDetail,
+                  Customer customer) {
         this.id = id;
         this.isDelete = isDelete;
         this.statusTicket = statusTicket;
+        this.ticketBookingTime = ticketBookingTime;
         this.seatDetail = seatDetail;
         this.customer = customer;
     }
@@ -48,12 +51,20 @@ public class Ticket {
         isDelete = delete;
     }
 
-    public boolean isStatusTicket() {
+    public int getStatusTicket() {
         return statusTicket;
     }
 
-    public void setStatusTicket(boolean statusTicket) {
+    public void setStatusTicket(int statusTicket) {
         this.statusTicket = statusTicket;
+    }
+
+    public String getTicketBookingTime() {
+        return ticketBookingTime;
+    }
+
+    public void setTicketBookingTime(String ticketBookingTime) {
+        this.ticketBookingTime = ticketBookingTime;
     }
 
     public SeatDetail getSeatDetail() {

@@ -14,9 +14,6 @@ public class Times {
     private boolean isDelete;
     private String startTime;
 
-//    @OneToMany(mappedBy = "times")
-//    private Set<ShowTimes> showTimes;
-
     public Times() {
     }
 

@@ -2,11 +2,9 @@ package projectbackend.model.show_times;
 
 import projectbackend.model.movie.Movie;
 import projectbackend.model.room.Room;
-import projectbackend.model.ticket.SeatDetail;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Set;
 
 @Entity
 public class ShowTimes {
@@ -15,7 +13,7 @@ public class ShowTimes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private boolean isDelete;
-    private Date dayBegin;
+    private Date dateProjection;
 
     @ManyToOne
     @JoinColumn(name = "movie_id", referencedColumnName = "id")
@@ -25,9 +23,6 @@ public class ShowTimes {
     @JoinColumn(name = "times_id", referencedColumnName = "id")
     private Times times;
 
-//    @OneToMany(mappedBy = "showTimes")
-//    private Set<SeatDetail> seatDetails;
-
     @ManyToOne
     @JoinColumn(name = "room_id", referencedColumnName = "id")
     private Room room;
@@ -36,10 +31,10 @@ public class ShowTimes {
     public ShowTimes() {
     }
 
-    public ShowTimes(int id, boolean isDelete, Date dayBegin, Movie movie, Times times, Room room) {
+    public ShowTimes(int id, boolean isDelete, Date dateProjection, Movie movie, Times times, Room room) {
         this.id = id;
         this.isDelete = isDelete;
-        this.dayBegin = dayBegin;
+        this.dateProjection = dateProjection;
         this.movie = movie;
         this.times = times;
         this.room = room;
@@ -61,12 +56,12 @@ public class ShowTimes {
         isDelete = delete;
     }
 
-    public Date getDayBegin() {
-        return dayBegin;
+    public Date getDateProjection() {
+        return dateProjection;
     }
 
-    public void setDayBegin(Date dayBegin) {
-        this.dayBegin = dayBegin;
+    public void setDateProjection(Date dateProjection) {
+        this.dateProjection = dateProjection;
     }
 
     public Movie getMovie() {

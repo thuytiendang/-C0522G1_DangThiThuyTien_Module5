@@ -17,18 +17,14 @@ public class SeatDetail {
     @JoinColumn(name = "show_time_id", referencedColumnName = "id")
     private ShowTimes showTimes;
 
-    @OneToOne(mappedBy = "seatDetail")
-    private Ticket ticket;
-
     public SeatDetail() {
     }
 
-    public SeatDetail(int id, boolean isDelete, boolean statusSeat, ShowTimes showTimes, Ticket ticket) {
+    public SeatDetail(int id, boolean isDelete, boolean statusSeat, ShowTimes showTimes) {
         this.id = id;
         this.isDelete = isDelete;
         this.statusSeat = statusSeat;
         this.showTimes = showTimes;
-        this.ticket = ticket;
     }
 
     public int getId() {
@@ -61,13 +57,5 @@ public class SeatDetail {
 
     public void setShowTimes(ShowTimes showTimes) {
         this.showTimes = showTimes;
-    }
-
-    public Ticket getTicket() {
-        return ticket;
-    }
-
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
     }
 }

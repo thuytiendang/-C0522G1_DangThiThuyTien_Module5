@@ -13,9 +13,6 @@ public class Seat {
     private int id;
     private String name;
     private boolean isDelete;
-//
-//    @OneToMany(mappedBy = "seat")
-//    private Set<SeatRoom> seatRooms;
 
     public Seat() {
     }

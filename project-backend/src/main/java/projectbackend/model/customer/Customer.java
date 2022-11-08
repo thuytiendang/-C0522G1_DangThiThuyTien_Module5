@@ -19,15 +19,9 @@ public class Customer {
     private String address;
     private String phoneNumber;
 
-//    @OneToMany(mappedBy = "customer")
-//    private Set<Ticket> tickets;
-
     @ManyToOne
     @JoinColumn(name = "customer_type_id", referencedColumnName = "id")
     private CustomerType customerType;
-
-//    @OneToMany(mappedBy = "customer")
-//    private Set<SavingPoint> savingPoints;
 
     @OneToOne
     @JoinColumn(name = "user_name", referencedColumnName = "userName")

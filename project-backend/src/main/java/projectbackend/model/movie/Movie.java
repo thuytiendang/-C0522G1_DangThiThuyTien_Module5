@@ -27,12 +27,6 @@ public class Movie {
     @JoinColumn(name = "movie_type_id", referencedColumnName = "id")
     private MovieType movieType;
 
-//    @OneToMany(mappedBy = "movie")
-//    private Set<ShowTimes> showTimes;
-//
-//    @OneToMany(mappedBy = "movie")
-//    private Set<CommentMovie> commentMovies;
-
     @ManyToOne
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee employee;

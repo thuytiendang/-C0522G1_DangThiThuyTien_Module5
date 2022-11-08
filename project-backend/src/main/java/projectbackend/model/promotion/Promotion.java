@@ -19,9 +19,6 @@ public class Promotion {
     private String detail;
     private String discount;
 
-//    @OneToMany(mappedBy = "promotion")
-//    private Set<PromotionDetail> promotionDetails;
-
     public Promotion() {
     }
 

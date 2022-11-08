@@ -10,6 +10,7 @@ public class CommentMovie {
     private int id;
     private String timeComment;
     private int pointComment;
+    private String contentComment;
     private boolean isDelete;
 
     @ManyToOne
@@ -19,10 +20,12 @@ public class CommentMovie {
     public CommentMovie() {
     }
 
-    public CommentMovie(int id, String timeComment, int pointComment, boolean isDelete, Movie movie) {
+    public CommentMovie(int id, String timeComment, int pointComment, String contentComment,
+                        boolean isDelete, Movie movie) {
         this.id = id;
         this.timeComment = timeComment;
         this.pointComment = pointComment;
+        this.contentComment = contentComment;
         this.isDelete = isDelete;
         this.movie = movie;
     }
@@ -49,6 +52,14 @@ public class CommentMovie {
 
     public void setPointComment(int pointComment) {
         this.pointComment = pointComment;
+    }
+
+    public String getContentComment() {
+        return contentComment;
+    }
+
+    public void setContentComment(String contentComment) {
+        this.contentComment = contentComment;
     }
 
     public boolean isDelete() {
