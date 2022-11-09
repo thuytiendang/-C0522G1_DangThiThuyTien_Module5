@@ -12,6 +12,7 @@ public class SeatDetail {
     private Integer id;
     private boolean isDelete;
     private boolean statusSeat;
+    private Integer seatRoomId;
 
     @ManyToOne
     @JoinColumn(name = "show_time_id", referencedColumnName = "id")
@@ -20,11 +21,20 @@ public class SeatDetail {
     public SeatDetail() {
     }
 
-    public SeatDetail(Integer id, boolean isDelete, boolean statusSeat, ShowTimes showTimes) {
+    public SeatDetail(Integer id, boolean isDelete, boolean statusSeat, Integer seatRoomId, ShowTimes showTimes) {
         this.id = id;
         this.isDelete = isDelete;
         this.statusSeat = statusSeat;
+        this.seatRoomId = seatRoomId;
         this.showTimes = showTimes;
+    }
+
+    public Integer getSeatRoomId() {
+        return seatRoomId;
+    }
+
+    public void setSeatRoomId(Integer seatRoomId) {
+        this.seatRoomId = seatRoomId;
     }
 
     public Integer getId() {
