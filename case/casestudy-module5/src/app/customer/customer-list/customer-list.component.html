@@ -82,10 +82,8 @@
         <li class="page-item disabled" *ngIf="curPage <= 1">
           <a class="page-link">&laquo;</a>
         </li>
-        ​
         <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage"></a>
         </li>
-        ​
         <li class="page-item">
           <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Next &raquo;</a>
         </li>
